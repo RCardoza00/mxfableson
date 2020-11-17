@@ -6,7 +6,7 @@
 * fix EL CHART sizes
 * fix chart width
 * fix chart filters (dropdowns)
-* fix navbar event and position (has to be always on screen)
+* fix navbar event and position
 * add login buttn to the navbar
 * fix combobox "GROUP" [DONE]
 
