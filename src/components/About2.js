@@ -5,13 +5,10 @@ const Styles= styled.div`
 
 .about-container{
     overflow:hidden;
-    background-color:transparent;
-    padding: 10px 10%;
     align-items:center;
     margin:0;
     
     justify-content:space-between;
-    margin-bottom:30px;
     width:100%;
     
     .about-title{

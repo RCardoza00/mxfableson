@@ -5,13 +5,12 @@ const Styles= styled.div`
 
 .about-container{
 overflow:hidden;
-background-color:transparent;
 padding: 10px 10%;
 align-items:center;
 margin:0;
 
 justify-content:space-between;
-margin-bottom:30px;
+margin-bottom:2em;
 width:100%;
 height: 160px;
 
@@ -20,7 +19,7 @@ height: 160px;
     color:#306973;
     font-size:32px;
     font-weight: bold;
-    margin-bottom:30px;
+    margin-bottom:2em;
 }
 
 .about-content{

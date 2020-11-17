@@ -9,7 +9,7 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import Aside from '../components/Aside';
 
-const drawerWidth = '20vw';
+const drawerWidth = '5em';
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -38,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'none',
   },
   drawer: {
-    width: '70vw',
+    width: '75vw',
     flexShrink: 0
     
   },
@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh'
   },
   drawerOpen: {
-    width:'20vw',
+    width:'16vw',
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,

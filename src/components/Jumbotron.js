@@ -18,6 +18,7 @@ const Styles = styled.div`
         height: 500px;
         position: relative;
         z-index: -2;
+        margin-bottom:0;
     }
     .overlay{
         background-color: #000;
@@ -31,7 +32,14 @@ const Styles = styled.div`
     }
     
     @media(max-width 1200px){
-
+        .jumbo{
+            background: url(${Banner});
+            background-size: cover;
+            color: #ccc;
+            height: 500px;
+            position: relative;
+            z-index: -2;
+        }
     }
 
     @media(max-width 992px){

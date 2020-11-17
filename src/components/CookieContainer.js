@@ -24,7 +24,7 @@ const AcceptCookies = () =>{
 export default () => {
     return(
 
-<div className="layout">
+<div className="layout-disclaimer">
     <div className="cookie-container">
         <p className="text-disclaimer">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

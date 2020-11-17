@@ -16,7 +16,7 @@ const Tour = (props) => {
               // page overlay color
               overlayColor: "rgba(180, 132, 133, 0)",
               //button color
-              primaryColor: "green",
+              primaryColor: "pink",
               //spotlightShadow: '1 1 15px rgba(0, 0, 0, 0)',
               beaconSize: 36,
               //width of modal

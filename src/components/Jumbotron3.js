@@ -10,11 +10,7 @@ const Styles = styled.div`
         background-size: cover;
         color: #ccc;
         position: absoulte;
-        margin:0;
-        padding:0;
         background-position:center ;
-        height:270px;
-        width:100%;
     }
     .overlay{
         background-color: #000;

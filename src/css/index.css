@@ -77,32 +77,32 @@ code{
 
 /*COMBOBOX BEGINS*/
 	.contenedor-selects{
-		margin-top:20px;
 		display:flex;
-		justify-content:flex-end;
-		max-width:100%
+		justify-content:center;
+		max-width:100%;
+		margin-top:20px;
+		margin-bottom: 1em;
 	}
 	.conetenedor-select {
 		color: white;
 	}
-	select, .selectBox{
+	.selectBox{
 		background-color:#72a5ad;
-		color:white;
-		width:200px;
-		border-radius:7px;
-		height:30px;
-		border:0px;
-		outline:0px;
+		color: white;
+		min-width: 150px;
+		border-radius: 7px;
+		height: 2em;
+		border: 0px;
+		outline: 0px;
 		position: relative;
-		font-size:15px;
-		text-align:left;
-		padding:0 2%;
-		margin-left:7px;
-		margin-right:7px;
+		font-size: 1em;
+		text-align: center;
+		padding: 0 2%;
+		margin-left: 1em;
+		margin-right: 1em;
 		cursor: pointer;
 	}
 	 #comboboxcheckboxes{
-	 	z-index: -2;
 	}
 	  select:hover {
 		background-color:#306973;
@@ -129,7 +129,6 @@ code{
 		position: absolute;
 	}
 
-
 	.overSelect {
 		position: absolute;
 		left: 0;
@@ -139,12 +138,16 @@ code{
 	}
 
 	#checkboxes {
+		min-width: max-content;
+		text-align: left;
 		display: none;
 		border: 1px #dadada solid;
 		background-color:#72a5ad; 
 		position: absolute;
-		z-index: 800;
-		padding:0 .5%;
+		z-index: 1100;
+		padding:0.75em;
+		border-bottom-left-radius: 0.5em;
+		border-bottom-right-radius: 0.5em;
 	}
 
 	#checkboxes label {
@@ -175,6 +178,7 @@ code{
 	}
 
 	p{
+		margin-bottom:0;
 		margin-left: 13px;
 	}
 
@@ -281,6 +285,7 @@ code{
 		position: absolute;
 		z-index: -1;
 	}
+	.leaflet-control-zoom-in,.leaflet-control-zoom-out{z-index: 850;}
 /*LEAFLET ENDS*/
 
 /*BOXES BEGINS*/
@@ -405,7 +410,7 @@ code{
 /*BOX ENDS*/
 
 /*DISCLAIMER BEGINS*/
-	.layout{
+	.layout-disclaimer{
 	    background-color: rgba(0, 0, 0, 0.5);
 	    z-index: 10000;
 	    margin-left: 35%;
@@ -454,22 +459,76 @@ code{
 /*DISCLAIMER ENDS*/
 
 
-#container-fluid{
-	border:black 1px;
+#container-fluid:hover{
 }
 
-
-@media only screen and (max-width: 919px) {
+/*SMALL SCREENS*/
+@media only screen and (max-width: 576px) {
 	#banner{
 		width: 100%;
 	}
 }
-@media only screen and (min-width: 920px) {
+/*MEDIUM SCREENS (TABLETS)*/
+@media only screen and (max-width: 919px) {
 	#banner{
-		width: 80%;
-		margin-left: 10%;
+		width: 100%;
+		max-height: 0;
 	}
+	.bann{
+		font-size:75px;
+	}
+	.jumbo,.jumbo2,.jumbo3,.about-container,.Scenathon2020{border:#1E5430 0px solid;}
+	.about-container{padding: 2em;}
+	.scenathon-info,.Scenathon2020,.About1,.jumbo3{width: 100%;margin-left:0%;margin-right: 0%;}
+	.jumbo, .jumbotron,.About1,.about-container{margin-bottom: 0;}
+	.About1{padding-top: 2em;}
+	.about-container:hover{background-color: rgba(235,240,245,.5);}
+	/*.react-grid-item{margin:10px;}*/
+	.react-grid-item:hover{background-color: #1E543033;}
+	.jumbo3{
+		min-height: 30vh;
+	}
+	*{transition: all 0.5s ease;}
+	.chart-full{
+		width: 100%;
+		height: 75vh;
+	}
+	.charts{
+		width: 100%;
+		height: 75vh;
+	}
+	.row{width: 120%;overflow: hidden;}
+	.biodiversity-map{height: 80vh;width: 100%;border:1px dashed #1E5430;}
+	.biodiversity-chart{height: 80vh;width: 100%;border:1px dashed #1E5430;}
+
 }
+/*BIG SCREENS*/
+@media only screen and (min-width: 920px) {
+	.jumbo,.jumbo2,.jumbo3,.about-container,.Scenathon2020{border:#1E5430 0px solid;}
+	.about-container{padding: 2em;}
+	.scenathon-info,.Scenathon2020,.About1,.jumbo3{width: 100%;margin-left:0;margin-right: 0;}
+	.jumbo, .jumbotron,.About1,.about-container{margin-bottom: 0;}
+	.About1{padding-top: 2em;}
+	.about-container:hover{background-color: rgba(235,240,245,.5);}
+	.react-grid-item{margin:10px;}
+	.react-grid-item:hover{background-color: #1E543033;}
+	.jumbo3{
+		min-height: 30vh;
+	}
+	*{transition: all 0.5s ease;}
+	.chart-full{
+		width: 100%;
+		height: 75vh;
+	}
+	.charts{
+		width: 100%;
+		height: 75vh;
+	}
+	.row{width: 120%;overflow: hidden;}
+	.biodiversity-map{height: 75vh;width: 32.5vw;border:1px dashed #1E5430;}
+	.biodiversity-chart{height: 75vh;width: 32.5vw;border:1px dashed #1E5430;}
+}
+
 .popup-list--header{
 	text-align: center;
 }

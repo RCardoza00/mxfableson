@@ -331,7 +331,7 @@ const TradeReportMap = (props) => {
 		<div>
 			<Map
 				key={new Date().getMilliseconds()} 
-				style={{ height: '80vh' }} 
+				style={{ height: '74vh' }} 
 				zoom={1} 
 				center={[20, 100]} 
 				maxBoundsViscosity={1.0} 

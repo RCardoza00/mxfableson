@@ -7,8 +7,7 @@ import BiodiversityService from '../services/BiodiversityService';
 
 
 //nfch=NetForestCoverChange
-const DrawBiodiversity = () => 
-{
+const DrawBiodiversity = () => {
 
   const [state, setState] = useState({
     select: {
@@ -23,18 +22,9 @@ const DrawBiodiversity = () =>
     labels:[],
     datasets:[]
   });
-
-
-
-
   useEffect(() => {
 BiodiversityService(state).then(setJson);
- 
- 
   }, [state]);
-
-
-
   const handleChange = e => {
 
     var group = state.select.GraficaType;
@@ -56,8 +46,6 @@ if(e.name === "GraficaType")
         default: iteration = state.select.Iteration === "1" ? "3" : "4";
       }
     } else {
-
-    
       iteration =scenathon === "6" ? e.target.value === "after" ? "4" : "3" : e.target.value === "after" ? "2" : "1" ;
     }
 
@@ -66,26 +54,18 @@ if(e.name === "GraficaType")
         GraficaType: group,
         scenathon_id: scenathon,
         Iteration: iteration,
-
       }
-
-
     });
-
-   
   }
-
-
-
   return (
-    <Container fluid >
+    <Container className="charts">
       <div >
         <ComboBox onChange={handleChange} />
       </div>
       <Row>
         <Col>
 
-          <div style={{ textAlign: 'center', height: "120vh", width: "35vw" }}>
+          <div className="biodiversity-chart">
            
             <BarChart3 data={json} title="Share of total land which is protected"
               aspectRatio={false}
@@ -100,10 +80,7 @@ if(e.name === "GraficaType")
 
         </Col>
         <Col>
-<br/><br/><br/>
- 
-
-          <div style={{ textAlign: 'center', height: "70vh", width: "30vw" }}>
+          <div className="biodiversity-map">
           <TradeReportMap countriesData = {json}/>
 
           </div>

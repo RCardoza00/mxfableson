@@ -3,7 +3,7 @@ import { Map, GeoJSON} from 'react-leaflet';
 
 import mapDataTest from './../data/CountriesTest.json';
 import 'leaflet/dist/leaflet.css'; //This style is for the scroll and plus controls of the map
-import '../css/LeafletMap.css';
+import '../css/index.css';
 import * as L from 'leaflet';
 
 
@@ -373,7 +373,7 @@ class LeafletMap extends Component {
         return (
             <div>
                 
-                <Map style={{height: '80vh'}} zoom={2} center={[20, 100]} maxBoundsViscosity = {1.0} maxBounds = {this.bounds}>
+                <Map style={{height: '75vh'}} zoom={2} center={[20, 100]} maxBoundsViscosity = {1.0} maxBounds = {this.bounds}>
                     <GeoJSON style={this.countryStyle} 
                         data={mapDataTest.features}
                         onEachFeature={this.onEachCountry}></GeoJSON>

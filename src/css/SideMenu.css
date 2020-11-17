@@ -16,12 +16,11 @@
 }
 
 .pro-sidebar {
-  width: 270px;
   text-align: left;
   transition: width, left, right, 0.3s;
   position: relative;
   z-index: 1009;
-  margin-left:55px;
+  margin-left:5em;
  }
 
  .pro-sidebar .pro-menu .pro-menu-item > .pro-inner-item {

@@ -90,9 +90,9 @@ function ComboBox(props) {
       <br></br>
 
      
-  <div id="checkBoxContainer" className="checkBoxContainer">
+  <div id="checkBoxContainer" className="selectBox checkBoxContainer">
     <div  onClick={() => { showCheckboxes() }}>
-      <select id="comboboxcheckboxes">
+      <select id="comboboxcheckboxes" className="selectBox">
       <option value="" disabled selected hidden>Group</option>
       </select>
       <div className="overSelect"></div>

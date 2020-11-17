@@ -96,7 +96,7 @@ const DrawFreshWaterUse = () => {
      
       </div>
 
-      <div style={{ height: "100vh", width: "70vw" }}>
+      <div className="chart-full">
 
         <BarChart data={json}
           aspectRatio={false}
