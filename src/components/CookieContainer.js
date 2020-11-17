@@ -1,6 +1,6 @@
 import { getQueriesForElement } from '@testing-library/react';
 import react from 'react'
-import '../css/disclaimer.css'
+import '../css/index.css'
 /*const cookieContainer = document.querySelector(".cookie-container");
 const cookieButton = document.querySelector(".cookie-btn");
 
@@ -16,7 +16,6 @@ setTimeout(() => {
 }, 2000);*/
 
 const AcceptCookies = () =>{
-  console.log('aaaaaaaaaaaa')
   localStorage.setItem("Cookies", "true");
   
 }
