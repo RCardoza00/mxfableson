@@ -45,7 +45,6 @@ const Styles = styled.div`
     }
 }
 #container-fluid{ 
-   background: url(${DashboardCover});
    background-size:cover;
 }
 `;
