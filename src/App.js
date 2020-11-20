@@ -30,7 +30,7 @@ const App = (props) => {
     return (
         <React.Fragment>
         <div>
-          <Tour stepsP={steps}/>
+          // <Tour stepsP={steps}/>
         </div>
 
         <CookieDisclaimer
@@ -53,11 +53,7 @@ const App = (props) => {
         <div className="About1" id="About1">
           <About1 aboutRef={references.fable}/>
         </div>
-        <div id="Jumbotron_2" >
-          {<Jumbotron2 />}
-        </div>
-
-        
+      
         
         <div className="Scenathon2020">
           <Scenathon fableRef={references.scenathon2020} className="Scenathon2020" id="Scenathon2020"/>

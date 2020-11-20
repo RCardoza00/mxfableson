@@ -2,7 +2,7 @@ import React from 'react';
 import {Bar} from 'react-chartjs-2';
 
 //draw triple style chart
-const  drawSuperGraph=(props)=> {
+const  drawSuperGraph=(props) => {
 
     const options = {
       responsive: true,
@@ -86,8 +86,6 @@ const  drawSuperGraph=(props)=> {
     };
     
   //  let data = props.data;
-        
-  
     return (
           <Bar data={props.data}
                 options={options}/>

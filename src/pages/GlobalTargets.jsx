@@ -135,7 +135,7 @@ const DrawGlobalTargets = () => {
 						labelposition="bottom"
 						title="From Land use change"/>
 				</div>
-				<div key="t6" data-grid={{x: 0, y: 1, w: 9, h: 12}} style={{borderStyle:'none'}}>
+				<div key="t6" data-grid={{x: 0, y: 1, w: 7, h: 9}} style={{borderStyle:'none'}}>
 					<MixedChart 
 						data={targetFive}
 						aspectRatio={false}
@@ -145,7 +145,7 @@ const DrawGlobalTargets = () => {
 						fontColor='black'
 						title="Target 5.-  Food security"/>
 				</div>
-				<div key="t7" data-grid={{x: 9, y: 1, w: 3, h: 12}} style={{borderStyle:'none'}}>
+				<div key="t7" data-grid={{x: 9, y: 1, w: 3, h: 9}} style={{borderStyle:'none'}}>
 					<MixedChart
 						data={targetSix}
 						aspectRatio={false}

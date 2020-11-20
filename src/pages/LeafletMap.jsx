@@ -178,9 +178,6 @@ class LeafletMap extends Component {
         super(props);
         
         this.propsAux = props;
-        console.log('Este es el trade Senathon info')
-        console.log(this.propsAux)
-
         try {
            
             this.propsAux.countriesData.datasets.forEach(item => {
@@ -195,8 +192,6 @@ class LeafletMap extends Component {
         } catch ( e ) {
             console.error ( e );
         }
-        
-        
     }
     
 
@@ -228,7 +223,6 @@ class LeafletMap extends Component {
             fillColor: this.state.color,
             fillOpacity: 1
         });
-        
     }
 
 
@@ -333,7 +327,6 @@ class LeafletMap extends Component {
        if (!this.isColored) {
         indexAux = this.countriesName.indexOf('Otros');
         layer.options.fillColor = this.color[indexAux];
-            
              this.popup = L.popup().setContent(this.createListInfoCountry (indexAux, countryName));
             layer.bindPopup(this.popup)
        }
@@ -343,9 +336,6 @@ class LeafletMap extends Component {
         //layer.options.fillOpacity = Math.random () ; //This line is for draw diferent opacities with the countries
         //const colorIndex = Math.floor(Math.random() * this.colors.length); //The random color index in the array of the colors
         //layer.options.fillColor = this.colors[colorIndex]; //Change the color with anything color in the array od colors
-
-        //console.log('This is the layer country')
-        //console.log(countryName)
 
         //layer.bindPopup( countryName ) ; //When i click above the countri display the name of the country. If i need to add more
         //information about the country like for example i only need to concat the string. example countryName + 'other information'
@@ -370,25 +360,16 @@ class LeafletMap extends Component {
     bounds = L.latLngBounds(this.corner1, this.corner2)
 
     render () {
-        return (
+        return(
             <div>
-                
                 <Map style={{height: '75vh'}} zoom={2} center={[20, 100]} maxBoundsViscosity = {1.0} maxBounds = {this.bounds}>
                     <GeoJSON style={this.countryStyle} 
                         data={mapDataTest.features}
                         onEachFeature={this.onEachCountry}></GeoJSON>
-                        {//<TileLayer
-                        /*url="https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw"
-                        attribution='<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>'
-                        id="mapbox.streets"
-                        noWrap='true'
-                        */
-                        /*/>*/}
                 </Map>
-                
             </div>
         );
-    } 
+    }
 }
 
 export default LeafletMap;

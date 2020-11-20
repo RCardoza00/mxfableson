@@ -58,23 +58,18 @@ const SustainableExporter = () => {
       <Row  >
         <Col>
 
-          <div style={{ height: "100vh", width: "35vw" }}>
+          <div className="trade-chart">
             
                       <BarChart data={json} title="Sustainable net exporters"
-                                  labelString='Export quantity'
-
+                        labelString='Export quantity'
                         aspectRatio={false}
                         labelposition="bottom"/> 
-                        
           </div>
-
         </Col>
         <Col>
           <br /><br />
-          <div style={{textAlign: 'center', height: "70vh", width: "30vw" }}>
-           
+          <div className="trade-map">
                   <TradeReportMap countriesData = {json}/>
-                 
           </div>
         </Col>
       </Row>

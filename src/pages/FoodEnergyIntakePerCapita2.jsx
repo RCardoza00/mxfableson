@@ -97,14 +97,14 @@ const FoodEnergyIntakePerCapita = () => {
 
       </div>
 
-      <div style={{ height: "100vh", width: "70vw" }}>
+      <div style={{ height: "60vh", width: "70vw" }}>
         <BarChart2 data={json}
           aspectRatio={false}
           labelposition="top"
           labelwidth={50}
           labelSize={24}
           TitleSize={45}
-          labelString='Energy intake per capita'
+          labelString='Kcal per capita/day'
           title="Food energy intake per capita" />
       </div>
 

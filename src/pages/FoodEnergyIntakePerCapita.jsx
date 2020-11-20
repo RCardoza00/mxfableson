@@ -82,14 +82,14 @@ const handleChange = e => {
         <ComboBox2 onChange={handleChange} />
       </div>
       <Tour stepsP={steps}/>
-    <div className="graph" style={{height: "100vh" ,width:"70vw"} }>
+    <div className="graph" style={{height: "60vh" ,width:"70vw"} }>
       <MixedChart data={json}
         aspectRatio={false}
         labelposition="top"
         labelwidth={50}
         labelSize={24}
         TitleSize={45}
-        labelString='Energy intake per capita'
+        labelString='Kcal per capita/day'
         title="Food energy intake per capita"/>
     </div>
     </div>

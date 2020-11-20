@@ -504,11 +504,16 @@ code{
 }
 /*BIG SCREENS*/
 @media only screen and (min-width: 920px) {
-	.jumbo,.jumbo2,.jumbo3,.about-container,.Scenathon2020{border:#1E5430 0px solid;}
+	.jumbo,.jumbo2,.jumbo3,.about-container,.Scenathon2020{border:#1E5430 1px solid;}
 	.about-container{padding: 2em;}
-	.scenathon-info,.Scenathon2020,.About1,.jumbo3{width: 100%;margin-left:0;margin-right: 0;}
-	.jumbo, .jumbotron,.About1,.about-container{margin-bottom: 0;}
+	.scenathon-info,.Scenathon2020,.About1,.jumbo3{
+		width: 100%;margin-left:0%;margin-right: 0;
+
+	}
+	
+	.container-fluid,.jumbo, .jumbotron,.About1,.about-container{margin-bottom: 0;}
 	.About1{padding-top: 2em;}
+
 	.about-container:hover{background-color: rgba(235,240,245,.5);}
 	.react-grid-item{margin:10px;}
 	.react-grid-item:hover{background-color: #1E543033;}
@@ -525,8 +530,8 @@ code{
 		height: 75vh;
 	}
 	.row{width: 120%;overflow: hidden;flex-wrap: nowrap;}
-	.biodiversity-map{height: 75vh;width: 32.5vw;border:1px dashed #1E5430;}
-	.biodiversity-chart{height: 75vh;width: 32.5vw;border:1px dashed #1E5430;}
+	.biodiversity-map,.trade-map{height: 75vh;width: 32.5vw;border:1px dashed #1E5430;}
+	.biodiversity-chart,.trade-chart{height: 75vh;width: 32.5vw;border:1px dashed #1E5430;}
 }
 
 .popup-list--header{
