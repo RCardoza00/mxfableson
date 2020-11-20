@@ -10,7 +10,6 @@ import Jumbotron3 from './components/Jumbotron3'
 import JumbotronFin from './components/JumbotronFin'
 import 'react-hint/css/index.css';
 import Scenathon from './pages/Scenathon';
-import steps from './components/TOUR_STEPS';
 import Sidebar from './components/Sidebar';
 import CookieDisclaimer from 'react-cookie-disclaimer';
 import CookieDisclaimer2 from './components/CookieContainer'
@@ -29,10 +28,6 @@ const App = (props) => {
 
     return (
         <React.Fragment>
-        <div>
-          // <Tour stepsP={steps}/>
-        </div>
-
         <CookieDisclaimer
           background='#306973' 
           bottomPosition={true}
