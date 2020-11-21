@@ -62,7 +62,7 @@ class Scenathon extends Component {
             scenathon_id: '6',
             Year: '2000'
         },
-        dashboard: "Background"
+        dashboard: 'Global Target Summary'
     }
 
     //recibe valor de class component "ComboBox" 
@@ -100,7 +100,6 @@ class Scenathon extends Component {
                //document.getElementById('container-fluid').style.backgroundImage="url(../assets/DashboardCover.png)"; ;
                 break;
             case 'Global Target Summary':
-                document.getElementById('container-fluid').style.background="transparent";
                 this.combobox = null;
                 this.dash = <GlobalTargets combinacion={this.state} />;
                 try {
