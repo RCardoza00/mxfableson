@@ -96,14 +96,18 @@ const DrawNfch2 = () => {
         <Col >
 
 
-          <div style={{ textAlign: 'center', height: "100vh", width: "35vw" }}>
+          <div style={{ textAlign: 'center', height: "62vh", width: "40vw" }}>
             <BarChart data={json}
               title="Net Forest Cover Change 2"
-              labelposition="bottom"
+              labelposition="right"
               display={true}
               labelString='ha per year'
               fontSize='25'
               aspectRatio={false} />
+ <div>
+    <p style={{color:"gray",fontSize:"14px",fontFamily: "Montserrat",paddingLeft:"80px", textAlign:"justify"}}>Contribution by country to cumulated forest loss due to crop, pasture, and/or urban expansion and forest gain due to afforestation in 1000 ha per year (average annual change over each 5 year-period e.g. 2005 corresponds to 2000 and 2005). 
+</p>
+    </div>
 
           </div>
 

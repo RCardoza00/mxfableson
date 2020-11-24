@@ -91,7 +91,15 @@ const handleChange = e => {
         TitleSize={45}
         labelString='Kcal per capita/day'
         title="Food energy intake per capita"/>
+         <div>
+    <p style={{color:"gray",fontSize:"18px",fontFamily: "Montserrat",paddingTop:"40px",paddingLeft:"200px", textAlign:"justify"}}>Energy intake and Minimum Dietary Energy Requirement (MDER) in kilocalories per capita per day.
+  
+ 
+</p>
     </div>
+
+    </div>
+
     </div>
   )
 }
