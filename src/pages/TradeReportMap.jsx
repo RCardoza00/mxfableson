@@ -1,5 +1,5 @@
 import React from 'react';
-import { Map, GeoJSON } from 'react-leaflet';
+import { Map, GeoJSON,CircleMarker, Tooltip } from 'react-leaflet';
 import mapDataTest from './../data/Countries.json';
 import 'leaflet/dist/leaflet.css'; //This style is for the scroll and plus controls of the map
 import '../css/index.css';
@@ -16,9 +16,12 @@ const TradeReportMap = (props) => {
 			}
 			years = props.countriesData.labels;
 		}
+		console.log("XDXDXD")
+		console.log(props.countriesName)
+
 	}
 	var popup = null;
-
+var circle=null;	
 	var R_ASIPAC = [
 		'BGD',
 		'BRN',
@@ -192,13 +195,15 @@ const TradeReportMap = (props) => {
 		htmlCode = '<p class="popup-list--header"><strong>' + countryName + '</strong></p>'
 		htmlCode = htmlCode + '<ul class="popup-list">'
 		var i = 0
+		var sum=0;
 		for (const currentValue in years) {
-			htmlCode = htmlCode + '<li><strong>' + years[i] + '</strong>: ' + data[index][i]
+			sum = sum + parseFloat(data[index][i])
 			if(props.graphType === 'Biodiversity') htmlCode = htmlCode + '%';
 			htmlCode = htmlCode + '</li>';
 			i++;
 		}
-		htmlCode = htmlCode + '</ul>'
+		htmlCode +="Total:"+"<br>"+ sum.toFixed(2) + '</ul>'
+
 		return htmlCode;
 	}
 
@@ -213,7 +218,7 @@ const TradeReportMap = (props) => {
 			if (indexAux !== -1) {
 				layer.options.fillColor = color[indexAux];
 				popup = L.popup().setContent(createListInfoCountry(indexAux, countryName));
-				layer.bindPopup(popup);
+				layer.bindPopup(popup)
 			} 
 			else {
 				indexAux = countriesName.indexOf('SSA');
@@ -251,8 +256,9 @@ const TradeReportMap = (props) => {
 				indexAux = countriesName.indexOf('CSA');
 				if (indexAux !== -1) {
 					layer.options.fillColor = color[indexAux];
-					popup = L.popup().setContent(createListInfoCountry(indexAux, countryName));
+					popup = L.circle().setLatLng(createListInfoCountry(indexAux, countryName));
 					layer.bindPopup(popup);
+
 				}
 			}
 		}
@@ -336,9 +342,13 @@ const TradeReportMap = (props) => {
 				center={[20, 100]} 
 				maxBoundsViscosity={1.0} 
 				maxBounds={bounds}>
+
+
 				{converter()}
 				{<GeoJSON style={countryStyle} key={new Date().getMilliseconds()} data={mapDataTest.features} onEachFeature={onEachCountry} />}
 			</Map>
+
+
 		</div>
 	);
 }

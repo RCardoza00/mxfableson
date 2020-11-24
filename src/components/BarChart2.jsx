@@ -35,10 +35,19 @@ const  BarChart2=(props) => {
 			}],
 			yAxes: [{
 				stacked: false,
-				type: 'linear',
 				display: true,
 				position: 'left',
-				id: 'y-axis-1',
+				id: "y-axis-1",
+				ticks: {
+					
+					display: true,
+					beginAtZero: true,
+					fontSize: 13,
+					padding: 10,
+					callback: function (tick, index, ticks) {
+						return tick;
+					}
+				  },
 				gridLines: {
 					display: true,
 				}, 
@@ -49,24 +58,32 @@ const  BarChart2=(props) => {
 					fontSize:props.fontSize===undefined?18:props.fontSize,
 					fontFamily: "Montserrat",
 				},
-				labels: {
-					show: true,
-					position: 'right',
-				}
 			},
 			{
-				type: 'linear',
-				display: false,
+				stacked: false,
+				display: true,
 				position: 'right',
-				id: 'y-axis-2',
+				id: "y-axis-2",
+				ticks: {
+					
+					display: true,
+					fontSize: 13,
+					padding: 10,
+				  },
 				gridLines: {
-					display: false
+					display: true,
+				}, 
+				scaleLabel: {
+					display: true,
+					labelString:props.labelString2===undefined?'':props.labelString2,
+					fontColor:props.fontColor===undefined?'#546372':props.fontColor,
+					fontSize:props.fontSize===undefined?18:props.fontSize,
+					fontFamily: "Montserrat",
 				},
-				labels: {
-					show: true
-				}
+			
 			}]
 		}
+		
 	};
 	let data=props.data;
 	return (

@@ -11,7 +11,8 @@ const BarChart = (props) => {
       display: true,
       fontSize:props.TitleSize===undefined?12:props.TitleSize,
       fontColor:props.fontColor===undefined?"#666":props.fontColor,
-
+      position:props.TitlePosition===undefined?"top":props.TitlePosition,
+      
       text: props.title
   },legend:{
     

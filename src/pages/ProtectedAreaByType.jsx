@@ -94,7 +94,7 @@ const DrawProtected = () => {
       
 
       <BarChart data={json}
-        labelString='ha per year'
+        labelString='1000ha per year'
         fontSize='25'
         labelposition="bottom"
         labelwidth={50}

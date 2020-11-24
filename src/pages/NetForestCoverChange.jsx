@@ -88,7 +88,7 @@ if(e.name === "GraficaType")
   ]
 
 
-  return <div style={{height: "100vh",width:"70vw"}}>
+  return <div style={{height: "80vh",width:"82vw"}}>
 <div>
 <Tour stepsP={steps}/>
 <ComboBox onChange={handleChange}/>
@@ -96,14 +96,25 @@ if(e.name === "GraficaType")
 </div>
 
 
-<div style={{height: "100vh",width:"70vw"}} className="graph">
+<div style={{height: "80vh",width:"82vw"}} className="graph">
   
-<MixedChart style={{height: "100vh",width:"70vw"}} data={json}
+<MixedChart style={{height: "80vh",width:"82vw"}} data={json}
   title="Net Forest Cover Change"
   aspectRatio={false}
-  labelposition="bottom"/>
-   
+  labelString='1000 ha Per Year'
+  fontSize="18"
+  labelWidth={27}
+	labelSize={14}
+
+  labelposition="right"/>
+     <div>
+    <p style={{color:"gray",fontSize:"16px",textAlign:"left",fontFamily: "Montserrat",paddingLeft:"80px"}}>Forest loss due to crop, pasture, and/or urban expansion and forest gain due to afforestation in 1000 ha per year (average annual change over each 5 year-period e.g. 2005 corresponds to 2000 and 2005). 
+    Source of historical data:<a href="https://datastudio.google.com/u/0/reporting/77705208-e149-4507-a419-63ddbef26a63/page/uBsMB" target="_blank"> Global Forest Watch (GFW) </a>
+</p>
+    </div>
+
   </div>
+  
   </div>;
 }
 

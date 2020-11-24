@@ -84,8 +84,8 @@ function ComboBox(props) {
       <br></br>
       <select className="selectBox" name="Iteration" onChange={onChange}>
         <option value="" disabled selected hidden>Trade Adjustment</option>
-        <option value="after">After Iteration</option>
-        <option value="before">Before Iteration</option>
+        <option value="after">After </option>
+        <option value="before">Before </option>
       </select>
       <br></br>
 
@@ -93,7 +93,7 @@ function ComboBox(props) {
   <div id="checkBoxContainer" className="selectBox checkBoxContainer">
     <div  onClick={() => { showCheckboxes() }}>
       <select id="comboboxcheckboxes" className="selectBox">
-      <option value="" disabled selected hidden>Group</option>
+      <option value="" disabled selected hidden>Countries</option>
       </select>
       <div className="overSelect"></div>
     </div>
@@ -107,7 +107,7 @@ function ComboBox(props) {
 
         <label className="container">
           <input onClick={() => { check("regions") }} ref={regionscheckbox} value="regions" type="checkbox" name="GraficaType" />
-          <p>ALL ROW regions</p>
+          <p>Not Fable Countries</p>
           <span className="checkmark"></span>
         </label>
 

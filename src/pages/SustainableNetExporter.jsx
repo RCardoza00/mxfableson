@@ -50,8 +50,11 @@ const SustainableExporter = () => {
 
 
   return (
+
     <Container fluid >
       <div >
+      {console.log("entre")}
+
         <ComboBoxTradeReportersImporters metodo={handleChange} />
 
       </div>
@@ -59,7 +62,7 @@ const SustainableExporter = () => {
         <Col>
 
           <div className="trade-chart">
-            
+
                       <BarChart data={json} title="Sustainable net exporters"
                         labelString='Export quantity'
                         aspectRatio={false}

@@ -63,7 +63,7 @@
             "pointBackgroundColor": "#36a2eb",
             "pointHoverBackgroundColor": "#36a2eb",
             "pointHoverBorderColor": "#36a2eb",
-            "yAxisID": "y-axis-1"
+            "yAxisID": "y-axis-2"
         }
     ],"calcPasture": [
         {
@@ -253,7 +253,7 @@
         "fill": false,
         "borderColor": "red",
         "backgroundColor": "red",
-        "radius": 7,
+        "radius": 5.5,
         "pointBorderColor":" #e64a19",
         "pointBackgroundColor": "#e64a19",
         "pointHoverBackgroundColor": "#e64a19",
@@ -333,16 +333,10 @@
     "GHG_LU_target":[{
         "type": "scatter",
         "label": "Target GHG LU",
-      
         "fill": false,
         "borderColor": "red",
         "backgroundColor": "red",
-        "pointBorderColor": "red",
-        "radius": 5,
-        "usePointStyle":true,
-        "pointBackgroundColor":"red",
-        "pointHoverBackgroundColor": "crimson",
-        "pointHoverBorderColor": "#EC932F",
+        "radius": 5.2,
         "yAxisID": "y-axis-1"
     }],
     "NetForestChange":[{
@@ -386,7 +380,7 @@
         "fill": false,
         "backgroundColor": "Red",
         "borderColor":"Red",
-        "radius": 7,
+        "radius": 5.2,
         "pointBorderColor": "Red",
         "pointBackgroundColor": "Red",
         "pointHoverBackgroundColor": "Red",
@@ -420,6 +414,8 @@
         "fill": false,
         "backgroundColor": "red",
         "borderColor":"red",
+        "radius": 5.2,
+
         "hoverBackgroundColor":"Red",
         "hoverBorderColor":"Red"
 

@@ -105,15 +105,22 @@ const DrawFreshWater2 = () => {
       </div>
       <Row  >
         <Col >
-          <div className="graph"  style={{ textAlign: 'center',height: "100vh", width: "35vw" }}>
+          <div className="graph"  style={{ textAlign: 'center',height: "72vh", width: "45vw" }}>
 
             <BarChart data={json}
               title="Fresh Water Use 2"
-              labelposition="bottom"
+              labelposition="right"
               labelwidth={20}
               labelSize={15}
               TitleSize={35}
+              labelString="Blue water/million cubic metres"
               aspectRatio={false} />
+ <div>
+    <p style={{color:"gray",fontSize:"16px",fontFamily: "Montserrat",paddingLeft:"80px", textAlign:"justify"}}>Water use for irrigation for crops and livestock production by country 
+ 
+</p>
+    </div>
+
 
           </div>
         </Col>
