@@ -81,7 +81,7 @@ const GreenHouse = () => {
   
    
   }
-  
+  /** 
     const steps = [
       {
         target: ".graph",
@@ -99,28 +99,29 @@ const GreenHouse = () => {
           placement: "top"
       }
     ]
-
+*/
 return (
 <Container fluid>
  
   <div>
-  <Tour stepsP={steps}/>
-  <ComboBox onChange={handleChange}/>
+{/**<Tour stepsP={steps}/>*/}
+<ComboBox onChange={handleChange}/>
        
   </div>
  
     <div className="graph">
       <Row>
         <Col>
-        <div style={{ textAlign: 'center',height: "120vh" ,width:"35vw"} }>
+        <div style={{ textAlign: 'center',height: "70vh" ,width:"38vw",marginTop:"50px"} }>
        
     
           <BarChart data={data.chartOne}
-            title="             Annual GHG emissions from crops and livestock in Gt CO2e." 
-            aspectRatio={false}
-            labelposition="bottom"
+            title="             Annual GHG emissions from crops and livestock in Gt CO2e." aspectRatio={false}
+            labelposition="right"
             labelwidth={20}
-            labelSize={15}
+            labelSize={12}
+            labelString="Gt CO2e"
+
           TitleSize={20} />
           
         </div>
@@ -136,13 +137,15 @@ return (
       </Row>
       <Row>
         <Col>
-        <div style={{ textAlign: 'center',height: "120vh" ,width:"35vw"} }>
+        <div style={{ textAlign: 'center',height: "70vh" ,width:"38vw",marginTop:"50px"} }>
         
           <BarChart data={data.charTwo}
             title="                      Average annual GHG emissions from land use change and peat oxidation in Gt CO2e." aspectRatio={false}
-            labelposition="bottom" 
+            labelposition="right" 
             labelwidth={20}
-            labelSize={15}
+            labelString="Gt CO2e"
+
+            labelSize={12}
             TitleSize={20}
         />
               

@@ -83,11 +83,10 @@ const DrawGlobalTargets = () => {
 		});
 	}
 	return (
-		<div style={{width:"75vw",marginTop:"20px"}}>
+		<div style={{width:"75vw",height:"1000px",marginTop:"20px"}}>
 			<ComboBox onChange={handleChange}/>
 			<ResponsiveReactGridLayout
 				className="layout"
-				breakpoints={{lg:960, md:768, sm:480}}
 				cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
 				rowHeight={30}
 				isDraggable={false}

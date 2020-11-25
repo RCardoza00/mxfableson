@@ -55,9 +55,9 @@ if (response.length !==0) {
 });
 
 //target six
-var foodEnergy = new FoodSecurity(ChartCharacteristics["target_mder"],target_MDER);
+var foodEnergy = new FoodSecurityTarget(ChartCharacteristics["target_mder"],target_MDER);
 datasetsTargetFive.push(foodEnergy);
- foodEnergy = new FoodSecurityTarget(ChartCharacteristics["kcal_feasible"],kcal_feasible);
+ foodEnergy = new FoodSecurity(ChartCharacteristics["kcal_feasible"],kcal_feasible);
 datasetsTargetFive.push(foodEnergy);
 
 

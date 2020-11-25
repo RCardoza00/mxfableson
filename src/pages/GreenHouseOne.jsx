@@ -76,7 +76,7 @@ group=e.value
 }
 
 
-
+/** 
   const steps = [
     {
       target: ".graph",
@@ -95,18 +95,18 @@ group=e.value
     }
   ]
 
-
+*/
 
 
   return (
     <Container fluid>
-      <Tour stepsP={steps}/>
+{/**<Tour stepsP={steps}/>*/}
       <ComboBox onChange={handleChange}/>
      
       <div className="graph">
       <Row>
         <Col >
-          <div style={{  height: "75vh", width: "30vw" }}>
+          <div style={{  height: "75vh", width: "35vw" }}>
           
 
             <SuperGraph data={data.chartOne}
@@ -115,6 +115,8 @@ group=e.value
             labelposition="bottom"
             labelwidth={20}
             labelSize={15}
+            labelString="Gt CO2e"
+
           TitleSize={18}/> 
 
     </div>
@@ -129,6 +131,7 @@ group=e.value
             labelposition="bottom" 
             labelwidth={20}
             labelSize={15}
+            labelString="Gt CO2e"
           TitleSize={18}/> 
 
             </div>

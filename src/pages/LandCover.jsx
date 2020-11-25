@@ -76,7 +76,7 @@ const DrawLandCover = () => {
    
   }
 
-      const steps = [
+/**      const steps = [
         {
           target: ".graph",
           content: "Distribution of land cover area in 1000 ha.",
@@ -93,11 +93,11 @@ const DrawLandCover = () => {
             placement: "top"
         }
       ]
-    
+ */    
     return (
 
     <div className="graph">
-      <Tour stepsP={steps}/>
+      {/**<Tour stepsP={steps}/>*/}
 
     <div >
     <ComboBox onChange={handleChange}/>
@@ -108,6 +108,7 @@ const DrawLandCover = () => {
     <BarChart data={json}
     labelwidth={40}
     labelSize={24}
+    TitleSize={24}
     title="Land Cover"
     labelposition='right'
     labelString='1000Ha per year'

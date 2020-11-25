@@ -63,8 +63,7 @@ const DrawProtected = () => {
     }
   
   
-    
-    const steps = [
+/** const steps = [
       {
         target: ".graph",
         content: "Different types of protected areas and their extension.",
@@ -80,14 +79,16 @@ const DrawProtected = () => {
           },
           placement: "top"
       }
-    ]
+    ]*/
+    
 
  
 
     return (
 
       <div className="graph" style={{height: "100vh",width:"70vw"}}>
-      <Tour stepsP={steps}/>
+{/**<Tour stepsP={steps}/>
+*/}
       
       <ComboBox onChange={handleChange}/>
     
@@ -99,6 +100,7 @@ const DrawProtected = () => {
         labelposition="bottom"
         labelwidth={50}
         labelSize={16}
+        TitleSize={24}
         title="Protected Areas By Type"/>
     
     </div>

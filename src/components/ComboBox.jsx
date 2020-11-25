@@ -1,4 +1,4 @@
-import React from 'react';
+import  React,{useEffect } from 'react';
 import '../css/index.css';
 
 
@@ -8,6 +8,7 @@ function ComboBox(props) {
     const groupcheckbox = React.createRef();
     const regionscheckbox = React.createRef();
     const countriescheckbox = React.createRef();
+    
     const check = (nameComboBox) => {
         let checkbox=null;
         switch (nameComboBox){
@@ -58,6 +59,14 @@ function ComboBox(props) {
 
 
   }
+  useEffect(() => {
+    groupcheckbox.current.checked = true;
+    regionscheckbox.current.checked = true;
+    countriescheckbox.current.checked = true;
+
+     
+      }, []);
+    
 
 
   const showCheckboxes = (nameComboBox) => {
@@ -112,7 +121,7 @@ function ComboBox(props) {
         </label>
 
         <label className="container">
-          <input onClick={() => { check("countries") }} ref={countriescheckbox} value="countries" type="checkbox" name="GraficaType" />
+          <input onClick={() => { check("countries") }} ref={countriescheckbox} value="countries" type="checkbox" name="GraficaType"  />
           <p>ALL FABLE countries</p>
           <span className="checkmark"></span>
         </label>

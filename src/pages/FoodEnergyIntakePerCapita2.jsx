@@ -68,7 +68,7 @@ const FoodEnergyIntakePerCapita = () => {
   }
   
 
-
+/** 
   const steps = [
     {
       target: ".graph",
@@ -86,11 +86,11 @@ const FoodEnergyIntakePerCapita = () => {
       placement: "top"
     }
   ]
-
+*/
   return (
 
     <div className="graph">
-      <Tour stepsP={steps} />
+{/**<Tour stepsP={steps}/>*/}
 
       <div>
       <ComboBox2 onChange={handleChange} />
