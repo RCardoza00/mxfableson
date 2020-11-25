@@ -88,7 +88,7 @@ datasetsTargetOne.push(global);
 
 
   //target Two
-  global = new Global(ChartCharacteristics["protected_land_target"],protected_landTarget);
+  global = new GlobalTarget(ChartCharacteristics["protected_land_target"],protected_landTarget);
   datasetsTargetTwo.push(global);
   global = new Global(ChartCharacteristics["protected_land"],protected_land);
   datasetsTargetTwo.push(global);

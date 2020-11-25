@@ -55,9 +55,11 @@ const SustainableExporter = () => {
       <Row  >
         <Col>
 
-          <div style={{ height: "100vh", width: "35vw" }}>
+          <div style={{ height: "78vh", width: "35vw" }}>
             <BarChart data={json} title="Current trend net Importers"
               labelString='Import quantity'
+              TitleSize={20}
+              labelSize={12}
 
               aspectRatio={false}
               labelposition="bottom" />

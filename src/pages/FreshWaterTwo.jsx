@@ -75,7 +75,7 @@ const DrawFreshWater2 = () => {
    
   }
   
-
+/** 
   const steps = [
     {
       target: ".graph",
@@ -94,12 +94,13 @@ const DrawFreshWater2 = () => {
     }
   ]
 
-
+  */
 
   return (
     <Container fluid>
-      <Tour stepsP={steps}/>
       <div>
+        {/*<Tour stepsP={steps}/>*/}
+        
         <ComboBox onChange={handleChange} />
      
       </div>
@@ -112,7 +113,7 @@ const DrawFreshWater2 = () => {
               labelposition="right"
               labelwidth={20}
               labelSize={15}
-              TitleSize={35}
+              TitleSize={24}
               labelString="Blue water/million cubic metres"
               aspectRatio={false} />
  <div>

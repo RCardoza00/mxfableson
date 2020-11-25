@@ -3,7 +3,7 @@
     "ProtectedAreasForest": [
         {
             "type": "bar",
-            "label": "ProtectedAreasForest",
+            "label": "Protected Areas Forest",
             "borderColor": "#EC932F",
             "backgroundColor": "#307a33",
             "yAxisID": "y-axis-1"
@@ -11,7 +11,7 @@
     ], "ProtectedAreasOther": [
         {
             "type": "bar",
-            "label": "ProtectedAreasOther",
+            "label": "Protected Areas Other",
             "borderColor": "#EC932F",
             "backgroundColor": "#ffd54f",
             "yAxisID": "y-axis-1"
@@ -20,7 +20,7 @@
     "ProtectedAreasOtherNat": [
         {
             "type": "bar",
-            "label": "ProtectedAreasOtherNat",
+            "label": "Protected Areas Other Nat",
             "borderColor": "#EC932F",
             "backgroundColor": "#81c784",
             "pointBorderColor": "#EC932F",
@@ -44,7 +44,7 @@
     ],"Protein_feasible": [
         {
             "type": "bar",
-            "label": "Protein_feasible",
+            "label": "Protein feasible",
             "borderColor": "#EC932F",
             "backgroundColor": "#ffc107",
             "pointBorderColor": "#EC932F",
@@ -56,7 +56,7 @@
     ],"Fat_feasible": [
         {
             "type": "bar",
-            "label": "Fat_feasible",
+            "label": "Fat feasible",
             "borderColor": "#ff8f00",
             "backgroundColor": "#ff8f00",
             "pointBorderColor": "#36a2eb",
@@ -68,7 +68,7 @@
     ],"calcPasture": [
         {
             "type": "bar",
-            "label": "calcPasture",
+            "label": "Pasture",
             "borderColor": "#36a2eb",
             "backgroundColor": "#307a33",
             "pointBorderColor": "#36a2eb",
@@ -80,7 +80,7 @@
     ],"calcCropland": [
         {
             "type": "bar",
-            "label": "calcCropland",
+            "label": "Cropland",
             "borderColor": "#ff006e",
             "backgroundColor": "#81c784",
             "pointBorderColor": "#ff006e",
@@ -92,7 +92,7 @@
     ],"calcForest": [
         {
             "type": "bar",
-            "label": "calcForest",
+            "label": "Forest",
             "borderColor": "#e71d36",
             "backgroundColor": "#ffd54f",
             "pointBorderColor": "#e71d36",
@@ -104,7 +104,7 @@
     ],"calcNewForest": [
         {
             "type": "bar",
-            "label": "calcNewForest",
+            "label": "NewForest",
             "borderColor": "#4ecdc4",
             "backgroundColor": "#000000",
             "pointBorderColor": "#4ecdc4",
@@ -116,7 +116,7 @@
     ],"calcOtherLand": [
         {
             "type": "bar",
-            "label": "calcOtherLand",
+            "label": "OtherLand",
             "borderColor": "#4ecdc4",
             "backgroundColor": "#e64a19",
             "pointBorderColor": "#4ecdc4",
@@ -128,7 +128,7 @@
     ],"calcUrban": [
         {
             "type": "bar",
-            "label": "calcUrban",
+            "label": "Urban",
             "borderColor": "#9a031e",
             "backgroundColor": "#00acc1",
             "pointBorderColor": "#9a031e",
@@ -142,19 +142,17 @@
             "type": "scatter",
             "label": "Target (MDER)",
             "borderColor": "red",
-            "backgroundColor": "#e64a19",
-            "pointBorderColor": "yellow",
-            "pointBackgroundColor": "#e64a19",
-            "pointHoverBackgroundColor": "#e64a19",
-            "radius":7,
-            "pointHoverBorderColor": "#EC932F",
+            "backgroundColor": "red",
+            "pointBackgroundColor": "red",
+            "radius":5.2,
+            "pointHoverBorderColor": "red",
             "yAxisID": "y-axis-1"
         }
     ],
     "cubic_metres": [
         {
             "type": "bar",
-            "label": "Cubic metres",
+            "label": "Million Cubic metres",
             "borderColor": "#81c784",
             "backgroundColor": "#0072f0",
             "pointBorderColor": "#81c784",
@@ -343,13 +341,9 @@
         "label": "Net forest change",
         "type":"scatter",
         "fill": false,
-        "backgroundColor": "Green",
-        "borderColor":"#71B37C",
-        "radius": 5,
-        "pointBorderColor": "#71B37C",
-        "pointBackgroundColor": "#71B37C",
-        "pointHoverBackgroundColor": "#71B37C",
-        "pointHoverBorderColor": "#71B37C",
+        "backgroundColor": "#307a33",
+        "borderColor":"#307a33",
+        "radius": 5.2,
         "yAxisID": "y-axis-1"
 
     }],"NetForestChangeBar":[{

@@ -70,27 +70,29 @@ const DrawFreshWaterUse = () => {
 
 
 
-  const steps = [
-    {
-      target: ".graph",
-      content: "Fresh water use for irrigation and livestock. The high demand of water continues to be expected the following decades, not showing much variation through the years.",
-      title: "Fresh Water Use 1",
-        styles: {
-          //this styles override the styles in the props  
-          options: {
-            textColor: "black"
-          }
-        },
-        locale: { 
-          next: <span>End</span>,
-        },
-        placement: "top"
-    }
-  ]
+/**      const steps = [
+        {
+          target: ".graph",
+          content: "Distribution of land cover area in 1000 ha.",
+          title: "Land Cover",
+            styles: {
+              //this styles override the styles in the props
+              options: {
+                textColor: "black"
+              }
+            },
+            locale: { 
+              next: <span>End</span>,
+            },
+            placement: "top"
+        }
+      ]
+ */
 
   return (
     <div>
-      <Tour stepsP={steps}/>
+      {/**<Tour stepsP={steps}*/}
+
       <div>
         <ComboBox onChange={handleChange} />
      
@@ -100,9 +102,9 @@ const DrawFreshWaterUse = () => {
 
         <BarChart data={json}
           aspectRatio={false}
-          labelposition="right"
-          labelwidth={50}
-          labelSize={24}
+          labelposition="top"
+          labelwidth={30}
+          labelSize={16}
           labelString='Blue water in million cubic metres'
           fontSize='24'
           TitleSize='24'

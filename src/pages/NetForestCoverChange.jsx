@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import MixedChart from "../components/MixedChart.jsx";
-import Tour from '../components/Tour';
 import ComboBox from '../components/ComboBox'
 import NetForestCoverService from '../services/NetForestCoverService';
 const DrawNfch = () => {
@@ -68,7 +67,7 @@ if(e.name === "GraficaType")
  
 
 
-  const steps = [
+/** const steps = [
     {
       target: ".graph",
       content: "Net Forest Change (loss and gain) describes the sum of all changes in forest area over a specific period of time.",
@@ -85,14 +84,15 @@ if(e.name === "GraficaType")
         },
         placement: "top"
     }
-  ]
+  ]*/
+  
 
 
   return <div style={{height: "80vh",width:"82vw"}}>
 <div>
-<Tour stepsP={steps}/>
 <ComboBox onChange={handleChange}/>
-
+{/**<Tour stepsP={steps}/>
+*/}
 </div>
 
 

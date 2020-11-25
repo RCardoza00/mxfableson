@@ -3,7 +3,7 @@ import BarChart from "../components/BarChart";
 import "../../node_modules/react-grid-layout/css/styles.css";
 import "../../node_modules/react-resizable/css/styles.css";
 import { Container, Row, Col } from "react-bootstrap";
-import ComboBox3 from '../components/ComboBox3';
+import ComboBox from '../components/ComboBox';
 import TradeReportMap from './TradeReportMap'
 import NetForesTwoService from '../services/NetForesTwoService';
 
@@ -17,7 +17,7 @@ const DrawNfch2 = () => {
 
   const [state, setState] = useState({
     select: {
-      GraficaType: 'regions',
+      GraficaType: 'group',
       scenathon_id: '6',
       Iteration: '4',
     }
@@ -78,7 +78,6 @@ const DrawNfch2 = () => {
     
         });
     
-        console.log(state)
       }
 
 
@@ -88,7 +87,7 @@ const DrawNfch2 = () => {
 
     <Container fluid >
       <div >
-        <ComboBox3 onChange={handleChange} />
+        <ComboBox onChange={handleChange} />
       
       </div>
       <Row>

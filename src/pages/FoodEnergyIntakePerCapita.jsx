@@ -55,7 +55,7 @@ const handleChange = e => {
     }
   });
 }
-
+/** 
     const steps = [
       {
         target: ".graph",
@@ -73,7 +73,7 @@ const handleChange = e => {
           placement: "top"
       }
     ]
-
+*/
   return (
 
     <div>
@@ -81,8 +81,8 @@ const handleChange = e => {
       <div>
         <ComboBox2 onChange={handleChange} />
       </div>
-      <Tour stepsP={steps}/>
-    <div className="graph" style={{height: "60vh" ,width:"70vw"} }>
+{/**<Tour stepsP={steps}/>*/}
+<div className="graph" style={{height: "60vh" ,width:"70vw"} }>
       <MixedChart data={json}
         aspectRatio={false}
         labelposition="top"
