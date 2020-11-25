@@ -104,8 +104,18 @@ const FoodEnergyIntakePerCapita = () => {
           labelwidth={50}
           labelSize={24}
           TitleSize={45}
-          labelString='Kcal per capita/day'
+          labelString="Protein feasible"
+          labelString2="fat feasible"
+
           title="Food energy intake per capita" />
+                   <div>
+    <p style={{color:"gray",fontSize:"18px",fontFamily: "Montserrat",paddingTop:"40px",paddingLeft:"200px", textAlign:"justify"}}>Average gr per capita per day of fat and protein feasible by country and selected year
+
+  
+ 
+</p>
+</div>
+
       </div>
 
     </div>

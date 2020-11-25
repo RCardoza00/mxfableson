@@ -93,49 +93,63 @@ const DrawGlobalTargets = () => {
 				isDraggable={false}
 				isResizable={false}
 				>
-				<div key="t1" data-grid={{x: 0, y: 0, w: 3, h: 7,}} >
+				<div key="t1" data-grid={{x: 0, y: 0, w: 2.2, h: 7,}} >
 					<MixedChart 
 						data={targetOne}
 						title="Target 1.- Zero net deforestation"
 						aspectRatio={false}
 						labelString='1000h/year'
-						fontSize='16'
+						fontSize='12'
 						fontColor='black'
 						labelposition="bottom"/>
 				</div>
-				<div key="t2" data-grid={{x: 3, y: 0, w: 3, h: 7}} >
+				<div key="t2" data-grid={{x: 2.3, y: 0, w: 2.3, h: 7}} >
 					<MixedChart2
 						data={targetTwo}
 						aspectRatio={false}
 						labelposition="bottom"
 						title="Target 2.- Share of total land which is protected"/>
 				</div>
-				<div key="t3" data-grid={{x: 6, y: 0, w: 3, h: 7}}>
+				<div key="t3" data-grid={{x: 4.7, y: 0, w: 2.5, h: 7}}>
 					<MixedChart2 
 						data={targetThree}
 						aspectRatio={false}
 						labelposition="bottom"
-						labelWidth={4}
-						labelSize={8}
+						
 						title="Target 3.- Share of land where natural processes predominate"/>
 				</div>
-				<div key="t4" data-grid={{x: 9, y: 0, w: 1.7, h:7}}>
+				<div key="t4" data-grid={{x: 7.2, y: 0, w: 2.3, h:7}}>
+				<div>
+					<p style={{position:"fixed",paddingLeft:"160px",paddingBottom:"500px"}}></p>
+				</div>
+
 					<BarChart 
 						data={targetFour}
 						aspectRatio={false}
 						labelWidth={6}
 						labelSize={10}
 						labelposition="right"
+						labelString='GtCo2'
+						fontSize="10"
+						TitlePosition="bottom"
 						title="From Agriculture "/>
 				</div>
-				<div key="t5" data-grid={{x: 10.7, y: 0, w: 1.3, h: 7}}>
+
+				<div key="t5" data-grid={{x: 9.5, y: 0, w: 2.4, h: 7}}>
+
 					<MixedChart 
+					
 						data={targetFourCharTwo}
 						aspectRatio={false}
-						labelposition="bottom"
-						title="From Land use change"/>
+						labelposition="right"
+						labelString='GtCo2'
+						fontSize="10"
+						title="From Land use change"
+						TitlePosition="bottom"
+						/>
+						
 				</div>
-				<div key="t6" data-grid={{x: 0, y: 1, w: 7, h: 9}} style={{borderStyle:'none'}}>
+				<div key="t6" data-grid={{x: 0, y: 1, w: 9, h: 9}} style={{borderStyle:'none'}}>
 					<MixedChart 
 						data={targetFive}
 						aspectRatio={false}
@@ -144,8 +158,15 @@ const DrawGlobalTargets = () => {
 						fontSize='15'
 						fontColor='black'
 						title="Target 5.-  Food security"/>
+						<div>
+							<p style={{fontFamily: "Montserrat",color:'gray',fontSize:18}}>kilocalories per capita per day by country from the year 2030 of energy intake and Minimum Dietary Energy Requirement (MDER).
+
+</p>
+						</div>
+
 				</div>
 				<div key="t7" data-grid={{x: 9, y: 1, w: 3, h: 9}} style={{borderStyle:'none'}}>
+					
 					<MixedChart
 						data={targetSix}
 						aspectRatio={false}
@@ -154,6 +175,11 @@ const DrawGlobalTargets = () => {
 						fontSize='14'
 						fontColor='black'
 						title="Target 6.- Fresh water use"/>
+						<div>
+							<p style={{fontFamily: "Montserrat",color: 'gray',fontSize:16}}>Water use for irrigation for crops and livestock production 
+</p>
+						</div>
+
 				</div>
 			</ResponsiveReactGridLayout>
 		</div>

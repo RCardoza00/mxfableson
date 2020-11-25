@@ -13,7 +13,7 @@ import {Bar} from 'react-chartjs-2';
       title: {
         display: true,
         fontSize:props.TitleSize===undefined?12:props.TitleSize,
-
+        position:props.TitlePosition===undefined?"top":props.TitlePosition,
         text: props.title
     },legend:{
       display:true,
@@ -69,7 +69,23 @@ import {Bar} from 'react-chartjs-2';
               fontFamily: "Montserrat",
               
 
-            },
+            },    ticks: {
+              callback: function(label, value, labels) {
+                if(label>=1000000){
+  
+                  return label/1000000+' M';
+                  
+                }else if(label<1000000 && label>100000){
+                  return label/1000+' mil';
+  
+                }
+                else{
+                  return label
+                }
+              },
+             
+           
+          },
 
   
             labels: {

@@ -106,7 +106,7 @@ group=e.value
       <div className="graph">
       <Row>
         <Col >
-          <div style={{ textAlign: 'center', height: "120vh", width: "30vw" }}>
+          <div style={{  height: "75vh", width: "30vw" }}>
           
 
             <SuperGraph data={data.chartOne}
@@ -116,10 +116,12 @@ group=e.value
             labelwidth={20}
             labelSize={15}
           TitleSize={18}/> 
-            </div>
+
+    </div>
+
             </Col>
         <Col > 
-        <div style={{ textAlign: 'center', height: "120vh", width: "30vw" }}>
+        <div style={{height: "75vh", width: "35vw"}}>
 
           <SuperGraph data={data.charTwo}
           title="                Average annual GHG emissions from land use change and peat oxidation in Gt CO2e."
