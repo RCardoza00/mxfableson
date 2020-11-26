@@ -25,6 +25,8 @@ const DrawBiodiversity = () => {
   useEffect(() => {
 BiodiversityService(state).then(setJson);
   }, [state]);
+
+
   const handleChange = e => {
 
     var group = state.select.GraficaType;
@@ -66,7 +68,7 @@ if(e.name === "GraficaType")
         <Col>
 
           <div className="biodiversity-chart" style={{width:"40vw"}}>
-           
+           {console.log(json)}
             <BarChart3 data={json} title="Share of total land which is protected"
               aspectRatio={false}
               labelString='1000ha per year'
