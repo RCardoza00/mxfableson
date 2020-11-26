@@ -3,7 +3,7 @@ import BarChart from "../components/BarChart";
 import { Container, Row, Col } from "react-bootstrap";
 import ComboBoxTradeReportersImporters from "../components/ComboBoxTradeReporters";
 
-import TradeReportMap from './TradeReportMap'
+
 import SustainableImporterService from '../services/SustainableImporterService';
 
 
@@ -61,25 +61,17 @@ const SustainableExporter = () => {
       <Row  >
         <Col>
 
-          <div style={{ height: "69vh", width: "35vw" }}>
+          <div className="chart" style={{height: "80vh",width:"70vw"}}>
 
             <BarChart data={json} title="Sustainable net importers "
               labelString='Import quantity (unit 1000 tons)'
               aspectRatio={false}
               TitleSize={20}
-
               labelposition="bottom" />
           </div>
 
         </Col>
-        <Col>
-          <br /><br />
-          <div style={{textAlign: 'center', height: "70vh", width: "30vw" }}>
-            <TradeReportMap countriesData={json} />
-
-
-          </div>
-        </Col>
+       
       </Row>
 
     </Container>
