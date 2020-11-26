@@ -117,7 +117,7 @@ const DrawFreshWater2 = () => {
               labelString="Blue water/million cubic metres"
               aspectRatio={false} />
  <div>
-    <p style={{color:"gray",fontSize:"16px",fontFamily: "Montserrat",paddingLeft:"80px", textAlign:"justify"}}>Water use for irrigation for crops and livestock production by country 
+    <p style={{color:"gray",fontSize:"20px",fontFamily: "Montserrat",paddingLeft:"80px", textAlign:"justify"}}>Water use for irrigation for crops and livestock production by country 
  
 </p>
     </div>

@@ -102,9 +102,10 @@ if(e.name === "GraficaType")
   title="Net Forest Cover Change"
   aspectRatio={false}
   labelString='1000 ha Per Year'
-  fontSize="18"
-  labelWidth={27}
-	labelSize={14}
+  fontSize="20"
+  labelWidth={40}
+	labelSize={18}
+  TitleSize={24}
 
   labelposition="right"/>
      <div>

@@ -107,7 +107,7 @@ const DrawLandCover = () => {
     <div style={{height: "80vh",width:"70vw"}}>
     <BarChart data={json}
     labelwidth={40}
-    labelSize={24}
+    labelSize={18}
     TitleSize={24}
     title="Land Cover"
     labelposition='right'

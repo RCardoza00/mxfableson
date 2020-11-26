@@ -65,22 +65,21 @@ if(e.name === "GraficaType")
       <Row>
         <Col>
 
-          <div className="biodiversity-chart">
+          <div className="biodiversity-chart" style={{width:"40vw"}}>
            
             <BarChart3 data={json} title="Share of total land which is protected"
               aspectRatio={false}
-              labelString='ha per year'
-              fontSize='25'
-              labelwidth={20}
+              labelString='1000ha per year'
+              fontSize="20"
+              labelWidth={40}
               labelSize={15}
-              TitleSize={30}
-              fontColor='#3a4aab'
-              labelposition="bottom" />
+              TitleSize={24}
+              labelposition="right" />
           </div>
 
         </Col>
         <Col>
-          <div className="biodiversity-map">
+          <div className="biodiversity-map" style={{width:"25vw"}}>
           <TradeReportMap countriesData = {json}/>
 
           </div>
