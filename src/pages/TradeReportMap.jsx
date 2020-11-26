@@ -202,7 +202,7 @@ const TradeReportMap = (props) => {
 
 	//Claudio
 	var bubbleInfo = [];
-	var selectedYear = 2000;
+	var selectedYear = 2050;
 	var minValue = 999
 	var maxValue = -999
 
@@ -397,11 +397,15 @@ const TradeReportMap = (props) => {
 
 	const onEachCountry = (country, layer) => {
 		const countryName = country.properties.ISO_A3;
-		var indexAux = whereBelongsCountry(countryName)[0];
+		var belongs = whereBelongsCountry(countryName);
+		var indexAux = belongs[0]
+		var fromRegion = belongs[1]
 		if (indexAux !== -1) {
-			layer.options.fillColor = color[indexAux];
-			popup = L.popup().setContent(createListInfoCountry(indexAux, countryName));
-			layer.bindPopup(popup)
+			if(fromRegion == undefined){
+				layer.options.fillColor = color[indexAux];
+				popup = L.popup().setContent(createListInfoCountry(indexAux, countryName));
+				layer.bindPopup(popup)
+			}
 		}
 	}
 
@@ -414,27 +418,27 @@ const TradeReportMap = (props) => {
 			var fromRegion = belongs[1]
 			if (indexAux !== -1) {
 				if (fromRegion != undefined) {
-					for (var regionName in regionsCenters) {
-						// console.log(`fromRegion:${fromRegion}, regionName:${regionName} lol:${(fromRegion.includes(regionName))}`)
-						if (!fromRegion.includes(regionName)) {
-							// console.log(`region:${regionName} already:${regionsAlreadyShowing} lol:${(!regionsAlreadyShowing.includes(regionName))}`)
-							if (!regionsAlreadyShowing.includes(regionName)) {
-								var coords = regionsCenters[regionName]
-								for (var pos in coords) {	
-									var newvalues = addInfoBubbleOnCountryCustom(indexAux, countryName, regionName, coords[pos]['lat'], coords[pos]['lon'], coords[pos]['size']);
-									if (newvalues !== undefined) {
-										if (newvalues[0] > maxValue) {
-											maxValue = newvalues[0]
-										} else if (newvalues[0] < minValue) {
-											minValue = newvalues[0]
-										}
-										regionsAlreadyShowing.push(regionName)
-									}
-								}
-								break;
-							}
-						}
-					}
+					// for (var regionName in regionsCenters) {
+					// 	// console.log(`fromRegion:${fromRegion}, regionName:${regionName} lol:${(fromRegion.includes(regionName))}`)
+					// 	if (!fromRegion.includes(regionName)) {
+					// 		// console.log(`region:${regionName} already:${regionsAlreadyShowing} lol:${(!regionsAlreadyShowing.includes(regionName))}`)
+					// 		if (!regionsAlreadyShowing.includes(regionName)) {
+					// 			var coords = regionsCenters[regionName]
+					// 			for (var pos in coords) {	
+					// 				var newvalues = addInfoBubbleOnCountryCustom(indexAux, countryName, regionName, coords[pos]['lat'], coords[pos]['lon'], coords[pos]['size']);
+					// 				if (newvalues !== undefined) {
+					// 					if (newvalues[0] > maxValue) {
+					// 						maxValue = newvalues[0]
+					// 					} else if (newvalues[0] < minValue) {
+					// 						minValue = newvalues[0]
+					// 					}
+					// 					regionsAlreadyShowing.push(regionName)
+					// 				}
+					// 			}
+					// 			break;
+					// 		}
+					// 	}
+					// }
 				} else {
 					var newvalues = addInfoBubbleOnCountry(indexAux, countryName);
 					if (newvalues !== undefined) {
