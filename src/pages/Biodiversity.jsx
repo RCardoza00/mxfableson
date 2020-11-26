@@ -25,6 +25,8 @@ const DrawBiodiversity = () => {
   useEffect(() => {
 BiodiversityService(state).then(setJson);
   }, [state]);
+
+
   const handleChange = e => {
 
     var group = state.select.GraficaType;

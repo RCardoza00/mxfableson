@@ -25,20 +25,22 @@ console.log(response);
 
     var dataBlueWater = [];
     var count = 0;
-
+    var i=0;
     var freshWater = [];
     var labels = [];
     var nameCounty = ""
     if (response.length !==0) {
       nameCounty=response[0].name;
       response.forEach(item => {
+        i++;
         if (!labels.includes(item.Year)) {
           labels.push(item.Year);
         }
        
-        if (nameCounty !== item.Country) {
+        if (nameCounty !== item.Country || i ===response.length) {
           if(count!==dataBlueWater.length)
           {
+            if(i ===response.length){dataBlueWater.push(item.BlueWater);}
           var fresh = new FreshWaterTwo(nameCounty, dataBlueWater);
           freshWater.push(fresh);
           }
