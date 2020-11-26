@@ -103,10 +103,9 @@ const DrawFreshWaterUse = () => {
         <BarChart data={json}
           aspectRatio={false}
           labelposition="top"
-          labelwidth={30}
-          labelSize={16}
-          labelString='Blue water in million cubic metres'
-          fontSize='24'
+          labelwidth={40}
+          labelSize={18}
+          labelString="Blue water/million cubic metres"
           TitleSize='24'
           title="Fresh Water use"
           

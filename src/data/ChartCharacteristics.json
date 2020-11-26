@@ -63,7 +63,7 @@
             "pointBackgroundColor": "#36a2eb",
             "pointHoverBackgroundColor": "#36a2eb",
             "pointHoverBorderColor": "#36a2eb",
-            "yAxisID": "y-axis-2"
+            "yAxisID": "y-axis-1"
         }
     ],"calcPasture": [
         {
@@ -369,7 +369,7 @@
         "yAxisID":"y-axis-1"
     }],
     "Forest_target":[{
-        "label": "forest target",
+        "label": "Forest target",
         "type":"scatter",
         "fill": false,
         "backgroundColor": "Red",
@@ -393,7 +393,7 @@
         "type":"bar",
         "fill": false,
         "backgroundColor": "rgba(129,199,132, 1)",
-        "borderColor":"Green"
+        "borderColor":"rgba(129,199,132, 1)"
     }],
     "protected_land":[{
         "label": "Protectend Land",
@@ -436,7 +436,7 @@
     "water_target": [
         {
             "type": "scatter",
-            "label": "water target",
+            "label": "Water target",
             "borderColor": "red",
             "backgroundColor": "#e64a19",
             "pointBorderColor": "red",

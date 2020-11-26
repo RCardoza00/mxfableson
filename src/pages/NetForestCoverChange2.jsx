@@ -100,9 +100,12 @@ const DrawNfch2 = () => {
               title="Net Forest Cover Change 2"
               labelposition="right"
               display={true}
-              labelString='ha per year'
-              fontSize='25'
-              aspectRatio={false} />
+              labelString='1000ha per year'
+              fontSize="20"
+              labelWidth={40}
+              labelSize={18}
+              TitleSize={24}
+                          aspectRatio={false} />
  <div>
     <p style={{color:"gray",fontSize:"14px",fontFamily: "Montserrat",paddingLeft:"80px", textAlign:"justify"}}>Contribution by country to cumulated forest loss due to crop, pasture, and/or urban expansion and forest gain due to afforestation in 1000 ha per year (average annual change over each 5 year-period e.g. 2005 corresponds to 2000 and 2005). 
 </p>

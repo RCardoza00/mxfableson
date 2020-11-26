@@ -49,7 +49,7 @@ const  BarChart2=(props) => {
 					}
 				  },
 				gridLines: {
-					display: true,
+					display: false,
 				}, 
 				scaleLabel: {
 					display: true,
@@ -59,29 +59,7 @@ const  BarChart2=(props) => {
 					fontFamily: "Montserrat",
 				},
 			},
-			{
-				stacked: false,
-				display: true,
-				position: 'right',
-				id: "y-axis-2",
-				ticks: {
-					
-					display: true,
-					fontSize: 13,
-					padding: 10,
-				  },
-				gridLines: {
-					display: true,
-				}, 
-				scaleLabel: {
-					display: true,
-					labelString:props.labelString2===undefined?'':props.labelString2,
-					fontColor:props.fontColor===undefined?'#546372':props.fontColor,
-					fontSize:props.fontSize===undefined?18:props.fontSize,
-					fontFamily: "Montserrat",
-				},
-			
-			}]
+			]
 		}
 		
 	};
