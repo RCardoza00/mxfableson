@@ -23,19 +23,21 @@ const responseApi = response =>
         var datasetAux = [];
         var labels = [];
         var nameCounty = "";
-    
+        var i=0;
         if (response.length !== 0) {
-    
+         
+         
           nameCounty = response[0].name;
           response.forEach(item => {
+            i++;
             if (!labels.includes(item.Year)) {
               labels.push(item.Year);
             }
     
-            if (nameCounty !== item.Country) {
+            if (nameCounty !== item.Country || i ===response.length) {
     
-              if (count !== NetForestChange.length) {
-    
+              if (count !== NetForestChange.length ) {
+                if(i ===response.length){NetForestChange.push(item.NetForestChange);}
                 var netForest = new NetForest(nameCounty, NetForestChange);
                 datasetAux.push(netForest);
               }
@@ -53,11 +55,13 @@ const responseApi = response =>
         }
         
     
+
+   
           var data = {
           labels: labels,
           datasets: datasetAux
         };
-       
+      
       
 
 return data;

@@ -30,7 +30,7 @@ const responseApi = response => {
         var labels = [];
         var countChartOne = 0;
         var countChartTwo = 0;
-
+        var i=0;
         var nameCounty = ""
 
         if (response.length !==0) 
@@ -38,17 +38,20 @@ const responseApi = response => {
         nameCounty = response[0].name;
 
         response.forEach(item => {
+            i++;
             if (!labels.includes(item.Year)) {
                 labels.push(item.Year);
             }
 
-            if (nameCounty !== item.Country) {
+            if (nameCounty !== item.Country  || i ===response.length) {
 
                 if (countChartOne !== AgriCO2e.length) {
+                    if(i ===response.length){AgriCO2e.push(item.AgriCO2e);}
                     var greenHouseOne = new GreenHouseTwo(nameCounty, AgriCO2e);
                     datasetsChart1.push(greenHouseOne);
                 }
                 if (countChartTwo !== LandCO2e.length) {
+                    if(i ===response.length){LandCO2e.push(item.LandCO2e);}
                     var greenHouseTwo = new GreenHouseTwo(nameCounty, LandCO2e);
                     datasetsChart2.push(greenHouseTwo);
                 }

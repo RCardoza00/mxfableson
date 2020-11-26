@@ -1,7 +1,8 @@
 import CountryCharacteristics from '../data/CountryCharacteristics.json';
 
 const responseApi = response => {
-
+console.log("response")
+console.log(response);
   function Biodiversity(nameCountry, data) {
 
 
@@ -17,20 +18,27 @@ const responseApi = response => {
 
   }
   var count = 0;
+  var i=0;
   var dataBiodiversity_land = [];
   var biodiversities = [];
   var labels = [];
   var nameCountry = "";
+
   if (response.length !== 0) {
+    
     nameCountry = response[0].name;
     response.forEach(item => {
+      i++;
+     
       if (!labels.includes(item.Year)) {
         labels.push(item.Year);
       }
 
-      if (nameCountry !== item.Country) {
+      if (nameCountry !== item.Country || i ===response.length) {
+       
 
         if (count !== dataBiodiversity_land.length) {
+          if(i ==response.length){dataBiodiversity_land.push(item.Protected_land);}
           var biodiversity = new Biodiversity(nameCountry, dataBiodiversity_land);
           biodiversities.push(biodiversity);
         }
@@ -49,7 +57,6 @@ const responseApi = response => {
     labels: labels,
     datasets: biodiversities
   };
-
 
 
   return data;
