@@ -1,14 +1,12 @@
 import React from 'react';
 import { Map, GeoJSON, CircleMarker, Tooltip, TileLayer, Pane, Circle } from 'react-leaflet';
 import mapDataTest from './../data/Countries.json';
-// import centros from './../data/centers.json';
 import centros from './../data/countries_centers.json';
+import regionsCenters from './../data/regions_centers.json';
 import surfaceAreas from './../data/countries_surfaceArea.json';
 import 'leaflet/dist/leaflet.css'; //This style is for the scroll and plus controls of the map
 import '../css/index.css';
 import * as L from 'leaflet';
-import { findByPlaceholderText } from '@testing-library/react';
-import { rgbToHex } from '@material-ui/core';
 
 const TradeReportMap = (props) => {
 
@@ -183,6 +181,15 @@ const TradeReportMap = (props) => {
 		'ESP'
 	];
 
+	var regionColors = {
+		"R_ASIPAC": "#EBE24D",
+		"R_NEU": "#1FBEEB",
+		"R_OEU": "#31EBAA",
+		"R_LAM": "#0A844A",
+		"R_MECAS": "#570039",
+		"R_AFR": "#ED1755"
+	}
+
 	var color = [];
 
 	var countriesName = [];
@@ -193,7 +200,11 @@ const TradeReportMap = (props) => {
 	//This function is for the style of countries in the GeoJson
 	var htmlCode = ''
 
-	var bubbleInfo = {};
+	//Claudio
+	var bubbleInfo = [];
+	var selectedYear = 2000;
+	var minValue = 999
+	var maxValue = -999
 
 	const createListInfoCountry = (index, countryName) => {
 		htmlCode = '<p class="popup-list--header"><strong>' + countryName + '</strong></p>'
@@ -209,36 +220,33 @@ const TradeReportMap = (props) => {
 		return htmlCode;
 	}
 
-	// const addInfoBubbleOnCountry = (index, countryName) => {
-	// 	var i = 0
-	// 	var suma = 0
-	// 	for (const currentValue in years) {
-	// 		suma += parseFloat(data[index][i])
-	// 		i++
-	// 	}
-	// 	var randomLol = randomGeo({ "lat": 0, "lon": 0 }, 5000)
-	// 	bubbleInfoArray[countryName]= [
-	// 		suma,randomLol["lat"],randomLol["lon"]
-	// 	];
-	// 	if(Object.keys(bubbleInfoArray).length == 1){
-	// 		{bubbleInfoArray.map((info, idx) =>
-	// 			console.log(info)
-	// 		)}
-	// 	}
-	// }
 	const addInfoBubbleOnCountry = (index, countryName) => {
-		var i = 0
-		var suma = 0
-		for (const currentValue in years) {
-			suma += parseFloat(data[index][i])
-			i++
-		}
-
 		var found = false;
+
+		var valor = 0
 		var lat = 0;
 		var long = 0;
 		var surfaceArea = 0
 		var fullName = ""
+		for (const currentValue in years) {
+			var currentYear = years[currentValue]
+			// console.log(`[Burbujas Debug] ${currentYear} ${selectedYear} ${typeof currentYear} ${typeof selectedYear}`)
+			if (currentYear == selectedYear) {
+				valor = parseFloat(data[index][currentValue])
+				found = true;
+				if (valor == 0.0) {
+						console.log(`[Burbujas Error] ${countryName} saltado porque el valor es 0, seleccione otro año`)
+					return NaN;
+				}
+				break;
+			}
+		}
+		if (!found) {
+			console.log(`[Burbujas Error] ${countryName} saltado porque año seleccionado (${selectedYear}) no esta en array years`)
+			return;
+		}
+		found = false
+
 		for (var center in centros) {
 			if (center == countryName) {
 				found = true;
@@ -248,6 +256,7 @@ const TradeReportMap = (props) => {
 			}
 		}
 		if (!found) {
+			// console.log(`[Burbujas Error] ${countryName} saltado porque no se encontraron coordenadas centro??`)
 			return;
 		}
 
@@ -259,8 +268,43 @@ const TradeReportMap = (props) => {
 			}
 		}
 
-		bubbleInfo[countryName] = [suma.toFixed(2), lat, long, surfaceArea, fullName];
-		// console.log(countryName+" agregado a bubble array (len:"+Object.keys(bubbleInfo).length+")")
+		bubbleInfo.push([valor.toFixed(6), lat, long, surfaceArea, fullName, countryName, increaseBrightness(color[index],20), false]);
+		return bubbleInfo[bubbleInfo.length - 1];
+	}
+
+	const addInfoBubbleOnCountryCustom = (index, countryName, region, lat, long, size) => {
+		var found = false;
+		var valor = 0
+		var surfaceArea = size
+		var fullName = region;
+		var color = "#000000"
+		if(region in regionColors){
+			color = regionColors[region]
+			// if(region == "R_LAM"){
+			// 	color = increaseBrightness(regionColors[region],-10);
+			// } else {
+			// 	color = increaseBrightness(regionColors[region],15);
+			// }
+		}
+
+		for (const currentValue in years) {
+			var currentYear = years[currentValue]
+			if (currentYear == selectedYear) {
+				valor = parseFloat(data[index][currentValue])
+				found = true;
+				// if (valor == 0.0) {
+				// 	console.log(`[Burbujas Error 2] ${countryName} (${region}) saltado porque el valor es 0, seleccione otro año`)
+				// 	return NaN;
+				// }
+				break;
+			}
+		}
+		if (!found) {
+			console.log(`[Burbujas Error 2] ${countryName} saltado porque año seleccionado (${selectedYear}) no esta en array years`)
+			return;
+		}
+		bubbleInfo.push([valor.toFixed(6), lat, long, surfaceArea, fullName, countryName, color, true]);
+		return bubbleInfo[bubbleInfo.length - 1];
 	}
 
 	// function getPolyCenter(countryName) {
@@ -306,66 +350,54 @@ const TradeReportMap = (props) => {
 	// 	return lat,lon;
 	// }
 
-	function randomCoords(radius) {
-		var y0 = 20;
-		var x0 = 100;
-		var rd = radius / 5000;
-
-		var u = Math.random();
-		var v = Math.random();
-
-		var w = rd * Math.sqrt(u);
-		var t = 2 * Math.PI * v;
-		var x = w * Math.cos(t);
-		var y = w * Math.sin(t);
-
-		return {
-			'lat': y + y0,
-			'lon': x + x0
-		};
-	}
-
 	function whereBelongsCountry(countryName) {
 		var indexAux = -1;
+		var fromRegion = undefined
 		if (R_AFR.includes(countryName)) {
 			indexAux = countriesName.indexOf('R_AFR');
 			if (indexAux == -1) {
 				indexAux = countriesName.indexOf('SSA');
 			}
+			fromRegion = "R_AFR,SSA"
 		} else if (R_MECAS.includes(countryName)) {
 			indexAux = countriesName.indexOf('R_MECAS');
 			if (indexAux == -1) {
 				indexAux = countriesName.indexOf('NMC');
 			}
+			fromRegion = "R_MECAS,NMC"
 		} else if (R_LAM.includes(countryName)) {
 			indexAux = countriesName.indexOf('R_LAM');
 			if (indexAux == -1) {
 				indexAux = countriesName.indexOf('CSA');
 			}
+			fromRegion = "R_LAM,CSA"
 		} else if (R_OEU.includes(countryName)) {
 			indexAux = countriesName.indexOf('ROEU');
 			if (indexAux == -1) {
 				indexAux = countriesName.indexOf('R_OEU');
 			}
+			fromRegion = "ROEU,R_OEU"
 		} else if (R_NEU.includes(countryName)) {
 			indexAux = countriesName.indexOf('R_NEU');
 			if (indexAux == -1) {
 				indexAux = countriesName.indexOf('NEU');
 			}
+			fromRegion = "R_NEU,NEU"
 		} else if (R_ASIPAC.includes(countryName)) {
 			indexAux = countriesName.indexOf('R_ASIPAC');
 			if (indexAux == -1) {
 				indexAux = countriesName.indexOf('ASP');
 			}
+			fromRegion = "R_ASIPAC,ASP"
 		} else {
 			indexAux = countriesName.indexOf(countryName);
 		}
-		return indexAux;
+		return [indexAux, fromRegion];
 	}
 
 	const onEachCountry = (country, layer) => {
 		const countryName = country.properties.ISO_A3;
-		var indexAux = whereBelongsCountry(countryName);
+		var indexAux = whereBelongsCountry(countryName)[0];
 		if (indexAux !== -1) {
 			layer.options.fillColor = color[indexAux];
 			popup = L.popup().setContent(createListInfoCountry(indexAux, countryName));
@@ -373,12 +405,46 @@ const TradeReportMap = (props) => {
 		}
 	}
 
+	var regionsAlreadyShowing = []
 	function eachCountriesBubbles() {
 		for (var country in mapDataTest.features) {
 			const countryName = mapDataTest.features[country].properties.ISO_A3;
-			var indexAux = whereBelongsCountry(countryName);
+			var belongs = whereBelongsCountry(countryName);
+			var indexAux = belongs[0]
+			var fromRegion = belongs[1]
 			if (indexAux !== -1) {
-				addInfoBubbleOnCountry(indexAux, countryName);
+				if (fromRegion != undefined) {
+					for (var regionName in regionsCenters) {
+						// console.log(`fromRegion:${fromRegion}, regionName:${regionName} lol:${(fromRegion.includes(regionName))}`)
+						if (!fromRegion.includes(regionName)) {
+							// console.log(`region:${regionName} already:${regionsAlreadyShowing} lol:${(!regionsAlreadyShowing.includes(regionName))}`)
+							if (!regionsAlreadyShowing.includes(regionName)) {
+								var coords = regionsCenters[regionName]
+								for (var pos in coords) {	
+									var newvalues = addInfoBubbleOnCountryCustom(indexAux, countryName, regionName, coords[pos]['lat'], coords[pos]['lon'], coords[pos]['size']);
+									if (newvalues !== undefined) {
+										if (newvalues[0] > maxValue) {
+											maxValue = newvalues[0]
+										} else if (newvalues[0] < minValue) {
+											minValue = newvalues[0]
+										}
+										regionsAlreadyShowing.push(regionName)
+									}
+								}
+								break;
+							}
+						}
+					}
+				} else {
+					var newvalues = addInfoBubbleOnCountry(indexAux, countryName);
+					if (newvalues !== undefined) {
+						if (newvalues[0] > maxValue) {
+							maxValue = newvalues[0]
+						} else if (newvalues[0] < minValue) {
+							minValue = newvalues[0]
+						}
+					}
+				}
 			}
 		}
 	}
@@ -398,7 +464,20 @@ const TradeReportMap = (props) => {
 	converter()
 	eachCountriesBubbles()
 
-	// min:0.21 max:3.3
+	//aumentar tamaño de burbuja de los paises normales
+	for(var i in bubbleInfo){
+		if (!bubbleInfo[i][7]) {
+			bubbleInfo[i][3] = clamp(bubbleInfo[i][3], 0, 1_500_000)
+		}
+	}
+	
+	//ordenar mayor a menor por surfaceArea
+	bubbleInfo.sort(function (a, b) {
+		return a[3] < b[3] ? 1 : -1;
+	});
+
+	// console.log(`min:${minValue}, max:${maxValue}`)
+
 	return (
 		<div>
 			<Map
@@ -409,35 +488,40 @@ const TradeReportMap = (props) => {
 				maxBoundsViscosity={1.0}
 				maxBounds={bounds}
 			>
-				{/* {converter()} */}
 				{<GeoJSON style={countryStyle} key={new Date().getMilliseconds()} data={mapDataTest.features} onEachFeature={onEachCountry} />}
-				{/* <Pane name="custom" style={{ zIndex: 1000 }}> */}
 				{Object.keys(bubbleInfo).map((i, index) => {
 					var countryName = i;
 					var x = bubbleInfo[countryName];
+					// var isRegion = x[7]
 					var sum = x[0]
 					var lat = x[1]
 					var lon = x[2]
-					var radius = clamp(x[3] * 0.15, 100000, 1_000_000)
+					var radius = x[3]
+					// if (isRegion) {
+					// 	radius = x[3]
+					// } else {
+					// 	radius = clamp(x[3], 0, 1_500_000)
+					// }
 					var fullName = x[4]
-					var opacity = 0.8
+					var countryCode = x[5]
+					var color = x[6]
 					return (<Circle
 						center={[lat, lon]}
 						radius={radius}
-						fillOpacity={opacity}
+						fillOpacity={0.35}
 						stroke={false}
-						color={"red"}
+						color={color}
 					>
 						<Tooltip direction="center" offset={[0, 50]} opacity={1}>
-							<span>{fullName + ": " + sum}</span>
+							<span>{`${fullName} (${selectedYear}): ${sum}`}</span>
 						</Tooltip>
 					</Circle>)
 				})}
 				{/* TODO: despues hacerlo bn */}
 				{/* http://tile.stamen.com/toner-labels/{z}/{x}/{y}.png */}
 				<TileLayer
-						url="https://a.tile.openstreetmap.org/7/56/46.png"
-						id="lolllllll"
+					url="https://a.tile.openstreetmap.org/7/56/46.png"
+					id="lolllllll"
 				/>
 				{/* </Pane> */}
 
@@ -447,6 +531,17 @@ const TradeReportMap = (props) => {
 
 	function clamp(num, min, max) {
 		return num <= min ? min : num >= max ? max : num;
+	}
+
+	function increaseBrightness(color,percent){
+		var ctx = document.createElement('canvas').getContext('2d');
+		ctx.fillStyle = color;
+		ctx.fillRect(0,0,1,1);
+		var color = ctx.getImageData(0,0,1,1);
+		var r = color.data[0] + Math.floor( percent / 100 * 255 );
+		var g = color.data[1] + Math.floor( percent / 100 * 255 );
+		var b = color.data[2] + Math.floor( percent / 100 * 255 );
+		return 'rgb('+r+','+g+','+b+')';
 	}
 
 }
