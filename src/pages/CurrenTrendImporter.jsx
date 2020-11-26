@@ -57,7 +57,7 @@ const SustainableExporter = () => {
 
           <div style={{ height: "78vh", width: "35vw" }}>
             <BarChart data={json} title="Current trend net Importers"
-              labelString='Import quantity'
+              labelString='Import quantity (unit 1000 tons)'
               TitleSize={20}
               labelSize={12}
 
