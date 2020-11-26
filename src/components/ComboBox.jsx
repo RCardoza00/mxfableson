@@ -121,7 +121,7 @@ function ComboBox(props) {
 
     <label className="container">
           <input onClick={() => { check("group") }} ref={groupcheckbox} value="group" type="checkbox" name="GraficaType" />
-          <p>Group</p>
+          <p>Global</p>
           <span className="checkmark"></span>
         </label>
 
