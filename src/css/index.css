@@ -280,7 +280,7 @@ code{
 
 /*LEAFLET BEGINS*/
 	.leaflet-container {
-		background-color: #73b6e6;
+		background-color: #73b6e6 !important;
 	}
 	.leaflet-popup-content{
 		font: sans-serif;
@@ -549,13 +549,3 @@ code{
 	margin: 0;
 	text-align: center;
 }
-
-/* .leaflet-pane, .leaflet-tooltip-pane, .leaflet-tooltip, .leaflet-zoom-animated, .leaflet-tooltip-center{
-	z-index:2000 !important;
-}
-.leaflet-tooltip > span{
-    z-index: 2001;
-}
-.tooltip-mapa{
-	z-index:2000 !important;
-} */

@@ -20,7 +20,7 @@ const DrawBiodiversity = () => {
 
   const [json, setJson] = useState({
     labels:[],
-    datasets:[]
+    datasets:[],
   });
   useEffect(() => {
 BiodiversityService(state).then(setJson);
@@ -65,7 +65,7 @@ if(e.name === "GraficaType")
       <Row>
         <Col>
 
-          <div className="biodiversity-chart" style={{width:"40vw"}}>
+          <div className="biodiversity-chart" style={{width:"33vw"}}>
            
             <BarChart3 data={json} title="Share of total land which is protected"
               aspectRatio={false}
@@ -79,8 +79,8 @@ if(e.name === "GraficaType")
 
         </Col>
         <Col>
-          <div className="biodiversity-map" style={{width:"25vw"}}>
-          <TradeReportMap countriesData = {json}/>
+          <div className="biodiversity-map" style={{width:"33vw"}}>
+          <TradeReportMap countriesData = {json} from="Biodiversity"/>
 
           </div>
           
