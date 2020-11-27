@@ -314,7 +314,7 @@ const TradeReportMap = (props) => {
 	var bounds = L.latLngBounds(corner1, corner2)
 
 	var countryStyle = {
-		fillColor: '#dddddd',
+		fillColor: '#FFdddd',
 		fillOpacity: 1,
 		color: 'white',
 		weight: 1,
