@@ -8,7 +8,7 @@ function ComboBox(props) {
 		<div className="contenedor-selects">
 			<br/>
 			<div>
-				<h6 > Pathway </h6>
+				<h6 className="selectBoxTitle" > Pathway </h6>
 			<select className="selectBox" name="scenathon_id" onChange={onChange}>
 							<option value="6">Sustainable</option>
 				<option value="5">Current trend</option>
@@ -17,7 +17,7 @@ function ComboBox(props) {
 			</div>
 			<br/>
 			<div>
-				<h6 > Trade Adjustment </h6>
+				<h6  className="selectBoxTitle"> Trade Adjustment </h6>
 
 			<select className="selectBox" name="Iteration" onChange={onChange}>
 				<option value="after">After </option>
@@ -27,7 +27,7 @@ function ComboBox(props) {
 
 			<br/>
 			<div>
-				<h6 > Year </h6>
+				<h6 className="selectBoxTitle"> Year </h6>
 
 			<Form>
 				<select className="selectBox" name="Year" onChange={onChange} >
