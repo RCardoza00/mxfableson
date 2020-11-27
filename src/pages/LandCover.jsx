@@ -110,7 +110,7 @@ const DrawLandCover = () => {
     labelSize={18}
     TitleSize={24}
     title="Land Cover"
-    labelposition='right'
+    labelposition='bottom'
     labelString='1000Ha per year'
     fontSize='20'
    aspectRatio={false}/>
