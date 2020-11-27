@@ -92,6 +92,7 @@ function ComboBox(props) {
         <option value="5">Current trend</option>
 
       </select>
+      
       </div>
 
       <br></br>
@@ -102,13 +103,14 @@ function ComboBox(props) {
         <option value="after">After </option>
         <option value="before">Before </option>
       </select>
+      
       </div>
 
       <br></br>
 
       <div>
 				<h6 className="selectBoxTitle"> Countries </h6>
-
+    
   <div id="checkBoxContainer" className="selectBox checkBoxContainer">
     <div  onClick={() => { showCheckboxes() }}>
 
@@ -136,10 +138,14 @@ function ComboBox(props) {
           <p>ALL FABLE countries</p>
           <span className="checkmark"></span>
         </label>
+        
         </div>
-
+    
     </div>
+    
   </div>
+  <button type="button" className="buttonCSV" onClick={props.onClick}> Download CSV</button>
+
     </div>
 
     )

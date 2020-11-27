@@ -1,4 +1,5 @@
 import ChartCharacteristics from '../data/ChartCharacteristics.json';
+import ConvertToCSV from '../components/ConvertToCSV';
 
 const responseApi = response =>{
 
@@ -54,10 +55,11 @@ const responseApi = response =>{
             labels:labels,
             datasets:dataSet
         };
-        
+        return data = {
+          Chart:data,
+          CSV:response
+      };
         }
-      
-    return data;
 }
 
 

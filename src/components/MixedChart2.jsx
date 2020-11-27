@@ -78,10 +78,11 @@ import {Bar} from 'react-chartjs-2';
             },
             ticks: {
               callback: function(label, index, labels) {
-                  return label*100+'%';
+                  return label
               },
              
               min:0,
+            
               
           },
   

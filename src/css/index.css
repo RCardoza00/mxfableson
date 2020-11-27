@@ -92,8 +92,6 @@ code{
 		font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
 
 	}
-	
-	
 	.selectBox{
 		background-color:#72a5ad;
 		color: white;
@@ -109,6 +107,23 @@ code{
 		margin-left: 1em;
 		margin-right: 1em;
 		cursor: pointer;
+	}
+	.buttonCSV{
+		background-color:#72a5ad;
+		color: white;
+		width: 150px;
+		border-radius: 7px;
+		height: 2em;
+		border: 0px;
+		outline: 0px;
+		position: relative;
+		font-size: 1em;
+		text-align: center;
+		padding: 0 2%;
+		margin-left: 1em;
+		margin-right: 1em;
+		cursor: pointer;
+
 	}
 	 #comboboxcheckboxes{
 	}
