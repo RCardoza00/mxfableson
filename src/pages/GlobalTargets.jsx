@@ -84,11 +84,11 @@ const DrawGlobalTargets = () => {
 		});
 	}
 	return (
-		<div style={{width:"75vw",height:"1000px",marginTop:"20px"}}>
+		<div style={{width:"75vw", minHeight:"1000px",marginTop:"20px"}}>
 			<ComboBox onChange={handleChange}/>
 			<ReactBootStrap.Container fluid style={{widht: "75vw"}}>
 				<ReactBootStrap.Row style={{height:"500px"}}>
-					<ReactBootStrap.Col lg={3} md={4} key="t1" style={{height: 350}} >
+					<ReactBootStrap.Col lg={3} md={6} key="t1" style={{height: 350}} >
 						<MixedChart 
 							data={targetOne}
 							title="Target 1.- Zero net deforestation"
@@ -98,14 +98,14 @@ const DrawGlobalTargets = () => {
 							fontColor='black'
 							labelposition="bottom"/>
 					</ReactBootStrap.Col>
-					<ReactBootStrap.Col lg={3} md={4} key="t2" style={{height: 350}} >
+					<ReactBootStrap.Col lg={3} md={6} key="t2" style={{height: 350}} >
 						<MixedChart2
 							data={targetTwo}
 							aspectRatio={false}
 							labelposition="bottom"
 							title="Target 2.- Share of total land which is protected"/>
 					</ReactBootStrap.Col>
-					<ReactBootStrap.Col lg={3} md={4} key="t3" style={{height: 350}} >
+					<ReactBootStrap.Col lg={3} md={6} key="t3" style={{height: 350}} >
 						<MixedChart2 
 							data={targetThree}
 							aspectRatio={false}
@@ -113,7 +113,7 @@ const DrawGlobalTargets = () => {
 							
 							title="Target 3.- Share of land where natural processes predominate"/>
 					</ReactBootStrap.Col>
-					<ReactBootStrap.Col lg={3} md={4} key="t4" style={{height: 350}}>
+					<ReactBootStrap.Col lg={3} md={6} key="t4" style={{height: 350}}>
 						<div>
 							<p style={{position:"fixed",paddingLeft:"160px",paddingBottom:"500px"}}></p>
 						</div>
@@ -132,7 +132,7 @@ const DrawGlobalTargets = () => {
 
 				</ReactBootStrap.Row>
 				<ReactBootStrap.Row style={{height:"500px"}}>
-				<ReactBootStrap.Col lg={3} md={4} key="t5" style={{height: 350}}>
+				<ReactBootStrap.Col lg={3} md={5} key="t5" style={{height: 350}}>
 					<MixedChart 
 						data={targetFourCharTwo}
 						aspectRatio={false}
@@ -144,7 +144,7 @@ const DrawGlobalTargets = () => {
 						/>
 				</ReactBootStrap.Col>
 
-					<ReactBootStrap.Col lg={6} md={6} key="t6"le={{borderStyle:'none'}} style={{height: 350}} >
+					<ReactBootStrap.Col lg={6} md={7} key="t6"le={{borderStyle:'none'}} style={{height: 350}} >
 						<MixedChart 
 							data={targetFive}
 							aspectRatio={false}
@@ -158,7 +158,7 @@ const DrawGlobalTargets = () => {
 								</p>
 							</div>
 					</ReactBootStrap.Col>
-					<ReactBootStrap.Col lg={3} md={2} key="t7"le={{borderStyle:'none'}} style={{height: 350}}>
+					<ReactBootStrap.Col lg={3} md={12} key="t7"le={{borderStyle:'none'}} style={{height: 350}}>
 						
 						<MixedChart
 							data={targetSix}
