@@ -82,15 +82,16 @@ code{
 		max-width:100%;
 		margin-top:20px;
 		margin-bottom: 1em;
+		flex-wrap: wrap;
 	}
 	.conetenedor-select {
 		color: white;
 	}
-	h6{
-		font-size: 4px;
-		color: #7d7d7d;
+	.selectBoxTitle{
+		color: #575757;
 		text-align: center;
 		font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
+
 	}
 	.selectBox{
 		background-color:#72a5ad;
@@ -107,6 +108,23 @@ code{
 		margin-left: 1em;
 		margin-right: 1em;
 		cursor: pointer;
+	}
+	.buttonCSV{
+		background-color:#72a5ad;
+		color: white;
+		width: 150px;
+		border-radius: 7px;
+		height: 2em;
+		border: 0px;
+		outline: 0px;
+		position: relative;
+		font-size: 1em;
+		text-align: center;
+		padding: 0 2%;
+		margin-left: 1em;
+		margin-right: 1em;
+		cursor: pointer;
+
 	}
 	 #comboboxcheckboxes{
 	}

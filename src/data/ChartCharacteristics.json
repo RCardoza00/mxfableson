@@ -350,7 +350,8 @@
         "label": "Net forest change",
         "type":"bar",
         "fill": false,
-        "backgroundColor": "Green",
+        "hoverBackgroundColor":"Green",
+        "backgroundColor": "#388e3c",
         "borderColor":"#71B37C",
         "yAxisID": "y-axis-1"
 
@@ -396,7 +397,7 @@
         "borderColor":"rgba(129,199,132, 1)"
     }],
     "protected_land":[{
-        "label": "Protectend Land",
+        "label": "Protected Land",
         "type":"bar",
         "fill": false,
         "backgroundColor": "#7cb342",
