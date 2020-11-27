@@ -84,10 +84,13 @@ const DrawGlobalTargets = () => {
 		});
 	}
 	return (
+		
 		<div style={{width:"75vw", minHeight:"1000px",marginTop:"20px"}}>
-			<ComboBox onChange={handleChange}/>
+			
+			
 			<ReactBootStrap.Container fluid style={{widht: "75vw"}}>
-				<ReactBootStrap.Row style={{height:"500px"}}>
+			<ComboBox onChange={handleChange}/>
+				<ReactBootStrap.Row className="centerX pd-3" style={{justifyContent:"center"}}>
 					<ReactBootStrap.Col lg={3} md={6} key="t1" style={{height: 350}} >
 						<MixedChart 
 							data={targetOne}
@@ -113,7 +116,11 @@ const DrawGlobalTargets = () => {
 							
 							title="Target 3.- Share of land where natural processes predominate"/>
 					</ReactBootStrap.Col>
-					<ReactBootStrap.Col lg={3} md={6} key="t4" style={{height: 350}}>
+					
+
+				</ReactBootStrap.Row>
+				<ReactBootStrap.Row className="pt-5" style={{justifyContent:"center"}}>
+				<ReactBootStrap.Col lg={3} md={6} key="t4" style={{height: 350}}>
 						<div>
 							<p style={{position:"fixed",paddingLeft:"160px",paddingBottom:"500px"}}></p>
 						</div>
@@ -129,9 +136,6 @@ const DrawGlobalTargets = () => {
 							TitlePosition="bottom"
 							title="From Agriculture "/>
 					</ReactBootStrap.Col>
-
-				</ReactBootStrap.Row>
-				<ReactBootStrap.Row style={{height:"500px"}}>
 				<ReactBootStrap.Col lg={3} md={5} key="t5" style={{height: 350}}>
 					<MixedChart 
 						data={targetFourCharTwo}
@@ -144,7 +148,7 @@ const DrawGlobalTargets = () => {
 						/>
 				</ReactBootStrap.Col>
 
-					<ReactBootStrap.Col lg={6} md={7} key="t6"le={{borderStyle:'none'}} style={{height: 350}} >
+					{/* <ReactBootStrap.Col lg={6} md={7} key="t6"le={{borderStyle:'none'}} style={{height: 350}} >
 						<MixedChart 
 							data={targetFive}
 							aspectRatio={false}
@@ -157,7 +161,7 @@ const DrawGlobalTargets = () => {
 								<p style={{fontFamily: "Montserrat",color:'gray',fontSize:18}}>kilocalories per capita per day by country from the year 2030 of energy intake and Minimum Dietary Energy Requirement (MDER).
 								</p>
 							</div>
-					</ReactBootStrap.Col>
+					</ReactBootStrap.Col> */}
 					<ReactBootStrap.Col lg={3} md={12} key="t7"le={{borderStyle:'none'}} style={{height: 350}}>
 						
 						<MixedChart
@@ -173,6 +177,22 @@ const DrawGlobalTargets = () => {
 		</p>
 							</div>
 
+					</ReactBootStrap.Col>
+				</ReactBootStrap.Row>
+				<ReactBootStrap.Row className="centerX pt-5" style={{justifyContent:"center"}}>
+					<ReactBootStrap.Col lg={6} md={7} key="t6"le={{borderStyle:'none'}} style={{height: 350}} >
+						<MixedChart 
+							data={targetFive}
+							aspectRatio={false}
+							labelposition="top"
+							labelString='Kcal per capita /day'
+							fontSize='15'
+							fontColor='black'
+							title="Target 5.-  Food security"/>
+							<div>
+								<p style={{fontFamily: "Montserrat",color:'gray',fontSize:18}}>kilocalories per capita per day by country from the year 2030 of energy intake and Minimum Dietary Energy Requirement (MDER).
+								</p>
+							</div>
 					</ReactBootStrap.Col>
 				</ReactBootStrap.Row>
 			</ReactBootStrap.Container>

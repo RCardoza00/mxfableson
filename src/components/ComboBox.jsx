@@ -85,30 +85,32 @@ function ComboBox(props) {
 
     <div className="contenedor-selects">
       			<div>
-				<h6 > Pathway </h6>
+				<h6 className="selectBoxTitle"> Pathway </h6>
 
       <select className="selectBox" name="scenathon_id" onChange={onChange}>
         <option value="6">Sustainable</option>
         <option value="5">Current trend</option>
 
       </select>
+      
       </div>
 
       <br></br>
       <div>
-				<h6 > Trade adjustment </h6>
+				<h6 className="selectBoxTitle"> Trade adjustment </h6>
 
       <select className="selectBox" name="Iteration" onChange={onChange}>
         <option value="after">After </option>
         <option value="before">Before </option>
       </select>
+      
       </div>
 
       <br></br>
 
       <div>
-				<h6 > Countries </h6>
-
+				<h6 className="selectBoxTitle"> Countries </h6>
+    
   <div id="checkBoxContainer" className="selectBox checkBoxContainer">
     <div  onClick={() => { showCheckboxes() }}>
 
@@ -136,10 +138,14 @@ function ComboBox(props) {
           <p>ALL FABLE countries</p>
           <span className="checkmark"></span>
         </label>
+        
         </div>
-
+    
     </div>
+    
   </div>
+  <button type="button" className="buttonCSV" onClick={props.onClick}> Download CSV</button>
+
     </div>
 
     )
