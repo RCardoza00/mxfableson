@@ -81,7 +81,8 @@ import {Bar} from 'react-chartjs-2';
                   return label*100+'%';
               },
              
-           
+              min:0,
+              
           },
   
             labels: {
