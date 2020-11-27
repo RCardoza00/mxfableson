@@ -106,7 +106,7 @@ const DrawFreshWater2 = () => {
       </div>
       <Row  >
         <Col >
-          <div className="graph"  style={{ textAlign: 'center',height: "72vh", width: "45vw" }}>
+          <div className="graph"  style={{ textAlign: 'center',height: "72vh", width: "40vw", "margin-right":-100 }}>
 
             <BarChart data={json}
               title="Fresh Water Use 2"
@@ -126,9 +126,9 @@ const DrawFreshWater2 = () => {
           </div>
         </Col>
         <Col>
-        <br/><br/><br/>
+        <br/><br/>
  
-          <div style={{textAlign: 'center', height: "70vh", width: "30vw" }}>
+          <div style={{textAlign: 'center', height: "70vh", width: "35vw" }}>
           <TradeReportMap countriesData = {json}/>
           </div>
         </Col>

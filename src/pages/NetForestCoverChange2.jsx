@@ -95,7 +95,7 @@ const DrawNfch2 = () => {
         <Col >
 
 
-          <div style={{ textAlign: 'center', height: "62vh", width: "40vw" }}>
+          <div style={{ textAlign: 'center', height: "62vh", width: "33vw","margin-right":-175 }}>
             <BarChart data={json}
               title="Net Forest Cover Change 2"
               labelposition="right"
@@ -117,7 +117,7 @@ const DrawNfch2 = () => {
         </Col>
         <Col>
           <br /><br />
-          <div style={{textAlign: 'center', height: "70vh", width: "30vw" }}>
+          <div style={{textAlign: 'center', height: "70vh", width: "40vw" }}>
             <TradeReportMap countriesData={json} />
 
           </div>
