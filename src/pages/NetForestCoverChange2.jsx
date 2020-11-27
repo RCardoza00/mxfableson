@@ -10,7 +10,7 @@ import NetForesTwoService from '../services/NetForesTwoService';
 
 
 //nfch=NetForestCoverChange
-const DrawNfch2 = () => {
+  const DrawNfch2 = () => {
 
 
 
