@@ -101,66 +101,55 @@ const GreenHouse = () => {
 */
   return (
     <Container fluid>
-
       <div>
-        {/**<Tour stepsP={steps}/>*/}
         <ComboBox onChange={handleChange} />
-
       </div>
 
       <div className="graph">
         <Row>
           <Col>
-            <div style={{ textAlign: 'center', height: "70vh", width: "35vw", marginTop: "50px","margin-right":-175  }}>
-
-
+            <div style={{ textAlign: 'center', height: "80vh", width: "37vw", "margin-right": -200 }}>
               <BarChart data={data.chartOne}
                 title="             Annual GHG emissions from crops and livestock in Gt CO2e." aspectRatio={false}
                 labelposition="right"
                 labelwidth={20}
                 labelSize={12}
                 labelString="Gt CO2e"
-
                 TitleSize={20} />
-
             </div>
           </Col>
 
           <Col>
             <br /><br /><br />
-            <div style={{ textAlign: 'center', height: "70vh", width: "35vw" }}>
+            <div style={{ textAlign: 'center', height: "80vh", width: "40vw" }}>
               <TradeReportMap countriesData={data.chartOne} />
             </div>
-
           </Col>
         </Row>
+
         <Row>
           <Col>
-            <div style={{ textAlign: 'center', height: "70vh", width: "33vw", marginTop: "50px","margin-right":-175 }}>
-
+            <div style={{ textAlign: 'center', height: "80vh", width: "37vw", "margin-right": -200 }}>
               <BarChart data={data.charTwo}
                 title="                      Average annual GHG emissions from land use change and peat oxidation in Gt CO2e." aspectRatio={false}
                 labelposition="right"
                 labelwidth={20}
                 labelString="Gt CO2e"
-
                 labelSize={12}
                 TitleSize={20}
               />
-
             </div >
           </Col>
+
           <Col>
             <br /><br /><br />
-            <div style={{ textAlign: 'center', height: "70vh", width: "35vw" }}>
+            <div style={{ textAlign: 'center', height: "80vh", width: "40vw" }}>
               <TradeReportMap countriesData={data.charTwo} />
             </div>
-
           </Col>
         </Row>
-
-
       </div>
+
     </Container>
   );
 }

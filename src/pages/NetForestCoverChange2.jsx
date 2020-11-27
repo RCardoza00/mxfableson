@@ -25,77 +25,71 @@ const DrawNfch2 = () => {
   });
 
   const [json, setJson] = useState({
-    labels:[],
-    datasets:[]
+    labels: [],
+    datasets: []
   });
 
 
   useEffect(() => {
-   
+
     NetForesTwoService(state).then(setJson);
-     
-     
-      }, [state]);
-    
+
+
+  }, [state]);
 
 
 
-      const handleChange = e => {
 
-        var graficaType = state.select.GraficaType;
-        var scenathon = state.select.scenathon_id;
-        var iteration = state.select.Iteration;
-        
-    if(e.name === "GraficaType")
-    {
-      graficaType=e.value 
-    }else if (e.target.name === "scenathon_id") {
-          switch (e.target.value) {
-            case '6':
-              iteration = state.select.Iteration === "1" ? "3" : "4";
-              scenathon = "6";
-              break;
-            case '5':
-              scenathon = "5";
-              iteration = state.select.Iteration === "3" ? "1" : "2";
-              break;
-            default: iteration = state.select.Iteration === "1" ? "3" : "4";
-          }
-        } else {
-    
-        
-          iteration =scenathon === "6" ? e.target.value === "after" ? "4" : "3" : e.target.value === "after" ? "2" : "1" ;
-        }
-    
-        setState({
-          select: {
-            GraficaType: graficaType,
-            scenathon_id: scenathon,
-            Iteration: iteration,
-    
-          }
-    
-    
-        });
-    
+  const handleChange = e => {
+
+    var graficaType = state.select.GraficaType;
+    var scenathon = state.select.scenathon_id;
+    var iteration = state.select.Iteration;
+
+    if (e.name === "GraficaType") {
+      graficaType = e.value
+    } else if (e.target.name === "scenathon_id") {
+      switch (e.target.value) {
+        case '6':
+          iteration = state.select.Iteration === "1" ? "3" : "4";
+          scenathon = "6";
+          break;
+        case '5':
+          scenathon = "5";
+          iteration = state.select.Iteration === "3" ? "1" : "2";
+          break;
+        default: iteration = state.select.Iteration === "1" ? "3" : "4";
       }
+    } else {
+
+
+      iteration = scenathon === "6" ? e.target.value === "after" ? "4" : "3" : e.target.value === "after" ? "2" : "1";
+    }
+
+    setState({
+      select: {
+        GraficaType: graficaType,
+        scenathon_id: scenathon,
+        Iteration: iteration,
+
+      }
+
+
+    });
+
+  }
 
 
 
   return (
-
-
     <Container fluid >
-      <div >
+      <div>
         <ComboBox onChange={handleChange} />
-      
       </div>
+
       <Row>
-
         <Col >
-
-
-          <div style={{ textAlign: 'center', height: "62vh", width: "33vw","margin-right":-175 }}>
+          <div style={{ textAlign: 'center', height: "66vh", width: "37vw", "margin-right": -200 }}>
             <BarChart data={json}
               title="Net Forest Cover Change 2"
               labelposition="right"
@@ -105,23 +99,20 @@ const DrawNfch2 = () => {
               labelWidth={40}
               labelSize={18}
               TitleSize={24}
-                          aspectRatio={false} />
- <div>
-    <p style={{color:"gray",fontSize:"14px",fontFamily: "Montserrat",paddingLeft:"80px", textAlign:"justify"}}>Contribution by country to cumulated forest loss due to crop, pasture, and/or urban expansion and forest gain due to afforestation in 1000 ha per year (average annual change over each 5 year-period e.g. 2005 corresponds to 2000 and 2005). 
-</p>
-    </div>
-
+              aspectRatio={false} />
+            <div>
+              <p style={{ color: "gray", fontSize: "14px", fontFamily: "Montserrat", paddingLeft: "80px", textAlign: "justify" }}>Contribution by country to cumulated forest loss due to crop, pasture, and/or urban expansion and forest gain due to afforestation in 1000 ha per year (average annual change over each 5 year-period e.g. 2005 corresponds to 2000 and 2005).</p>
+            </div>
           </div>
-
-
         </Col>
+
         <Col>
-          <br /><br />
-          <div style={{textAlign: 'center', height: "70vh", width: "40vw" }}>
+          <br /><br /><br />
+          <div style={{ textAlign: 'center', height: "80vh", width: "40vw" }}>
             <TradeReportMap countriesData={json} />
-
           </div>
         </Col>
+
       </Row>
     </Container>
   );
