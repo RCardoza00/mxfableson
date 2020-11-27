@@ -16,24 +16,24 @@ const GreenHouse = () => {
 
   const [state, setState] = useState({
     select: {
-      GraficaType:'group',
-      scenathon_id:'6',
-      Iteration:'4',
+      GraficaType: 'group',
+      scenathon_id: '6',
+      Iteration: '4',
     }
-   
+
   });
- 
+
 
   const [data, setdata] = useState({
-    chartOne:[],
-    charTwo:[]
+    chartOne: [],
+    charTwo: []
   });
 
- 
-  
+
+
   useEffect(() => {
     GreenHouseTwoService(state).then(setdata);
-    
+
   }, [state]);
 
 
@@ -47,10 +47,9 @@ const GreenHouse = () => {
     var group = state.select.GraficaType;
     var scenathon = state.select.scenathon_id;
     var iteration = state.select.Iteration;
-  if(e.name === "GraficaType")
-  {
-  group=e.value 
-  }else if (e.target.name === "scenathon_id") {
+    if (e.name === "GraficaType") {
+      group = e.value
+    } else if (e.target.name === "scenathon_id") {
       switch (e.target.value) {
         case '6':
           iteration = state.select.Iteration === "1" ? "3" : "4";
@@ -63,23 +62,23 @@ const GreenHouse = () => {
         default: iteration = state.select.Iteration === "1" ? "3" : "4";
       }
     } else {
-  
-    
-      iteration =scenathon === "6" ? e.target.value === "after" ? "4" : "3" : e.target.value === "after" ? "2" : "1" ;
+
+
+      iteration = scenathon === "6" ? e.target.value === "after" ? "4" : "3" : e.target.value === "after" ? "2" : "1";
     }
-  
+
     setState({
       select: {
         GraficaType: group,
         scenathon_id: scenathon,
         Iteration: iteration,
-  
+
       }
-  
-  
+
+
     });
-  
-   
+
+
   }
   /** 
     const steps = [
@@ -100,69 +99,58 @@ const GreenHouse = () => {
       }
     ]
 */
-return (
-<Container fluid>
- 
-  <div>
-{/**<Tour stepsP={steps}/>*/}
-<ComboBox onChange={handleChange}/>
-       
-  </div>
- 
-    <div className="graph">
-      <Row>
-        <Col>
-        <div style={{ textAlign: 'center',height: "70vh" ,width:"38vw",marginTop:"50px"} }>
-       
-    
-          <BarChart data={data.chartOne}
-            title="             Annual GHG emissions from crops and livestock in Gt CO2e." aspectRatio={false}
-            labelposition="right"
-            labelwidth={20}
-            labelSize={12}
-            labelString="Gt CO2e"
+  return (
+    <Container fluid>
+      <div>
+        <ComboBox onChange={handleChange} />
+      </div>
 
-          TitleSize={20} />
-          
-        </div>
-        </Col>
+      <div className="graph">
+        <Row>
+          <Col>
+            <div style={{ textAlign: 'center', height: "80vh", width: "37vw", "margin-right": -200 }}>
+              <BarChart data={data.chartOne}
+                title="             Annual GHG emissions from crops and livestock in Gt CO2e." aspectRatio={false}
+                labelposition="right"
+                labelwidth={20}
+                labelSize={12}
+                labelString="Gt CO2e"
+                TitleSize={20} />
+            </div>
+          </Col>
 
-        <Col>
-        <br/><br/><br/>
-        <div style={{textAlign: 'center', height: "70vh", width: "30vw"}}>
-        <TradeReportMap countriesData = {data.chartOne}/>
-        </div>
-      
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-        <div style={{ textAlign: 'center',height: "70vh" ,width:"38vw",marginTop:"50px"} }>
-        
-          <BarChart data={data.charTwo}
-            title="                      Average annual GHG emissions from land use change and peat oxidation in Gt CO2e." aspectRatio={false}
-            labelposition="right" 
-            labelwidth={20}
-            labelString="Gt CO2e"
+          <Col>
+            <br /><br /><br />
+            <div style={{ textAlign: 'center', height: "80vh", width: "40vw" }}>
+              <TradeReportMap countriesData={data.chartOne} />
+            </div>
+          </Col>
+        </Row>
 
-            labelSize={12}
-            TitleSize={20}
-        />
-              
-        </div >
-        </Col>
-        <Col>
-        <br/><br/><br/>
-        <div style={{textAlign: 'center', height: "70vh", width: "30vw"}}>
-        <TradeReportMap countriesData = {data.charTwo}/>
-        </div>
-       
-        </Col>
-      </Row>
-     
-   
-    </div>
-</Container>
+        <Row>
+          <Col>
+            <div style={{ textAlign: 'center', height: "80vh", width: "37vw", "margin-right": -200 }}>
+              <BarChart data={data.charTwo}
+                title="                      Average annual GHG emissions from land use change and peat oxidation in Gt CO2e." aspectRatio={false}
+                labelposition="right"
+                labelwidth={20}
+                labelString="Gt CO2e"
+                labelSize={12}
+                TitleSize={20}
+              />
+            </div >
+          </Col>
+
+          <Col>
+            <br /><br /><br />
+            <div style={{ textAlign: 'center', height: "80vh", width: "40vw" }}>
+              <TradeReportMap countriesData={data.charTwo} />
+            </div>
+          </Col>
+        </Row>
+      </div>
+
+    </Container>
   );
 }
 

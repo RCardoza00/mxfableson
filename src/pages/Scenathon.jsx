@@ -24,6 +24,7 @@ import SustainableImporter from '../pages/SustainableImporter'
 import SustainableNetExporter from './SustainableNetExporter'
 import CurrenTrendExporter from './CurrenTrendExporter'
 import CurrenTrendImporter from './CurrenTrendImporter'
+import TradeReport from './TradeReport'
 import DashboardCover from '../assets/DashboardCover2.jpg';
 
 const Styles = styled.div`
@@ -181,29 +182,12 @@ class Scenathon extends Component {
                 this.combobox = null;
                 this.dash = <FoodEnergyIntakePerCapita2 />;
                 break;
-            case 'Sustainable_next_exporters':
+           
+            case 'Trade_Report':
                 document.getElementById('container-fluid').style.background="transparent";
                 document.getElementById("banner").src = "";
                 this.combobox = null;
-                this.dash = <SustainableNetExporter />;
-                break;
-            case 'Sustainable_next_importers':
-                document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = "";
-                this.combobox = null;
-                this.dash = <SustainableImporter />;
-                break;
-            case 'Current_trend_next_exporters':
-                document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = "";
-                this.combobox = null;
-                this.dash = <CurrenTrendExporter />;
-                break;
-            case 'Current_trend_next_importers':
-                document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = "";
-                this.combobox = null;
-                this.dash = <CurrenTrendImporter />;
+                this.dash = <TradeReport/>;
                 break;
             default: this.combobox = null;
             document.getElementById("banner").src = "";

@@ -21,9 +21,28 @@ function ComboBoxTradeReportersImporters(props) {
     <Styles>
 
       <div className="contenedor-selects">
+ 
+        <div>
+        <h6 > Pathway </h6>
+        <select className="selectBox" name="scenathon_id" onChange={props.metodo}>
+        <option value="6">Sustainable</option>
+        <option value="5">Current trend</option>
+
+      </select>
+      </div>
         <br></br>
-        <select class="selectBox" name="Product" onChange={props.metodo}>
-          <option value="" disabled selected hidden>Product</option>
+        <div>
+        <h6 > Trade adjustment </h6>
+        <select class="selectBox" name="iteration" onChange={props.metodo}>
+          <option value="after">After</option>
+          <option value="before">Before</option>
+        </select>
+        </div>
+
+        <div>
+        <h6 > Product </h6>
+        <select class="selectBox" name="product" onChange={props.metodo}>
+       
           <option value="abaca">Abaca</option>
           <option value="apple">Apple</option>
           <option value="banana">Banana</option>
@@ -125,13 +144,10 @@ function ComboBoxTradeReportersImporters(props) {
 
 
         </select>
-        <br></br>
-        <select class="selectBox" name="iteration" onChange={props.metodo}>
-          <option value="" disabled selected hidden>Trade Adjustment</option>
-          <option value="after">After Iteration</option>
-          <option value="before">Before Iteration</option>
-        </select>
+        </div>
 
+      
+       
       </div>
     </Styles>
 
