@@ -3,6 +3,7 @@ import "../css/index.css";
 import "../../node_modules/react-grid-layout/css/styles.css";
 import "../../node_modules/react-resizable/css/styles.css";
 import { WidthProvider, Responsive } from "react-grid-layout";
+import * as ReactBootStrap from "react-bootstrap";
 import MixedChart from "../components/MixedChart";
 import MixedChart2 from "../components/MixedChart2";
 import BarChart from '../components/BarChart'
@@ -85,59 +86,54 @@ const DrawGlobalTargets = () => {
 	return (
 		<div style={{width:"75vw",height:"1000px",marginTop:"20px"}}>
 			<ComboBox onChange={handleChange}/>
-			<ResponsiveReactGridLayout
-				className="layout"
-				cols={{ lg: 12, md: 10, sm: 6, xs: 4, xxs: 2 }}
-				rowHeight={30}
-				isDraggable={false}
-				isResizable={false}
-				>
-				<div key="t1" data-grid={{x: 0, y: 0, w: 2.2, h: 7,}} >
+			<ReactBootStrap.Container fluid style={{widht: "75vw"}}>
+				<ReactBootStrap.Row style={{height:"500px"}}>
+					<ReactBootStrap.Col lg={3} md={4} key="t1" style={{height: 350}} >
+						<MixedChart 
+							data={targetOne}
+							title="Target 1.- Zero net deforestation"
+							aspectRatio={false}
+							labelString='1000h/year'
+							fontSize='12'
+							fontColor='black'
+							labelposition="bottom"/>
+					</ReactBootStrap.Col>
+					<ReactBootStrap.Col lg={3} md={4} key="t2" style={{height: 350}} >
+						<MixedChart2
+							data={targetTwo}
+							aspectRatio={false}
+							labelposition="bottom"
+							title="Target 2.- Share of total land which is protected"/>
+					</ReactBootStrap.Col>
+					<ReactBootStrap.Col lg={3} md={4} key="t3" style={{height: 350}} >
+						<MixedChart2 
+							data={targetThree}
+							aspectRatio={false}
+							labelposition="bottom"
+							
+							title="Target 3.- Share of land where natural processes predominate"/>
+					</ReactBootStrap.Col>
+					<ReactBootStrap.Col lg={3} md={4} key="t4" style={{height: 350}}>
+						<div>
+							<p style={{position:"fixed",paddingLeft:"160px",paddingBottom:"500px"}}></p>
+						</div>
+
+						<BarChart 
+							data={targetFour}
+							aspectRatio={false}
+							labelWidth={6}
+							labelSize={10}
+							labelposition="right"
+							labelString='GtCo2'
+							fontSize="10"
+							TitlePosition="bottom"
+							title="From Agriculture "/>
+					</ReactBootStrap.Col>
+
+				</ReactBootStrap.Row>
+				<ReactBootStrap.Row style={{height:"500px"}}>
+				<ReactBootStrap.Col lg={3} md={4} key="t5" style={{height: 350}}>
 					<MixedChart 
-						data={targetOne}
-						title="Target 1.- Zero net deforestation"
-						aspectRatio={false}
-						labelString='1000h/year'
-						fontSize='12'
-						fontColor='black'
-						labelposition="bottom"/>
-				</div>
-				<div key="t2" data-grid={{x: 2.3, y: 0, w: 2.3, h: 7}} >
-					<MixedChart2
-						data={targetTwo}
-						aspectRatio={false}
-						labelposition="bottom"
-						title="Target 2.- Share of total land which is protected"/>
-				</div>
-				<div key="t3" data-grid={{x: 4.7, y: 0, w: 2.5, h: 7}}>
-					<MixedChart2 
-						data={targetThree}
-						aspectRatio={false}
-						labelposition="bottom"
-						
-						title="Target 3.- Share of land where natural processes predominate"/>
-				</div>
-				<div key="t4" data-grid={{x: 7.2, y: 0, w: 2.3, h:7}}>
-				<div>
-					<p style={{position:"fixed",paddingLeft:"160px",paddingBottom:"500px"}}></p>
-				</div>
-
-					<BarChart 
-						data={targetFour}
-						aspectRatio={false}
-						labelWidth={6}
-						labelSize={10}
-						labelposition="right"
-						labelString='GtCo2'
-						fontSize="10"
-						TitlePosition="bottom"
-						title="From Agriculture "/>
-				</div>
-
-				<div key="t5" data-grid={{x: 9.5, y: 0, w: 2.4, h: 7}}>
-
-					<MixedChart 
-					
 						data={targetFourCharTwo}
 						aspectRatio={false}
 						labelposition="right"
@@ -146,41 +142,40 @@ const DrawGlobalTargets = () => {
 						title="From Land use change"
 						TitlePosition="bottom"
 						/>
+				</ReactBootStrap.Col>
+
+					<ReactBootStrap.Col lg={6} md={6} key="t6"le={{borderStyle:'none'}} style={{height: 350}} >
+						<MixedChart 
+							data={targetFive}
+							aspectRatio={false}
+							labelposition="top"
+							labelString='Kcal per capita /day'
+							fontSize='15'
+							fontColor='black'
+							title="Target 5.-  Food security"/>
+							<div>
+								<p style={{fontFamily: "Montserrat",color:'gray',fontSize:18}}>kilocalories per capita per day by country from the year 2030 of energy intake and Minimum Dietary Energy Requirement (MDER).
+								</p>
+							</div>
+					</ReactBootStrap.Col>
+					<ReactBootStrap.Col lg={3} md={2} key="t7"le={{borderStyle:'none'}} style={{height: 350}}>
 						
-				</div>
-				<div key="t6" data-grid={{x: 0, y: 1, w: 9, h: 9}} style={{borderStyle:'none'}}>
-					<MixedChart 
-						data={targetFive}
-						aspectRatio={false}
-						labelposition="top"
-						labelString='Kcal per capita /day'
-						fontSize='15'
-						fontColor='black'
-						title="Target 5.-  Food security"/>
-						<div>
-							<p style={{fontFamily: "Montserrat",color:'gray',fontSize:18}}>kilocalories per capita per day by country from the year 2030 of energy intake and Minimum Dietary Energy Requirement (MDER).
+						<MixedChart
+							data={targetSix}
+							aspectRatio={false}
+							labelposition="bottom"
+							labelString='blue water in million cubic meters'
+							fontSize='14'
+							fontColor='black'
+							title="Target 6.- Fresh water use"/>
+							<div>
+								<p style={{fontFamily: "Montserrat",color: 'gray',fontSize:16}}>Water use for irrigation for crops and livestock production 
+		</p>
+							</div>
 
-</p>
-						</div>
-
-				</div>
-				<div key="t7" data-grid={{x: 9, y: 1, w: 3, h: 9}} style={{borderStyle:'none'}}>
-					
-					<MixedChart
-						data={targetSix}
-						aspectRatio={false}
-						labelposition="bottom"
-						labelString='blue water in million cubic meters'
-						fontSize='14'
-						fontColor='black'
-						title="Target 6.- Fresh water use"/>
-						<div>
-							<p style={{fontFamily: "Montserrat",color: 'gray',fontSize:16}}>Water use for irrigation for crops and livestock production 
-</p>
-						</div>
-
-				</div>
-			</ResponsiveReactGridLayout>
+					</ReactBootStrap.Col>
+				</ReactBootStrap.Row>
+			</ReactBootStrap.Container>
 		</div>
 	);
 };
