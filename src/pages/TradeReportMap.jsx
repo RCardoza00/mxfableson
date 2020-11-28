@@ -5,7 +5,7 @@ import * as L from 'leaflet';
 import surfaceAreas from './../data/countries_surfaceArea.json';
 import centros from './../data/countries_centers.json';
 import mapDataTest from './../data/Countries.json';
-import 'leaflet/dist/leaflet.css'; //This style is for the scroll and plus controls of the map
+import 'leaflet/dist/leaflet.css';
 import '../css/index.css';
 
 const TradeReportMap = (props) => {
