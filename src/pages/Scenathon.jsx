@@ -19,11 +19,7 @@ import BannerLifeOnLand from '../assets/banners/Mesa de trabajo 19.png';
 import BannerCleanWater from '../assets/banners/Mesa de trabajo 8.png';
 import BannerZeroHunger from '../assets/banners/Mesa de trabajo 2.png';
 import BannerClimateAction from '../assets/banners/Mesa de trabajo 16.png';
-import BannerCustom from '../assets/derheader.svg';
-import SustainableImporter from '../pages/SustainableImporter'
-import SustainableNetExporter from './SustainableNetExporter'
-import CurrenTrendExporter from './CurrenTrendExporter'
-import CurrenTrendImporter from './CurrenTrendImporter'
+import BannerCustom from '../assets/neueheader.svg';
 import TradeReport from './TradeReport'
 import DashboardCover from '../assets/DashboardCover2.jpg';
 
@@ -82,7 +78,6 @@ class Scenathon extends Component {
 
             })
         } else {
-
             this.setState({
                 select: {
                     //el next code evitara que se sobrescriba cuando reciba un valor new
@@ -91,7 +86,6 @@ class Scenathon extends Component {
                     [e.target.name]: e.target.value
                 },
                 dashboard: e.target.value
-
             });
         }
     }
@@ -200,7 +194,7 @@ class Scenathon extends Component {
 
             <Styles>
                 <div className="header" ref={this.fableRef}>
-                    <img className="banner" id="banner" alt=""></img>
+                    <img className="banner" id="banner-custom" src={BannerCustom} alt=""/>
                 </div>
                 <div id="container-fluid" className="container-fluid" style={{ display: 'flex' , padding:'0 0'}} >
 
