@@ -35,6 +35,7 @@ const Styles = styled.div`
     margin: 0;
     transition: all 0.5s ease;
     width: 100%;
+    max-height: 12vh;
 
     .banner{
         max-width:100%;
@@ -194,7 +195,7 @@ class Scenathon extends Component {
 
             <Styles>
                 <div className="header" ref={this.fableRef}>
-                    <img className="banner" id="banner-custom" src={BannerCustom} alt=""/>
+                    <img className="banner" id="banner" src={BannerCustom} alt=""/>
                 </div>
                 <div id="container-fluid" className="container-fluid" style={{ display: 'flex' , padding:'0 0'}} >
 
