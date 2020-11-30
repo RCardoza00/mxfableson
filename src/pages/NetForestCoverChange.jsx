@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import MixedChart from "../components/MixedChart.jsx";
 import ComboBox from '../components/ComboBox'
 import NetForestCoverService from '../services/NetForestCoverService';
+import ConvertToCSV from '../components/ConvertToCSV';
 const DrawNfch = () => {
   const [state, setState] = useState({
     select: {
@@ -55,7 +56,8 @@ if(e.name === "GraficaType")
     
       const [json, setJson] = useState([{
         labels:[],
-        datasets:[]
+        datasets:[],
+        CSV:[]
       }]);
       
     
@@ -86,11 +88,13 @@ if(e.name === "GraficaType")
     }
   ]*/
   
-
+  const DownloadCSV = e => {
+    ConvertToCSV(json.CSV)
+    }
 
   return <div style={{height: "80vh",width:"82vw"}}>
 <div>
-<ComboBox onChange={handleChange}/>
+<ComboBox onChange={handleChange} onClick={DownloadCSV}/>
 {/**<Tour stepsP={steps}/>
 */}
 </div>

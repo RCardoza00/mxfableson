@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import ComboBox from '../components/ComboBox';
 import TradeReportMap from './TradeReportMap'
 import BiodiversityService from '../services/BiodiversityService';
-
+import ConvertToCSV from '../components/ConvertToCSV';
 
 //nfch=NetForestCoverChange
 const DrawBiodiversity = () => {
@@ -21,6 +21,7 @@ const DrawBiodiversity = () => {
   const [json, setJson] = useState({
     labels: [],
     datasets: [],
+    CSV: []
   });
   useEffect(() => {
     BiodiversityService(state).then(setJson);
@@ -58,10 +59,14 @@ const DrawBiodiversity = () => {
       }
     });
   }
+
+  const DownloadCSV = e => {
+    ConvertToCSV(json.CSV)
+    }
   return (
     <Container fluid >
       <div >
-        <ComboBox onChange={handleChange} />
+        <ComboBox onChange={handleChange} onClick={DownloadCSV}/>
       </div>
       <Row>
         <Col>

@@ -59,7 +59,8 @@ const responseApi = response =>
    
           var data = {
           labels: labels,
-          datasets: datasetAux
+          datasets: datasetAux,
+          CSV:response
         };
       
       
