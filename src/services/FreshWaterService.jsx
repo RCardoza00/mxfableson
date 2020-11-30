@@ -40,7 +40,10 @@ const responseApi = response =>{
 
     }
 
-  return data;
+    return data = {
+      Chart:data,
+      CSV:response
+  };
 
 
 }

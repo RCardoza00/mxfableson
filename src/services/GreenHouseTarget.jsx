@@ -118,7 +118,9 @@ datasetsTargetSix.push(grenHouse);
 
 var dataTargetFour = {
     labels:labels,
-    datasets:datasetsTargetFour
+    datasets:datasetsTargetFour,
+    CSV:response
+
 };
 
 var dataTargetFourCharTwo = {
@@ -134,7 +136,7 @@ var dataTargetSix = {
 var dataGreenHouse={
     targetFour:dataTargetFour,
     targetFourCharTwo:dataTargetFourCharTwo,
-    targetSix:dataTargetSix
+    targetSix:dataTargetSix,
     }
 
 }

@@ -4,6 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import ComboBox from '../components/ComboBox';
 import Tour from '../components/Tour';
 import FreshWaterTwoService from '../services/FreshWaterTwoService';
+import ConvertToCSV from '../components/ConvertToCSV';
 
 import TradeReportMap from './TradeReportMap'
 
@@ -22,8 +23,8 @@ const DrawFreshWater2 = () => {
   });
 
   const [json, setJson] = useState([{
-    labels: [],
-    datasets: []
+    Chart:[],
+    CSV:[]
   }]);
 
 
@@ -94,22 +95,24 @@ const DrawFreshWater2 = () => {
     ]
   
     */
-
+   const DownloadCSV = e => {
+    ConvertToCSV(json.CSV)
+    }
   return (
     <Container fluid>
       <div>
         {/*<Tour stepsP={steps}/>*/}
-        <ComboBox onChange={handleChange} />
+        <ComboBox onChange={handleChange}  onClick={DownloadCSV}/>
       </div>
       <Row  >
 
         <Col >
-          <div className="graph" style={{ textAlign: 'center', height: "72vh", width: "37vw", "margin-right": -200 }}>
-            <BarChart data={json}
+          <div className="graph" style={{ textAlign: 'center', height: "74vh", width: "37vw", "margin-right": -200 }}>
+            <BarChart data={json.Chart}
               title="Fresh Water Use 2"
               labelposition="right"
               labelwidth={20}
-              labelSize={15}
+              labelSize={12}
               TitleSize={24}
               labelString="Blue water/million cubic metres"
               aspectRatio={false} />
