@@ -55,7 +55,8 @@ console.log(response);
   }
   var data = {
     labels: labels,
-    datasets: biodiversities
+    datasets: biodiversities,
+    CSV:response
   };
 
 
