@@ -94,13 +94,13 @@ return (
 		</div>
 		<br/>
 		<div>
-			<h6 className="selectBoxTitle">Countries </h6>
+			<h6 className="selectBoxTitle">Countries</h6>
 			<div id="checkBoxContainer" className="selectBox checkBoxContainer">
 				<div  onClick={() => { showCheckboxes() }}>
 					<select id="comboboxcheckboxes" className="selectBox">
-						<option value="" disabled selected hidden>Countries</option>
+						<option value="" disabled selected hidden> </option>
 					</select>
-					<div className="overSelect"></div>
+					<div className="overSelect">Countries</div>
 				</div>
 				<div id="checkboxes">
 					<label className="container">

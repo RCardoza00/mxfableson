@@ -109,9 +109,9 @@ code{
 		margin-right: 1em;
 		cursor: pointer;
 	}
-	.selectBox:hover,.buttonCSV:hover,select:hover {
+	.selectBox:hover,.buttonCSV:hover,select:hover,.overSelect:hover{
 		background-color: #306973;
-		border: 1px solid #BBBBBB;
+		/*border: 1px solid #BBBBBB;*/
 		cursor: pointer;
 	}
 	 #comboboxcheckboxes{
@@ -141,6 +141,11 @@ code{
 		right: 0;
 		top: 0;
 		bottom: 0;
+		background-color: transparent;;
+		text-align: left;
+		padding: 0.4em;
+		padding-left: 1em;
+		border-radius:7px;
 	}
 
 	#checkboxes {
