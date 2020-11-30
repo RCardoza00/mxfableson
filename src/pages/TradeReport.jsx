@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import BarChart from "../components/BarChart";
 import { Container, Row, Col } from "react-bootstrap";
 import ComboBoxTradeReportersImporters from "../components/ComboBoxTradeReporters";
+import ConvertToCSV from '../components/ConvertToCSV';
 
 
 import TradeReportService from '../services/TradeReportService';
@@ -21,7 +22,8 @@ const SustainableExporter = () => {
 
   const [json, setJson] = useState({
     importertChart: [],
-    exporterChart: []
+    exporterChart: [],
+    CSV:[]
   });
 
 
@@ -64,11 +66,13 @@ console.log(state);
 
 
 
-
+  const DownloadCSV = e => {
+    ConvertToCSV(json.CSV)
+    }
   return (
     <Container fluid >
       <div >
-        <ComboBoxTradeReportersImporters metodo={handleChange} />
+        <ComboBoxTradeReportersImporters metodo={handleChange} onClick={DownloadCSV}/>
 
       </div>
       <Row  >

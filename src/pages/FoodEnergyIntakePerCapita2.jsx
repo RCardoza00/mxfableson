@@ -3,6 +3,7 @@ import BarChart2 from "../components/BarChart2.jsx";
 import Tour from '../components/Tour'
 import FoodEnergyTwo from '../services/FoodEnergyTwo';
 import ComboBox2 from "../components/ComboBox2.jsx";
+import ConvertToCSV from '../components/ConvertToCSV';
 const FoodEnergyIntakePerCapita = () => {
 
 
@@ -19,7 +20,8 @@ const FoodEnergyIntakePerCapita = () => {
 
   const [json, setJson] = useState([{
     labels: [],
-    datasets: []
+    datasets: [],
+    CSV:[]
   }]);
 
 
@@ -27,7 +29,6 @@ const FoodEnergyIntakePerCapita = () => {
   useEffect(() => {
     FoodEnergyTwo(state).then(setJson);
   }, [state]);
-
 
 
 
@@ -87,13 +88,17 @@ const FoodEnergyIntakePerCapita = () => {
     }
   ]
 */
+
+const DownloadCSV = e => {
+ConvertToCSV(json.CSV)
+}
   return (
 
     <div className="graph">
 {/**<Tour stepsP={steps}/>*/}
 
       <div>
-      <ComboBox2 onChange={handleChange} />
+      <ComboBox2 onChange={handleChange} onClick={DownloadCSV}/>
 
       </div>
 
