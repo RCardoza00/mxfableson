@@ -46,7 +46,7 @@ console.log(response);
           }
           nameCounty = item.Country;
           dataBlueWater = [];
-          dataBlueWater.push(item.sum);
+          dataBlueWater.push(item.BlueWater);
         }
         dataBlueWater.push(item.BlueWater);
         count = item.BlueWater === "0.00"? count + 1 : count;
@@ -59,7 +59,10 @@ console.log(response);
       datasets: freshWater
     };
   console.log(data);
-  return data;
+  return data = {
+    Chart:data,
+    CSV:response
+};
 
 
 

@@ -114,13 +114,13 @@ const responseApi = response =>{
       
            grenHouse =new  GreenHouseBartChart(ChartCharacteristics["Livestock_CH4"],Livestock_CH4);
           datasetsGraphOne.push(grenHouse);
-          grenHouse =new  GreenHouseBartChart(ChartCharacteristics["Livestock_N20"],Livestock_CH4);
+          grenHouse =new  GreenHouseBartChart(ChartCharacteristics["Livestock_N20"],Livestock_N20);
           datasetsGraphOne.push(grenHouse);
-          grenHouse =new  GreenHouseBartChart(ChartCharacteristics["Crop_N20"],Livestock_CH4);
+          grenHouse =new  GreenHouseBartChart(ChartCharacteristics["Crop_N20"],Crop_N20);
           datasetsGraphOne.push(grenHouse);
-          grenHouse =new  GreenHouseBartChart(ChartCharacteristics["Crop_CH4"],Livestock_CH4);
+          grenHouse =new  GreenHouseBartChart(ChartCharacteristics["Crop_CH4"],Crop_CH4);
           datasetsGraphOne.push(grenHouse);
-          grenHouse =new  GreenHouseBartChart(ChartCharacteristics["Crop_CO2"],Livestock_CH4);
+          grenHouse =new  GreenHouseBartChart(ChartCharacteristics["Crop_CO2"],Crop_CO2);
           datasetsGraphOne.push(grenHouse);
       
           //chart two
@@ -162,7 +162,8 @@ const responseApi = response =>{
 
       var dataCharts = {
         chartOne: dataChartOne,
-        charTwo: dataCharTwo
+        charTwo: dataCharTwo,
+        CSV:response,
 
     };
       
