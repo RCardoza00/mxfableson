@@ -11,6 +11,7 @@ import ComboBox from '../components/ComboBox';
 import GlobalTargetService from '../services/GlobalTargetService';
 import GreenHouseTarget from '../services/GreenHouseTarget';
 import FoodSecurityService from '../services/FoodSecurityService';
+import ConvertToCSV from '../components/ConvertToCSV';
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
@@ -24,13 +25,14 @@ const DrawGlobalTargets = () => {
 		}
 	});
 	
-	const [targetOne, seTargetOne] = useState({ labels:[], datasets:[] });
+	const [targetOne, seTargetOne] = useState({ labels:[], datasets:[]  ,  CSV:[]
+	});
 
-	const [targetTwo, seTargetTwo] = useState({ labels:[], datasets:[] });
+	const [targetTwo, seTargetTwo] = useState({ labels:[], datasets:[],  CSV2:[] });
 
-	const [targetThree, seTargetThree] = useState({	labels:[], datasets:[] });
+	const [targetThree, seTargetThree] = useState({	labels:[], datasets:[],  CSV:[] });
 
-	const [targetFour, seTargetFour] = useState({ labels:[], datasets:[] });
+	const [targetFour, seTargetFour] = useState({ labels:[], datasets:[],  CSV:[] });
 	const [targetFourCharTwo, seTargetFourTwo] = useState({ labels:[], datasets:[] });
 
 	const [targetSix, seTargetSix] = useState({ labels:[], datasets:[] });
@@ -83,13 +85,21 @@ const DrawGlobalTargets = () => {
 			}
 		});
 	}
+	 
+
+	const DownloadCSV = e => {
+		ConvertToCSV(targetOne.CSV)
+
+
+		}
+	
 	return (
 		
 		<div style={{width:"75vw", minHeight:"1000px",marginTop:"20px"}}>
 			
 			
 			<ReactBootStrap.Container fluid style={{widht: "75vw"}}>
-			<ComboBox onChange={handleChange}/>
+			<ComboBox onChange={handleChange}    onClick={DownloadCSV} />
 				<ReactBootStrap.Row className="centerX pd-3" style={{justifyContent:"center"}}>
 					<ReactBootStrap.Col lg={3} md={6} key="t1" style={{height: 350}} >
 						<MixedChart 
