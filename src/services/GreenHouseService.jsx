@@ -162,7 +162,8 @@ console.log(response);
 
       var dataCharts = {
         chartOne: dataChartOne,
-        charTwo: dataCharTwo
+        charTwo: dataCharTwo,
+        CSV:response,
 
     };
       

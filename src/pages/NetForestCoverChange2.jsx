@@ -6,6 +6,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import ComboBox from '../components/ComboBox';
 import TradeReportMap from './TradeReportMap'
 import NetForesTwoService from '../services/NetForesTwoService';
+import ConvertToCSV from '../components/ConvertToCSV';
 
 
 
@@ -26,7 +27,8 @@ import NetForesTwoService from '../services/NetForesTwoService';
 
   const [json, setJson] = useState({
     labels: [],
-    datasets: []
+    datasets: [],
+    CSV: []
   });
 
 
@@ -80,11 +82,13 @@ import NetForesTwoService from '../services/NetForesTwoService';
   }
 
 
-
+  const DownloadCSV = e => {
+    ConvertToCSV(json.CSV)
+    }
   return (
     <Container fluid >
       <div>
-        <ComboBox onChange={handleChange} />
+        <ComboBox onChange={handleChange} onClick={DownloadCSV} />
       </div>
 
       <Row>

@@ -50,6 +50,10 @@ function ComboBox(props) {
 			</div>
 
 			<br />
+			<div>
+			<h6 className="selectBoxTitle">Report</h6>
+			<button type="button" className="buttonCSV" onClick={props.onClick}>Export to CSV</button>
+		</div>
 		</div>
 	)
 }

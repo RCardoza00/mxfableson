@@ -3,6 +3,7 @@ import MixedChart from "../components/MixedChart.jsx";
 import ComboBox2 from "../components/ComboBox2.jsx";
 import Tour from "../components/Tour.js";
 import FoodEnergyService from '../services/FoodEnergyService';
+import ConvertToCSV from '../components/ConvertToCSV';
 const FoodEnergyIntakePerCapita = () => {
 
   const [state, setState] = useState({
@@ -16,7 +17,8 @@ const FoodEnergyIntakePerCapita = () => {
 
   const [json, setJson] = useState([{
     labels:[],
-    datasets:[]
+    datasets:[],
+    CSV:[]
   }]);
 
   useEffect(() => {
@@ -74,12 +76,15 @@ const handleChange = e => {
       }
     ]
 */
+const DownloadCSV = e => {
+  ConvertToCSV(json.CSV)
+  }
   return (
 
     <div>
       
       <div>
-        <ComboBox2 onChange={handleChange} />
+        <ComboBox2 onChange={handleChange} onClick={DownloadCSV}/>
       </div>
 {/**<Tour stepsP={steps}/>*/}
 <div className="graph" style={{height: "60vh" ,width:"70vw"} }>

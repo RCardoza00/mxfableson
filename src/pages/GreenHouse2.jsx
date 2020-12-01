@@ -6,6 +6,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import GreenHouseTwoService from '../services/GreenHouseTwoService';
 import TradeReportMap from './TradeReportMap'
 import Tour from '../components/Tour'
+import ConvertToCSV from '../components/ConvertToCSV';
+
 
 //nfch=NetForestCoverChange
 const GreenHouse = () => {
@@ -26,7 +28,8 @@ const GreenHouse = () => {
 
   const [data, setdata] = useState({
     chartOne: [],
-    charTwo: []
+    charTwo: [],
+    CSV:[]
   });
 
 
@@ -99,10 +102,14 @@ const GreenHouse = () => {
       }
     ]
 */
+const DownloadCSV = e => {
+  ConvertToCSV(data.CSV)
+  }
+
   return (
     <Container fluid>
       <div>
-        <ComboBox onChange={handleChange} />
+        <ComboBox onChange={handleChange}   onClick={DownloadCSV}/>
       </div>
 
       <div className="graph">
