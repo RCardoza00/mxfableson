@@ -93,7 +93,7 @@ code{
 		font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
 
 	}
-	.selectBox{
+	.selectBox,.buttonCSV{
 		background-color:#72a5ad;
 		color: white;
 		min-width: 150px;
@@ -109,31 +109,13 @@ code{
 		margin-right: 1em;
 		cursor: pointer;
 	}
-	.buttonCSV{
-		background-color:#72a5ad;
-		color: white;
-		width: 150px;
-		border-radius: 7px;
-		height: 2em;
-		border: 0px;
-		outline: 0px;
-		position: relative;
-		font-size: 1em;
-		text-align: center;
-		padding: 0 2%;
-		margin-left: 1em;
-		margin-right: 1em;
+	.selectBox:hover,.buttonCSV:hover,select:hover,.overSelect:hover{
+		background-color: #306973;
+		/*border: 1px solid #BBBBBB;*/
 		cursor: pointer;
-
 	}
 	 #comboboxcheckboxes{
 	}
-	  select:hover {
-		background-color:#306973;
-		border:1px solid #BBBBBB;
-		cursor: pointer;
-	}
-
 	option{
 		border:0px;
 		outline:0px;
@@ -159,6 +141,11 @@ code{
 		right: 0;
 		top: 0;
 		bottom: 0;
+		background-color: transparent;;
+		text-align: left;
+		padding: 0.4em;
+		padding-left: 1em;
+		border-radius:7px;
 	}
 
 	#checkboxes {
@@ -512,7 +499,6 @@ code{
 	.jumbo3{
 		min-height: 30vh;
 	}
-	/* *{transition: all 0.5s ease;} */
 	.chart-full{
 		width: 100%;
 		height: 75vh;
@@ -544,7 +530,6 @@ code{
 	.jumbo3{
 		min-height: 30vh;
 	}
-	/* *{transition: all 0.5s ease;} */
 	.chart-full{
 		width: 100%;
 		height: 75vh;

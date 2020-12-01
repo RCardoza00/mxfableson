@@ -63,7 +63,12 @@ console.log(response);
       datasets: freshWater
     };
 
-  return data;
+  console.log(data);
+  return data = {
+    Chart:data,
+    CSV:response
+};
+
 
 
 

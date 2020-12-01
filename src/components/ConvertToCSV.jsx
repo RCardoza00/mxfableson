@@ -3,7 +3,6 @@ const ObjecToCsv= (dataa) => {
           const csvRows=[];
           const headers=Object.keys(dataa[0]);
           csvRows.push(headers.join(','));
-          console.log("lmao")
           for(const row of dataa){
           const values=  headers.map(header=>{
               return row[header];
@@ -33,7 +32,12 @@ const ObjecToCsv= (dataa) => {
          document.body.appendChild(a);
          a.click();
          document.body.removeChild(a);
-       
+
+
+
+
+
+
 
         }
 export default ObjecToCsv

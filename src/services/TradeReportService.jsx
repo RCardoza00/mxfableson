@@ -85,7 +85,8 @@ console.log(response)
 
             return  {
               importertChart: importertChart,
-              exporterChart: exporterChart
+              exporterChart: exporterChart,
+              CSV:response
             }
           
           ;

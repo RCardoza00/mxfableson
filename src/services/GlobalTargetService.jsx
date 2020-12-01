@@ -106,24 +106,31 @@ datasetsTargetOne.push(global);
 
   var dataTargetOne = {
     labels:labels,
-    datasets:datasetsTargetOne
+    datasets:datasetsTargetOne,
+    CSV:response,
+
 };
 
 var dataTargetTwo= {
     labels:labels,
-    datasets:datasetsTargetTwo
+    datasets:datasetsTargetTwo,
+    CSV2:response,
+
 };
 
 var dataTargeThree= {
     labels:labels,
-    datasets:datasetsTargetThree
+    datasets:datasetsTargetThree,
+    CSV:response,
+
 };
    
 
 var dataGlobal={
 targetOne:dataTargetOne,
 targetTwo:dataTargetTwo,
-targetThree:dataTargeThree
+targetThree:dataTargeThree,
+
 };
     
 

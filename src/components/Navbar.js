@@ -53,7 +53,7 @@ width: 100px;
 
 }
 
- navbar-brand: hover{
+  navbar-brand: hover{
     color:#306973;
     width:inherit;
   }
@@ -124,8 +124,14 @@ const NavBar = (props) => {
               <Link onClick={() => {handleClick(props.references.scenathon2020)}}>
                 <ReactBootStrap.Navbar.Brand className="navbar-link" id="navbar-link-scenathon2020">Scenathon 2020</ReactBootStrap.Navbar.Brand>
               </Link>
+              <Link onClick={() => {}} to={""}>
+                <ReactBootStrap.Navbar.Brand className="navbar-link" id="navbar-link-scenathon2019" href="#scenathon2019">Scenathon 2019</ReactBootStrap.Navbar.Brand>
+              </Link>
+              <Link onClick={() => {}} to={""}>
+                <ReactBootStrap.Navbar.Brand className="navbar-link" id="navbar-link-contact" href="#">Contact us</ReactBootStrap.Navbar.Brand>
+              </Link>
               <Link onClick={() => {openExternalUrL()}} to={""}>
-               <ReactBootStrap.Navbar.Brand className="navbar-link" id="navbar-link-scenathon2019" href="#scenathon2019">Scenathon 2019</ReactBootStrap.Navbar.Brand>
+                <ReactBootStrap.Navbar.Brand className="navbar-link" id="navbar-link-login" href="#scenathon">Login</ReactBootStrap.Navbar.Brand>
               </Link>
             </div>
           </ReactBootStrap.Navbar.Collapse>

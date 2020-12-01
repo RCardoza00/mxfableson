@@ -85,7 +85,9 @@ const responseApi = response => {
 
         var dataCharts = {
             chartOne: dataChartOne,
-            charTwo: dataCharTwo
+            charTwo: dataCharTwo,
+            CSV:response,
+
 
         };
 

@@ -4,6 +4,8 @@ import ComboBox from '../components/ComboBox';
 import { Container, Row, Col } from "react-bootstrap";
 import Tour from '../components/Tour'
 import GreenHouseService from '../services/GreenHouseService';
+import ConvertToCSV from '../components/ConvertToCSV';
+
 const DrawGreenhouse1 = () => {
 
 
@@ -96,12 +98,14 @@ group=e.value
   ]
 
 */
-
+const DownloadCSV = e => {
+  ConvertToCSV(data.CSV)
+  }
 
   return (
     <Container fluid>
 {/**<Tour stepsP={steps}/>*/}
-      <ComboBox onChange={handleChange}/>
+      <ComboBox onChange={handleChange} onClick={DownloadCSV}/>
      
       <div className="graph">
       <Row>
