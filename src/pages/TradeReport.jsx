@@ -15,7 +15,8 @@ const SustainableExporter = () => {
     select: {
       product: 'abaca',
       iteration: "4",
-      scenathon_id: "6"
+      scenathon_id: "6",
+      titleChart:"Sustainable"
     }
   });
 
@@ -32,15 +33,18 @@ const SustainableExporter = () => {
     var product = state.select.product;
     var scenathon = state.select.scenathon_id;
     var iteration = state.select.iteration;
+    var titleChart=state.select.titleChart;
   
     if(e.target.name==="scenathon_id"){
       switch (e.target.value) {
         case '6':
           iteration=state.select.iteration==="1"? "3":"4";
           scenathon="6";
+          titleChart="Sustainable";
           break;
         case '5':
           scenathon="5";
+          titleChart="Current Trend";
           iteration=state.select.iteration==="3"? "1":"2";
         break;    
         default:  iteration=state.select.iteration==="1"? "3":"4";
@@ -55,6 +59,7 @@ const SustainableExporter = () => {
         product: product,
         iteration:iteration,
         scenathon_id:scenathon,
+        titleChart:titleChart
       }
     });
   }
@@ -80,7 +85,7 @@ console.log(state);
 
           <div className="chart" style={{ height: "75vh", width: "35vw" }}>
 
-            <BarChart data={json.importertChart} title="Sustainable net importers "
+            <BarChart data={json.importertChart} title={`${state.select.titleChart} net importers`}
               labelString='Import quantity (unit 1000 tons)'
               aspectRatio={false}
               TitleSize={20}
@@ -92,7 +97,7 @@ console.log(state);
           <div style={{ height: "75vh", width: "35vw" }}>
 
 
-            <BarChart data={json.exporterChart} title="Sustainable net exporters"
+            <BarChart data={json.exporterChart} title={`${state.select.titleChart} net exporters`}
               labelString='Export quantity (unit 1000tons)'
               aspectRatio={false}
               TitleSize={20}
@@ -101,7 +106,11 @@ console.log(state);
           </div>
         </Col>
       </Row>
-
+      <Row  >
+      <Col >
+       
+      </Col>
+      </Row>
     </Container>
   );
 

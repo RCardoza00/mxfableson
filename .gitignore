@@ -24,7 +24,10 @@ yarn-error.log*
 
 #archivos
 /mxfableson
+/ServerFableson/node_modules
 /debug.log
-/serverfableson
+
 /.vscode
+
+
 
