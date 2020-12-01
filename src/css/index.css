@@ -552,3 +552,22 @@ code{
 	margin: 0;
 	text-align: center;
 }
+
+/* Scenathon */
+
+ul{
+	list-style: none;
+}
+li{
+	font-size: 18px;
+	color: #fff;
+}
+.img-background{
+	background-image: url('../assets/backgroundScenathon.jpg');
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.custom-font-size{
+	font-size: 11vw;
+}

@@ -155,6 +155,9 @@ const NavBar = (props) => {
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
   var currentScrollPos = window.pageYOffset;
+  if(document.getElementById("navbar")){
+
+  
   if (prevScrollpos > currentScrollPos) {
     document.getElementById("navbar").style.top = "0";
     
@@ -186,6 +189,7 @@ window.onscroll = function () {
    document.getElementById("navbar-link-scenathon2020").style.color="white";
    document.getElementById("navbar-link-scenathon2019").style.color="white";
   }
+}
   prevScrollpos = currentScrollPos;
 }
 
