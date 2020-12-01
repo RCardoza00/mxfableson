@@ -67,8 +67,8 @@ console.log(response);
 export default function getBiodiversity(props) {
 
   try {
-
-
+   
+  
     return fetch(`https://fable2020.herokuapp.com/biodiversity${JSON.stringify(props)}`)
       .then(res => res.json()).then(responseApi);
 
