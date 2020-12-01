@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SwNavbar from '../components/SwNavbar';
+import Slider from '../components/Slider';
 import '../css/index.css';
 
 class ScenathonWeb extends Component{
@@ -8,33 +9,16 @@ class ScenathonWeb extends Component{
 	}
 	render(){
 		return(
-			<div className="img-background">
-				
-
+			<React.Fragment>
+				<div className="img-background">
 					<SwNavbar />
-					<div className="row col-lg-12 text-white">
-						<div className="col-lg-4 d-flex">
-							<div className="col-lg-4-">
-								<img src="http://via.placeholder.com/180x120" />
-							</div>
-							<div className="col-lg-8">The Leader the WTO needs.</div>
-						</div>
-						<div className="col-lg-4 d-flex">
-						<div className="col-lg-4-">
-								<img src="http://via.placeholder.com/180x120" />
-						</div>
-							<div className="col-lg-8">texto</div>
-						</div>
-						<div className="col-lg-4 d-flex">
-						<div className="col-lg-4-">
-							<img src="http://via.placeholder.com/180x120" />
-						</div>
-							<div className="col-lg-8">texto</div>
-						</div>
+					<Slider style={{width: '80%'}}/>
+					<div className="scenathon-container">
+						<h1 className="text-center text-white custom-font-size font-type">Scenathon</h1>
+						<p className="text-center font-type" style={{fontSize: '1.5vw'}}> Scenathons were conceived at IIASA as participatory decision-making exercises that integrate models, <br/> stakeholders, and technology to collectively solve complex, large-scale multi-objective problems.</p>
 					</div>
-					<h1 className="text-center text-white custom-font-size">Scenathon</h1>
-					<p className="text-center"></p>
-			</div>
+				</div>
+			</React.Fragment>
 		);
 	}
 } 
