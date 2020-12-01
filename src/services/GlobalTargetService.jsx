@@ -150,6 +150,7 @@ export default function getGlobalTargets(props)  {
     try {
        
      
+     
         return fetch ("https://fable2020.herokuapp.com/targets123"+JSON.stringify(props))
         .then(res=>res.json()).then(responseApi);
 

@@ -69,7 +69,7 @@ const DrawBiodiversity = () => {
           <div className="biodiversity-chart" style={{ width: "37vw", "margin-right": -200 }}>
             <BarChart3 data={json} title="Share of total land which is protected"
               aspectRatio={false}
-              labelString='1000ha per year'
+              labelString=''
               fontSize="20"
               labelWidth={40}
               labelSize={15}

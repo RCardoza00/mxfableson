@@ -2,7 +2,7 @@
 import ChartCharacteristics from '../data/ChartCharacteristics.json';
 
 const responseApi = response =>{
-
+console.log(response);
  
     function GreenHouseBartChart(ChartCharacteristics, data) {
         this.data = data;
@@ -79,6 +79,7 @@ const responseApi = response =>{
               labels.push(item.Year);
             }
              //chart one
+            
             Livestock_CH4.push(item.Livestock_CH4);
             Livestock_N20.push(item.Livestock_N20);
             Crop_N20.push(item.Crop_N20);
@@ -101,8 +102,7 @@ const responseApi = response =>{
           });
           //chart one
          
-      
-         
+      //variables chartOne
       
           var  grenHouse =new  GreenHouseBartScatter(ChartCharacteristics["FAO_GHGagric"],FAO_GHGagric);
           datasetsGraphOne.push(grenHouse);
@@ -114,13 +114,13 @@ const responseApi = response =>{
       
            grenHouse =new  GreenHouseBartChart(ChartCharacteristics["Livestock_CH4"],Livestock_CH4);
           datasetsGraphOne.push(grenHouse);
-          grenHouse =new  GreenHouseBartChart(ChartCharacteristics["Livestock_N20"],Livestock_CH4);
+          grenHouse =new  GreenHouseBartChart(ChartCharacteristics["Livestock_N20"],Livestock_N20);
           datasetsGraphOne.push(grenHouse);
-          grenHouse =new  GreenHouseBartChart(ChartCharacteristics["Crop_N20"],Livestock_CH4);
+          grenHouse =new  GreenHouseBartChart(ChartCharacteristics["Crop_N20"],Crop_N20);
           datasetsGraphOne.push(grenHouse);
-          grenHouse =new  GreenHouseBartChart(ChartCharacteristics["Crop_CH4"],Livestock_CH4);
+          grenHouse =new  GreenHouseBartChart(ChartCharacteristics["Crop_CH4"],Crop_CH4);
           datasetsGraphOne.push(grenHouse);
-          grenHouse =new  GreenHouseBartChart(ChartCharacteristics["Crop_CO2"],Livestock_CH4);
+          grenHouse =new  GreenHouseBartChart(ChartCharacteristics["Crop_CO2"],Crop_CO2);
           datasetsGraphOne.push(grenHouse);
       
           //chart two

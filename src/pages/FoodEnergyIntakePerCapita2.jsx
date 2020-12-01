@@ -10,7 +10,7 @@ const FoodEnergyIntakePerCapita = () => {
  
   const [state, setState] = useState({
     select: {
-      Year: '2050',
+      Year: '2030',
       scenathon_id: '6',
       Iteration: '4',
     }
