@@ -183,8 +183,7 @@ const DrawGlobalTargets = () => {
 							fontColor='black'
 							title="Target 6.- Fresh water use"/>
 							<div>
-								<p style={{fontFamily: "Montserrat",color: 'gray',fontSize:16}}>Water use for irrigation for crops and livestock production 
-		</p>
+								<p style={{fontFamily: "Montserrat",color: 'gray',fontSize:16}}>Water use for irrigation for crops and livestock production </p>
 							</div>
 
 					</ReactBootStrap.Col>
