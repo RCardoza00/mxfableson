@@ -2,7 +2,7 @@
 import ChartCharacteristics from '../data/ChartCharacteristics.json';
 
 const responseApi = response =>{
-
+console.log(response);
     function Global(ChartCharacteristics, data) {
        
         this.data = data;
@@ -89,12 +89,14 @@ datasetsTargetOne.push(global);
 
   //target Two
   global = new GlobalTarget(ChartCharacteristics["protected_land_target"],protected_landTarget);
+  console.log("protected")
+  console.log(protected_landTarget);
   datasetsTargetTwo.push(global);
   global = new Global(ChartCharacteristics["protected_land"],protected_land);
   datasetsTargetTwo.push(global);
 
   //target3
-  global = new GlobalTarget(ChartCharacteristics["protected_land_target"],target_biodiversity);
+  global = new GlobalTarget(ChartCharacteristics["biodiversity_target"],target_biodiversity);
   datasetsTargetThree.push(global);
   global = new Global(ChartCharacteristics["biodiversity_land"],biodiversity_land);
   datasetsTargetThree.push(global);
