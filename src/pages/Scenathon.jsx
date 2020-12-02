@@ -19,7 +19,7 @@ import BannerLifeOnLand from '../assets/banners/Mesa de trabajo 19.png';
 import BannerCleanWater from '../assets/banners/Mesa de trabajo 8.png';
 import BannerZeroHunger from '../assets/banners/Mesa de trabajo 2.png';
 import BannerClimateAction from '../assets/banners/Mesa de trabajo 16.png';
-import BannerCustom from '../assets/neueheader.svg';
+import BannerCustom from '../assets/xdxd.png';
 import TradeReport from './TradeReport'
 import DashboardCover from '../assets/DashboardCover2.jpg';
 
