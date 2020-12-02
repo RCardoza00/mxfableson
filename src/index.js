@@ -15,7 +15,7 @@ export { default as STATUS } from './constants/status';
 ReactDOM.render(
 	<Router>
 		<Switch>
-			<Route path="/ScenathonWeb" component={ScenathonWeb} />
+			<Route path="/scenathon" component={ScenathonWeb} />
 			<Route path="/" component={App} />
 		</Switch>
 	</Router>,
