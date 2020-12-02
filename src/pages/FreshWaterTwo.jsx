@@ -109,7 +109,7 @@ const DrawFreshWater2 = () => {
         <Col >
           <div className="graph" style={{ textAlign: 'center', height: "74vh", width: "37vw", "margin-right": -200 }}>
             <BarChart data={json.Chart}
-              title="Fresh Water Use 2"
+              title=""
               labelposition="right"
               labelwidth={20}
               labelSize={12}

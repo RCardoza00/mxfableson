@@ -95,7 +95,7 @@ import ConvertToCSV from '../components/ConvertToCSV';
         <Col >
           <div style={{ textAlign: 'center', height: "66vh", width: "37vw", "margin-right": -200 }}>
             <BarChart data={json}
-              title="Net Forest Cover Change 2"
+              title=""
               labelposition="right"
               display={true}
               labelString='1000ha per year'

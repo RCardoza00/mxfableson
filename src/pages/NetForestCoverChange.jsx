@@ -103,7 +103,7 @@ if(e.name === "GraficaType")
 <div style={{height: "80vh",width:"82vw"}} className="graph">
   
 <MixedChart style={{height: "80vh",width:"82vw"}} data={json}
-  title="Net Forest Cover Change"
+  title=""
   aspectRatio={false}
   labelString='1000 ha Per Year'
   fontSize="20"

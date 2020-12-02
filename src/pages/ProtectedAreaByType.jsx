@@ -106,7 +106,7 @@ const DrawProtected = () => {
         labelwidth={50}
         labelSize={16}
         TitleSize={24}
-        title="Protected Areas By Type"/>
+        title=""/>
     
     </div>
     )

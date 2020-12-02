@@ -20,6 +20,10 @@ import BannerLifeOnLandByCountry from '../assets/coverByCountry.png';
 import BiodiversityIMG from '../assets/biodiversity.png';
 import ProtectedAreas from '../assets/protectedAreas.png';
 import LandCoverNew from '../assets/LandCoverNew.png';
+import newFood1 from '../assets/newFood1.png';
+import food2 from '../assets/food2.png';
+import freshNew from '../assets/freshWaterNew.png';
+import ghgnew from '../assets/ghgnew.png';
 
 import BannerCleanWater from '../assets/banners/Mesa de trabajo 8.png';
 import BannerZeroHunger from '../assets/banners/Mesa de trabajo 2.png';
@@ -143,7 +147,7 @@ class Scenathon extends Component {
                 break;
             case 'Fresh Water 1':
                 document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = BannerCleanWater;
+                document.getElementById("banner").src = freshNew;
                  //  this.combobox=<ComboBox onChange={this.handleChange}/>
                 this.combobox = null;
                 this.dash = <FreshWaterUse />;
@@ -151,35 +155,35 @@ class Scenathon extends Component {
                 break;
             case 'Fresh Water 2':
                 document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = BannerCleanWater;
+                document.getElementById("banner").src = freshNew;
                 //  this.combobox=<ComboBox onChange={this.handleChange}/>
                 this.combobox = null;
                 this.dash = <FreshWaterTwo />;
                 break;
             case 'Green House Gas (GHG) Emissions 1':
                 document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = BannerClimateAction;
+                document.getElementById("banner").src = ghgnew;
                 //   this.combobox=<ComboBox onChange={this.handleChange}/>
                 this.combobox = null;
                 this.dash = <GreenHouseOne />;
                 break;
             case 'Green House Gas (GHG) Emissions 2':
                 document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = BannerClimateAction;
+                document.getElementById("banner").src = ghgnew;
                 // this.combobox=<ComboBox onChange={this.handleChange}/>
                 this.combobox = null;
                 this.dash = <GreenHouse2 />;
                 break;
             case 'Food Energy Intake Per Capita 1':
                 document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = BannerZeroHunger;
+                document.getElementById("banner").src = newFood1;
                 //   this.combobox=<ComboBox2 onChange={this.handleChange}/>
                 this.combobox = null;
                 this.dash = <FoodEnergyIntakePerCapita />;
                 break;
             case 'Food Energy Intake Per Capita 2':
                 document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = BannerZeroHunger2;
+                document.getElementById("banner").src = food2;
                 this.combobox = null;
                 this.dash = <FoodEnergyIntakePerCapita2 />;
                 break;

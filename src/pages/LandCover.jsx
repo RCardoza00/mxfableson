@@ -113,7 +113,7 @@ ConvertToCSV(json.CSV)
     labelwidth={40}
     labelSize={18}
     TitleSize={24}
-    title="Land Cover"
+    title=""
     labelposition='bottom'
     labelString='1000Ha per year'
     fontSize='20'
