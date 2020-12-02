@@ -611,3 +611,23 @@ button.rec-dot:hover, button.rec-dot:active, button.rec-dot:focus  {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.imagen2020 {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 70%;
+  }
+  
+.TablaA {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	
+  }
+  .TablaB {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	
+  }

@@ -110,7 +110,7 @@ const DownloadCSV = e => {
           labelSize={18}
           labelString="Blue water in cubic metres"
           TitleSize='24'
-          title="Fresh Water use"
+          title=""
           
           />
    <div>

@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import imagen from '../assets/imgScenathon2020.PNG';
+import imagen2 from '../assets/tablaA.png';
 
 const Styles= styled.div`
 	.about-container{
@@ -72,7 +74,16 @@ return(
 <br/><br/>
 <div className="about-title">Scenathon 2020</div>
 <div className="about-content"> <a href="https://www.foodandlandusecoalition.org/fable/ " target="_blank">In its second global report</a>, the FABLE Consortium presents thoroughly revised pathways towards sustainable land-use and food systems for 20 countries. We show that integrated strategies across food production, biodiversity, climate, and diets can meet the objectives of the Paris Agreement and the Sustainable Development Goals (SDGs). Our iterative Scenathon approach complements prevailing top-down global models, which tend to lack the granularity and local buy-in needed for policy engagement. FABLE country teams have improved and deepened the analysis, particularly on biodiversity, climate impacts, and freshwater use. We now consider current trends pathways that describe business as usual and sustainable pathways to meet ambitious sustainability objectives. Our work is informed by consultations with governments, business, civil society organizations, and other scientists on how to align development strategies, including climate and biodiversity strategies, with the objectives of the Paris Agreement and the SDGs. The pathways described in the 2020 report will help tackle the hidden costs of today’s food system described by the Food and Land-Use Coalition.
-FABLE pathways are developed by each FABLE country team in four steps (Figure). First, country teams adopt global targets (Table A) covering the entire land-use system that are consistent with the SDGs and the Paris Agreement. Second, teams develop national pathways using locally appropriate modeling tools. To this end, the FABLE Consortium has developed a simplified FABLE Calculator to complement more complex models. Third, in an iterative process (“Scenathon”) country teams adjust their assumptions and pathways to ensure balanced trade flows and to aim towards achieving the global FABLE Targets. Throughout the process, country teams engage stakeholders to review assumptions, seek technical advice, and build a shared vision of how to transform landuse and food systems.
+FABLE pathways are developed by each FABLE country team in four steps (Figure). First, country teams adopt global targets (Table A) covering the entire land-use system that are consistent with the SDGs and the Paris Agreement. Second, teams develop national pathways using locally appropriate modeling tools. To this end, the FABLE Consortium has developed a simplified FABLE Calculator to complement more complex models. Third, in an iterative process (“Scenathon”) country teams adjust their assumptions and pathways to ensure balanced trade flows and to aim towards achieving the global FABLE Targets. Throughout the process, country teams engage stakeholders to review assumptions, seek technical advice, and build a shared vision of how to transform landuse and food systems. 
+<br/><br/>
+
+<img src={imagen} alt="scn2020" width="700" height="700"  className="imagen2020" /> <br/><br/>
+
+<img src={imagen2} alt="tablaA" width="700" height="700"  className="TablaA" /> <br/><br/>
+
+This year, FABLE has made several improvements to the design of national pathways. First, all countries now present at least one Current Trends Pathway and one Sustainable Pathway to assess how far and how quickly improved policies can make land-use and food systems sustainable. Second, we have broadened the scope of the analysis to include freshwater, future climate-change impacts on crops, a richer discussion of biodiversity targets, and a more detailed trade analysis. Third, we have incorporated feedback on last year’s pathways. As a result, we now have greater confidence in the robustness of the FABLE pathways
+
+The Scenathon 2020 interactive dashboard allows you to navigate and query the data of the Scenathon 2020. For more explanation please read our <a href="https://www.foodandlandusecoalition.org/fable/ " target="_blank">2020 report.</a> 
 
 </div>
 </div>
