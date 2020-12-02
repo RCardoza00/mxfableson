@@ -113,7 +113,7 @@ if(e.name === "GraficaType")
 
   labelposition="right"/>
      <div>
-    <p style={{color:"gray",fontSize:"16px",textAlign:"left",fontFamily: "Montserrat",paddingLeft:"80px"}}>Forest loss due to crop, pasture, and/or urban expansion and forest gain due to afforestation in 1000 ha per year (average annual change over each 5 year-period e.g. 2005 corresponds to 2000 and 2005). 
+    <p style={{color:"black",fontSize:"16px",textAlign:"left",fontFamily: "sans-serif",paddingLeft:"80px"}}>Forest loss due to crop, pasture, and/or urban expansion and forest gain due to afforestation in 1000 ha per year (average annual change over each 5 year-period e.g. 2005 corresponds to 2000 and 2005). 
     Source of historical data:<a href="https://datastudio.google.com/u/0/reporting/77705208-e149-4507-a419-63ddbef26a63/page/uBsMB" target="_blank"> Global Forest Watch (GFW) </a>
 </p>
     </div>

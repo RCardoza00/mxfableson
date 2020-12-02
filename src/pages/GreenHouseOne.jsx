@@ -114,9 +114,9 @@ const DownloadCSV = e => {
           
 
             <SuperGraph data={data.chartOne}
-            title="            Annual GHG emissions from cops and livestock in Gt CO2e."
+            title=""
             aspectRatio={false} 
-            labelposition="bottom"
+            labelposition="right"
             labelwidth={20}
             labelSize={15}
             labelString="Gt CO2e"
@@ -124,24 +124,31 @@ const DownloadCSV = e => {
           TitleSize={18}/> 
 
     </div>
-
+    <div>
+      <p style={{fontSize:'16px', textAlign:"left",color:"#171717",fontFamily:"sans-serif"}}>Annual GHG emissions from crops and livestock in Gt CO2e</p>
+    </div>
             </Col>
         <Col > 
         <div style={{height: "75vh", width: "35vw"}}>
 
           <SuperGraph data={data.charTwo}
-          title="                Average annual GHG emissions from land use change and peat oxidation in Gt CO2e."
+          title=""
           aspectRatio={false} 
-            labelposition="bottom" 
+            labelposition="right" 
             labelwidth={20}
             labelSize={15}
             labelString="Gt CO2e"
           TitleSize={18}/> 
-
+       <div>
+      <p style={{fontSize:'16px', textAlign:"center",color:"#171717",fontFamily:"sans-serif"}}>Average annual GHG emissions from land use change and peat oxidation
+in Gt CO2e</p>
+    </div>
             </div>
+     
             </Col>
       </Row>
       </div>
+      
     </Container>
  ); 
 }

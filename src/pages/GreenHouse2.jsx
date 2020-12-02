@@ -117,7 +117,8 @@ const DownloadCSV = e => {
           <Col>
             <div style={{ textAlign: 'center', height: "80vh", width: "37vw", "margin-right": -200 }}>
               <BarChart data={data.chartOne}
-                title="             Annual GHG emissions from crops and livestock in Gt CO2e." aspectRatio={false}
+              title=''
+                               aspectRatio={false}
                 labelposition="right"
                 labelwidth={20}
                 labelSize={12}
@@ -133,12 +134,16 @@ const DownloadCSV = e => {
             </div>
           </Col>
         </Row>
-
+        <div>
+      <p style={{fontSize:'16px', textAlign:"center",color:"#171717",fontFamily:"sans-serif"}}>Annual GHG emissions from crops and livestock in Gt CO2e by country</p>
+    </div>
         <Row>
           <Col>
             <div style={{ textAlign: 'center', height: "80vh", width: "37vw", "margin-right": -200 }}>
               <BarChart data={data.charTwo}
-                title="                      Average annual GHG emissions from land use change and peat oxidation in Gt CO2e." aspectRatio={false}
+                            title=''
+
+                 aspectRatio={false}
                 labelposition="right"
                 labelwidth={20}
                 labelString="Gt CO2e"
@@ -156,7 +161,10 @@ const DownloadCSV = e => {
           </Col>
         </Row>
       </div>
-
+      <div>
+      <p style={{fontSize:'16px', textAlign:"center",color:"#171717",fontFamily:"sans-serif"}}>Average annual GHG emissions from land use change and peat oxidation
+in Gt CO2e by country</p>
+    </div>
     </Container>
   );
 }
