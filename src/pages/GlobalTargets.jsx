@@ -101,7 +101,7 @@ const DrawGlobalTargets = () => {
 			<ReactBootStrap.Container fluid style={{widht: "75vw"}}>
 			<ComboBox onChange={handleChange}    onClick={DownloadCSV} />
 				<ReactBootStrap.Row className="centerX pd-3" style={{justifyContent:"center"}}>
-					<ReactBootStrap.Col lg={3} md={6} key="t1" style={{height: 350}} >
+					<ReactBootStrap.Col lg={3} md={6} key="t1" style={{height: 300}} >
 						<MixedChart 
 							data={targetOne}
 							title="Target 1.- Zero net deforestation"
