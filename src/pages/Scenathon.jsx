@@ -15,7 +15,12 @@ import GreenHouseOne from '../pages/GreenHouseOne'
 import FreshWaterTwo from '../pages/FreshWaterTwo'
 //assets
 import styled from 'styled-components';
-import BannerLifeOnLand from '../assets/banners/Mesa de trabajo 19.png';
+import BannerLifeOnLand from '../assets/netForestNew.png';
+import BannerLifeOnLandByCountry from '../assets/coverByCountry.png';
+import BiodiversityIMG from '../assets/biodiversity.png';
+import ProtectedAreas from '../assets/protectedAreas.png';
+import LandCoverNew from '../assets/LandCoverNew.png';
+
 import BannerCleanWater from '../assets/banners/Mesa de trabajo 8.png';
 import BannerZeroHunger from '../assets/banners/Mesa de trabajo 2.png';
 import BannerClimateAction from '../assets/banners/Mesa de trabajo 16.png';
@@ -111,26 +116,26 @@ class Scenathon extends Component {
                 break;
             case 'Net Forest Cover Change 2':
                 document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = BannerLifeOnLand;
+                document.getElementById("banner").src = BannerLifeOnLandByCountry;
                 this.combobox = null;
                 this.dash = <NetForestCoverChange2 />;
                 break;
             case 'Biodiversity':
                 document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = BannerLifeOnLand;
+                document.getElementById("banner").src = BiodiversityIMG;
                 this.combobox = null;
                 this.dash = <Biodiversity />;
                 break;
             case 'Protected Areas by Type':
                 document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = BannerLifeOnLand;
+                document.getElementById("banner").src = ProtectedAreas;
                 //  <ComboBox onChange={this.handleChange}/>
                 this.combobox = null;
                 this.dash = <ProtectedAreaByType />;
                 break;
             case 'Land Cover':
                 document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = BannerLifeOnLand;
+                document.getElementById("banner").src = LandCoverNew;
                 // this.combobox=<ComboBox onChange={this.handleChange}/>
                 this.combobox = null;
                 this.dash = <LandCover />;
