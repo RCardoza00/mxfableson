@@ -35,18 +35,18 @@ const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar, onChange }
 					<SubMenu title="Dashboard" >
 						<MenuItem onClick={ () => handleChange("Global Target Summary") }>Global Target Summary</MenuItem>
 						<SubMenu icon title="Net Forest Cover Change">
-							<MenuItem onClick={ () => handleChange("Net Forest Cover Change 1") }>Net Forest Cover Change 1</MenuItem>
+							<MenuItem onClick={ () => handleChange("Net Forest Cover Change 1") }>Net Forest Cover Change </MenuItem>
 							<MenuItem onClick={ () => handleChange("Net Forest Cover Change 2") }>Net Forest Cover Change by country</MenuItem>
 						</SubMenu>
 						<MenuItem onClick={ () => handleChange("Biodiversity") }>Biodiversity</MenuItem>
 						<MenuItem onClick={ () => handleChange("Protected Areas by Type") }>Protected Areas by Type</MenuItem>
 						<MenuItem onClick={ () => handleChange("Land Cover") }>Land Cover</MenuItem>
 						<SubMenu title="Fresh Water">
-							<MenuItem  onClick={ () => handleChange("Fresh Water 1") }>Fresh Water 1</MenuItem>
+							<MenuItem  onClick={ () => handleChange("Fresh Water 1") }>Fresh Water </MenuItem>
 							<MenuItem  onClick={ () => handleChange("Fresh Water 2") }>Fresh Water by country</MenuItem>
 						</SubMenu>
 						<SubMenu title="Green House Gas (GHG) Emissions">
-							<MenuItem  onClick={ () => handleChange("Green House Gas (GHG) Emissions 1") }>Green House Gas (GHG) Emissions 1</MenuItem>
+							<MenuItem  onClick={ () => handleChange("Green House Gas (GHG) Emissions 1") }>Green House Gas (GHG) Emissions </MenuItem>
 							<MenuItem  onClick={ () => handleChange("Green House Gas (GHG) Emissions 2") }>Green House Gas (GHG) Emissions by country</MenuItem>
 						</SubMenu>
 						<SubMenu title="Food Energy Intake Per Capita">
