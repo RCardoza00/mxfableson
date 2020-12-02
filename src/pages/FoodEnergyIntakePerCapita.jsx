@@ -98,9 +98,8 @@ const DownloadCSV = e => {
         labelString="Kcal per capita per day"
       title="Food energy intake per capita"/>
          <div>
-    <p style={{color:"gray",fontSize:"18px",fontFamily: "Montserrat",paddingTop:"40px",paddingLeft:"200px", textAlign:"justify"}}>Energy intake and Minimum Dietary Energy Requirement (MDER) in kilocalories per capita per day.
+    <p style={{color:"black",fontSize:"16px",fontFamily: "sans-serif", textAlign:"center"}}>Energy intake and Minimum Dietary Energy Requirement (MDER) in kilocalories per capita per day.
   
- 
 </p>
     </div>
 

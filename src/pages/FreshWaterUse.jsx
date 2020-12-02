@@ -105,19 +105,16 @@ const DownloadCSV = e => {
 
         <BarChart data={json.Chart}
           aspectRatio={false}
-          labelposition="top"
+          labelposition="right"
           labelwidth={40}
           labelSize={18}
-          labelString="Blue water/million cubic metres"
+          labelString="Blue water in cubic metres"
           TitleSize='24'
           title="Fresh Water use"
           
           />
-     <div>
-    <p style={{color:"gray",fontSize:"20px",fontFamily: "Montserrat",paddingLeft:"296px"}}> 
-    Water use for irrigation for crops and livestock production 
-
-</p>
+   <div>
+      <p style={{fontSize:'16px', textAlign:"center",color:"#171717",fontFamily:"sans-serif"}}>Water use for irrigation for crops and livestock production</p>
     </div>
 
       </div>

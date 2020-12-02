@@ -104,20 +104,21 @@ import ConvertToCSV from '../components/ConvertToCSV';
               labelSize={18}
               TitleSize={24}
               aspectRatio={false} />
-            <div>
-              <p style={{ color: "gray", fontSize: "14px", fontFamily: "Montserrat", paddingLeft: "80px", textAlign: "justify" }}>Contribution by country to cumulated forest loss due to crop, pasture, and/or urban expansion and forest gain due to afforestation in 1000 ha per year (average annual change over each 5 year-period e.g. 2005 corresponds to 2000 and 2005).</p>
-            </div>
+           
           </div>
         </Col>
 
         <Col>
           <br /><br /><br />
-          <div style={{ textAlign: 'center', height: "80vh", width: "40vw" }}>
+          <div style={{ textAlign: 'center', height: "80vh", width: "40vw","margin-right":300}}>
             <TradeReportMap countriesData={json} />
           </div>
         </Col>
 
       </Row>
+      <div>
+      <p style={{fontSize:'16px', textAlign:"center",color:"#171717",fontFamily:"sans-serif"}}>Contribution by country to cumulated forest loss due to crop, pasture, and/or urban expansion and forest gain due to afforestation in 1000 ha per year (average annual change over each 5 year-period e.g. 2005 corresponds to 2000 and 2005).</p>
+    </div>
     </Container>
   );
 }

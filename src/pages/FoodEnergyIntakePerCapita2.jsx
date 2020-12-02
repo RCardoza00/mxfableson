@@ -103,7 +103,7 @@ ConvertToCSV(json.CSV)
           labelString="Gr per capita per day"
           title=""/>
                    <div>
-    <p style={{color:"gray",fontSize:"18px",fontFamily: "Montserrat",paddingTop:"40px",paddingLeft:"200px", textAlign:"justify"}}>Average gr per capita per day of fat and protein feasible by country and selected year
+    <p style={{color:"black",fontSize:"16px",fontFamily: "sans-serif",textAlign:"center"}}>Average gr per capita per day of fat and protein feasible by country and selected year
 
   
  

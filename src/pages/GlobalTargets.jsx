@@ -109,20 +109,20 @@ const DrawGlobalTargets = () => {
 							labelString='1000h/year'
 							fontSize='12'
 							fontColor='black'
-							labelposition="bottom"/>
+							labelposition="right"/>
 					</ReactBootStrap.Col>
-					<ReactBootStrap.Col lg={3} md={6} key="t2" style={{height: 350}} >
+					<ReactBootStrap.Col lg={3} md={6} key="t2" style={{height: 300}} >
 						<MixedChart2
 							data={targetTwo}
 							aspectRatio={false}
-							labelposition="bottom"
+							labelposition="right"
 							title="Target 2.- Share of total land which is protected"/>
 					</ReactBootStrap.Col>
-					<ReactBootStrap.Col lg={3} md={6} key="t3" style={{height: 350}} >
+					<ReactBootStrap.Col lg={3} md={6} key="t3" style={{height: 300}} >
 						<MixedChart2 
 							data={targetThree}
 							aspectRatio={false}
-							labelposition="bottom"
+							labelposition="right"
 							
 							title="Target 3.- Share of land where natural processes predominate"/>
 					</ReactBootStrap.Col>
@@ -130,7 +130,7 @@ const DrawGlobalTargets = () => {
 
 				</ReactBootStrap.Row>
 				<ReactBootStrap.Row className="pt-5" style={{justifyContent:"center"}}>
-				<ReactBootStrap.Col lg={3} md={6} key="t4" style={{height: 350}}>
+				<ReactBootStrap.Col lg={3} md={6} key="t4" style={{height: 300}}>
 						<div>
 							<p style={{position:"fixed",paddingLeft:"160px",paddingBottom:"500px"}}></p>
 						</div>
@@ -143,10 +143,10 @@ const DrawGlobalTargets = () => {
 							labelposition="right"
 							labelString='GtCo2'
 							fontSize="10"
-							TitlePosition="bottom"
+							TitlePosition="right"
 							title="From Agriculture "/>
 					</ReactBootStrap.Col>
-				<ReactBootStrap.Col lg={3} md={5} key="t5" style={{height: 350}}>
+				<ReactBootStrap.Col lg={3} md={5} key="t5" style={{height: 300}}>
 					<MixedChart 
 						data={targetFourCharTwo}
 						aspectRatio={false}
@@ -154,7 +154,7 @@ const DrawGlobalTargets = () => {
 						labelString='GtCo2'
 						fontSize="10"
 						title="From Land use change"
-						TitlePosition="bottom"
+						TitlePosition="right"
 						/>
 				</ReactBootStrap.Col>
 
@@ -172,13 +172,13 @@ const DrawGlobalTargets = () => {
 								</p>
 							</div>
 					</ReactBootStrap.Col> */}
-					<ReactBootStrap.Col lg={3} md={12} key="t7"le={{borderStyle:'none'}} style={{height: 350}}>
+					<ReactBootStrap.Col lg={3} md={12} key="t7"le={{borderStyle:'none'}} style={{height: 300}}>
 						
 						<MixedChart
 							data={targetSix}
 							aspectRatio={false}
-							labelposition="bottom"
-							labelString='blue water in million cubic meters'
+							labelposition="right"
+							labelString='blue water in  cubic meters'
 							fontSize='14'
 							fontColor='black'
 							title="Target 6.- Fresh water use"/>
@@ -189,11 +189,11 @@ const DrawGlobalTargets = () => {
 					</ReactBootStrap.Col>
 				</ReactBootStrap.Row>
 				<ReactBootStrap.Row className="centerX pt-5" style={{justifyContent:"center"}}>
-					<ReactBootStrap.Col lg={6} md={7} key="t6"le={{borderStyle:'none'}} style={{height: 350}} >
+					<ReactBootStrap.Col lg={6} md={7} key="t6"le={{borderStyle:'none'}} style={{height: 300}} >
 						<MixedChart 
 							data={targetFive}
 							aspectRatio={false}
-							labelposition="top"
+							labelposition="right"
 							labelString='Kcal per capita /day'
 							fontSize='15'
 							fontColor='black'
@@ -202,6 +202,7 @@ const DrawGlobalTargets = () => {
 								<p style={{fontFamily: "Montserrat",color:'gray',fontSize:18}}>kilocalories per capita per day by country from the year 2030 of energy intake and Minimum Dietary Energy Requirement (MDER).
 								</p>
 							</div>
+							
 					</ReactBootStrap.Col>
 				</ReactBootStrap.Row>
 			</ReactBootStrap.Container>

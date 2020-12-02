@@ -116,20 +116,21 @@ const DrawFreshWater2 = () => {
               TitleSize={24}
               labelString="Blue water/million cubic metres"
               aspectRatio={false} />
-            <div>
-              <p style={{ color: "gray", fontSize: "16px", fontFamily: "Montserrat", paddingLeft: "80px", textAlign: "justify" }}>Water use for irrigation for crops and livestock production by country </p>
-            </div>
+        
           </div>
         </Col>
 
         <Col>
           <br /><br /><br />
-          <div style={{ textAlign: 'center', height: "80vh", width: "40vw" }}>
+          <div style={{ textAlign: 'center', height: "65vh", width: "40vw" }}>
             <TradeReportMap countriesData={json} />
           </div>
         </Col>
-
+        
       </Row>
+      <div>
+      <p style={{fontSize:'16px', textAlign:"center",color:"#171717",fontFamily:"sans-serif"}}>Water use for irrigation for crops and livestock production by country</p>
+    </div>
     </Container>
   );
 }

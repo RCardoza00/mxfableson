@@ -152,7 +152,7 @@
     "cubic_metres": [
         {
             "type": "bar",
-            "label": "Million Cubic metres",
+            "label": "Cubic metres",
             "borderColor": "#81c784",
             "backgroundColor": "#0072f0",
             "pointBorderColor": "#81c784",
