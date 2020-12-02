@@ -31,9 +31,9 @@ const App = (props) => {
         <CookieDisclaimer
           background='#306973' 
           bottomPosition={true}
-          closeIconSize={30}
+          closeIconSize={60}
           closeIconPositionTop={false}
-          color='#fff'
+          color='white'
           cookiePolicyName='Cookie Policy'
           cookiePolicyText='By continuing to use the service, you agree to our'
           text='This website uses cookies to improve service.'/>
