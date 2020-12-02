@@ -23,6 +23,7 @@ import LandCoverNew from '../assets/LandCoverNew.png';
 
 import BannerCleanWater from '../assets/banners/Mesa de trabajo 8.png';
 import BannerZeroHunger from '../assets/banners/Mesa de trabajo 2.png';
+import BannerZeroHunger2 from '../assets/banners/Mesa de trabajo 2-1.png';
 import BannerClimateAction from '../assets/banners/Mesa de trabajo 16.png';
 import BannerCustom from '../assets/xdxd.png';
 import TradeReport from './TradeReport'
@@ -178,7 +179,7 @@ class Scenathon extends Component {
                 break;
             case 'Food Energy Intake Per Capita 2':
                 document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = BannerZeroHunger;
+                document.getElementById("banner").src = BannerZeroHunger2;
                 this.combobox = null;
                 this.dash = <FoodEnergyIntakePerCapita2 />;
                 break;

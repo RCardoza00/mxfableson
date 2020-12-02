@@ -488,7 +488,7 @@ code{
 	.bann{
 		font-size:75px;
 	}
-	.jumbo,.jumbo2,.jumbo3,.about-container,.Scenathon2020{border:#1E5430 0px solid;}
+	/* .jumbo,.jumbo2,.jumbo3,.about-container,.Scenathon2020{border:#1E5430 0px solid;} */
 	.about-container{padding: 2em;}
 	.scenathon-info,.Scenathon2020,.About1,.jumbo3{width: 100%;margin-left:0%;margin-right: 0%;}
 	.jumbo, .jumbotron,.About1,.about-container{margin-bottom: 0;}
@@ -514,7 +514,7 @@ code{
 }
 /*BIG SCREENS*/
 @media only screen and (min-width: 920px) {
-	.jumbo,.jumbo2,.jumbo3,.about-container,.Scenathon2020{border:#1E5430 1px solid;}
+	/* .jumbo,.jumbo2,.jumbo3,.about-container,.Scenathon2020{border:#1E5430 1px solid;} */
 	.about-container{padding: 2em;}
 	.scenathon-info,.Scenathon2020,.About1,.jumbo3{
 		width: 100%;margin-left:0%;margin-right: 0;
