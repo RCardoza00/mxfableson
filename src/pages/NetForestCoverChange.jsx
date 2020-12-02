@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import MixedChart from "../components/MixedChart.jsx";
 import ComboBox from '../components/ComboBox'
 import NetForestCoverService from '../services/NetForestCoverService';
+import ConvertToCSV from '../components/ConvertToCSV';
 const DrawNfch = () => {
   const [state, setState] = useState({
     select: {
@@ -55,7 +56,8 @@ if(e.name === "GraficaType")
     
       const [json, setJson] = useState([{
         labels:[],
-        datasets:[]
+        datasets:[],
+        CSV:[]
       }]);
       
     
@@ -86,11 +88,13 @@ if(e.name === "GraficaType")
     }
   ]*/
   
-
+  const DownloadCSV = e => {
+    ConvertToCSV(json.CSV)
+    }
 
   return <div style={{height: "80vh",width:"82vw"}}>
 <div>
-<ComboBox onChange={handleChange}/>
+<ComboBox onChange={handleChange} onClick={DownloadCSV}/>
 {/**<Tour stepsP={steps}/>
 */}
 </div>
@@ -99,7 +103,7 @@ if(e.name === "GraficaType")
 <div style={{height: "80vh",width:"82vw"}} className="graph">
   
 <MixedChart style={{height: "80vh",width:"82vw"}} data={json}
-  title="Net Forest Cover Change"
+  title=""
   aspectRatio={false}
   labelString='1000 ha Per Year'
   fontSize="20"
@@ -109,7 +113,7 @@ if(e.name === "GraficaType")
 
   labelposition="right"/>
      <div>
-    <p style={{color:"gray",fontSize:"16px",textAlign:"left",fontFamily: "Montserrat",paddingLeft:"80px"}}>Forest loss due to crop, pasture, and/or urban expansion and forest gain due to afforestation in 1000 ha per year (average annual change over each 5 year-period e.g. 2005 corresponds to 2000 and 2005). 
+    <p style={{color:"black",fontSize:"16px",textAlign:"left",fontFamily: "sans-serif",paddingLeft:"80px"}}>Forest loss due to crop, pasture, and/or urban expansion and forest gain due to afforestation in 1000 ha per year (average annual change over each 5 year-period e.g. 2005 corresponds to 2000 and 2005). 
     Source of historical data:<a href="https://datastudio.google.com/u/0/reporting/77705208-e149-4507-a419-63ddbef26a63/page/uBsMB" target="_blank"> Global Forest Watch (GFW) </a>
 </p>
     </div>

@@ -31,7 +31,8 @@ console.log(response);
     var nameCounty = ""
     if (response.length !==0) {
       nameCounty=response[0].name;
-      response.forEach(item => {
+      response.forEach(item => 
+        {
         i++;
         if (!labels.includes(item.Year)) {
           labels.push(item.Year);
@@ -40,14 +41,17 @@ console.log(response);
         if (nameCounty !== item.Country || i ===response.length) {
           if(count!==dataBlueWater.length)
           {
-            if(i ===response.length){dataBlueWater.push(item.BlueWater);}
+
+          if(i ===response.length)
+          {dataBlueWater.push(item.BlueWater);}
           var fresh = new FreshWaterTwo(nameCounty, dataBlueWater);
           freshWater.push(fresh);
           }
           nameCounty = item.Country;
           dataBlueWater = [];
-          dataBlueWater.push(item.sum);
+          dataBlueWater.push(item.BlueWater);
         }
+
         dataBlueWater.push(item.BlueWater);
         count = item.BlueWater === "0.00"? count + 1 : count;
       });
@@ -58,8 +62,13 @@ console.log(response);
       labels: labels,
       datasets: freshWater
     };
+
   console.log(data);
-  return data;
+  return data = {
+    Chart:data,
+    CSV:response
+};
+
 
 
 

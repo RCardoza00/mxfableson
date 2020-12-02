@@ -81,7 +81,8 @@ const responseApi = response =>{
 
           var data = {
             labels:labels,
-            datasets:datasets
+            datasets:datasets,
+            CSV:response
         };
       
 

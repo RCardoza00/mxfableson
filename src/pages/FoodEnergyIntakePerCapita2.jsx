@@ -3,14 +3,12 @@ import BarChart2 from "../components/BarChart2.jsx";
 import Tour from '../components/Tour'
 import FoodEnergyTwo from '../services/FoodEnergyTwo';
 import ComboBox2 from "../components/ComboBox2.jsx";
+import ConvertToCSV from '../components/ConvertToCSV';
 const FoodEnergyIntakePerCapita = () => {
 
-
-
- 
   const [state, setState] = useState({
     select: {
-      Year: '2000',
+      Year: '2030',
       scenathon_id: '6',
       Iteration: '4',
     }
@@ -19,7 +17,8 @@ const FoodEnergyIntakePerCapita = () => {
 
   const [json, setJson] = useState([{
     labels: [],
-    datasets: []
+    datasets: [],
+    CSV:[]
   }]);
 
 
@@ -27,14 +26,6 @@ const FoodEnergyIntakePerCapita = () => {
   useEffect(() => {
     FoodEnergyTwo(state).then(setJson);
   }, [state]);
-
-
-
-
-
-
-
-
 
   const handleChange = e => {
     var year = state.select.Year;
@@ -87,13 +78,17 @@ const FoodEnergyIntakePerCapita = () => {
     }
   ]
 */
+
+const DownloadCSV = e => {
+ConvertToCSV(json.CSV)
+}
   return (
 
     <div className="graph">
 {/**<Tour stepsP={steps}/>*/}
 
       <div>
-      <ComboBox2 onChange={handleChange} />
+      <ComboBox2 onChange={handleChange} onClick={DownloadCSV}/>
 
       </div>
 
@@ -106,9 +101,9 @@ const FoodEnergyIntakePerCapita = () => {
           TitleSize={30}
           fontSize={14}
           labelString="Gr per capita per day"
-          title="Food energy intake per capita" />
+          title=""/>
                    <div>
-    <p style={{color:"gray",fontSize:"18px",fontFamily: "Montserrat",paddingTop:"40px",paddingLeft:"200px", textAlign:"justify"}}>Average gr per capita per day of fat and protein feasible by country and selected year
+    <p style={{color:"black",fontSize:"16px",fontFamily: "sans-serif",textAlign:"center"}}>Average gr per capita per day of fat and protein feasible by country and selected year
 
   
  

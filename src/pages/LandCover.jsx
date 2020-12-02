@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import BarChart from "../components/BarChart.jsx";
 import ComboBox from '../components/ComboBox';
 import LandCoverService from '../services/LandCoverService';
-import Tour from '../components/Tour'
-
+import ConvertToCSV from '../components/ConvertToCSV';
 const DrawLandCover = () => {
 
 
@@ -22,8 +21,8 @@ const DrawLandCover = () => {
  
 
   const [json, setJson] = useState([{
-    labels:[],
-    datasets:[]
+    Chart:[],
+    CSV:[]
   }]);
 
   useEffect(() => {
@@ -94,22 +93,27 @@ const DrawLandCover = () => {
         }
       ]
  */    
+
+const DownloadCSV = e => {
+ConvertToCSV(json.CSV)
+}
+ 
     return (
 
     <div className="graph">
       {/**<Tour stepsP={steps}/>*/}
 
     <div >
-    <ComboBox onChange={handleChange}/>
+    <ComboBox onChange={handleChange} onClick={DownloadCSV}/>
  
     </div>
 
     <div style={{height: "80vh",width:"70vw"}}>
-    <BarChart data={json}
+    <BarChart data={json.Chart}
     labelwidth={40}
     labelSize={18}
     TitleSize={24}
-    title="Land Cover"
+    title=""
     labelposition='bottom'
     labelString='1000Ha per year'
     fontSize='20'

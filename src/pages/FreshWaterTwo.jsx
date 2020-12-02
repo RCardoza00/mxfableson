@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import BarChart from "../components/BarChart";
-import {Container,Row,Col} from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import ComboBox from '../components/ComboBox';
 import Tour from '../components/Tour';
 import FreshWaterTwoService from '../services/FreshWaterTwoService';
+import ConvertToCSV from '../components/ConvertToCSV';
 
 import TradeReportMap from './TradeReportMap'
 
@@ -22,8 +23,8 @@ const DrawFreshWater2 = () => {
   });
 
   const [json, setJson] = useState([{
-    labels:[],
-    datasets:[]
+    Chart:[],
+    CSV:[]
   }]);
 
 
@@ -40,10 +41,9 @@ const DrawFreshWater2 = () => {
     var group = state.select.GraficaType;
     var scenathon = state.select.scenathon_id;
     var iteration = state.select.Iteration;
-  if(e.name === "GraficaType")
-  {
-  group=e.value 
-  }else if (e.target.name === "scenathon_id") {
+    if (e.name === "GraficaType") {
+      group = e.value
+    } else if (e.target.name === "scenathon_id") {
       switch (e.target.value) {
         case '6':
           iteration = state.select.Iteration === "1" ? "3" : "4";
@@ -56,83 +56,81 @@ const DrawFreshWater2 = () => {
         default: iteration = state.select.Iteration === "1" ? "3" : "4";
       }
     } else {
-  
-    
-      iteration =scenathon === "6" ? e.target.value === "after" ? "4" : "3" : e.target.value === "after" ? "2" : "1" ;
+
+
+      iteration = scenathon === "6" ? e.target.value === "after" ? "4" : "3" : e.target.value === "after" ? "2" : "1";
     }
-  
+
     setState({
       select: {
         GraficaType: group,
         scenathon_id: scenathon,
         Iteration: iteration,
-  
+
       }
-  
-  
+
+
     });
-  
-   
+
+
   }
+
+  /** 
+    const steps = [
+      {
+        target: ".graph",
+        content: "Distribution of freshwater use for crop irrigation and livestock production by country.",
+        title: "Fresh Water Use 2",
+          styles: {
+            //this styles override the styles in the props  
+            options: {
+              textColor: "black"
+            }
+          },
+          locale: { 
+            next: <span>End</span>,
+          },
+          placement: "top"
+      }
+    ]
   
-/** 
-  const steps = [
-    {
-      target: ".graph",
-      content: "Distribution of freshwater use for crop irrigation and livestock production by country.",
-      title: "Fresh Water Use 2",
-        styles: {
-          //this styles override the styles in the props  
-          options: {
-            textColor: "black"
-          }
-        },
-        locale: { 
-          next: <span>End</span>,
-        },
-        placement: "top"
+    */
+   const DownloadCSV = e => {
+    ConvertToCSV(json.CSV)
     }
-  ]
-
-  */
-
   return (
     <Container fluid>
       <div>
         {/*<Tour stepsP={steps}/>*/}
-        
-        <ComboBox onChange={handleChange} />
-     
+        <ComboBox onChange={handleChange}  onClick={DownloadCSV}/>
       </div>
       <Row  >
-        <Col >
-          <div className="graph"  style={{ textAlign: 'center',height: "72vh", width: "45vw" }}>
 
-            <BarChart data={json}
-              title="Fresh Water Use 2"
+        <Col >
+          <div className="graph" style={{ textAlign: 'center', height: "74vh", width: "37vw", "margin-right": -200 }}>
+            <BarChart data={json.Chart}
+              title=""
               labelposition="right"
               labelwidth={20}
-              labelSize={15}
+              labelSize={12}
               TitleSize={24}
               labelString="Blue water/million cubic metres"
               aspectRatio={false} />
- <div>
-    <p style={{color:"gray",fontSize:"20px",fontFamily: "Montserrat",paddingLeft:"80px", textAlign:"justify"}}>Water use for irrigation for crops and livestock production by country 
- 
-</p>
-    </div>
-
-
+        
           </div>
         </Col>
+
         <Col>
-        <br/><br/><br/>
- 
-          <div style={{textAlign: 'center', height: "70vh", width: "30vw" }}>
-          <TradeReportMap countriesData = {json}/>
+          <br /><br /><br />
+          <div style={{ textAlign: 'center', height: "65vh", width: "40vw" }}>
+            <TradeReportMap countriesData={json} />
           </div>
         </Col>
+        
       </Row>
+      <div>
+      <p style={{fontSize:'16px', textAlign:"center",color:"#171717",fontFamily:"sans-serif"}}>Water use for irrigation for crops and livestock production by country</p>
+    </div>
     </Container>
   );
 }

@@ -11,6 +11,7 @@ import ComboBox from '../components/ComboBox';
 import GlobalTargetService from '../services/GlobalTargetService';
 import GreenHouseTarget from '../services/GreenHouseTarget';
 import FoodSecurityService from '../services/FoodSecurityService';
+import ConvertToCSV from '../components/ConvertToCSV';
 
 const ResponsiveReactGridLayout = WidthProvider(Responsive);
 
@@ -24,13 +25,14 @@ const DrawGlobalTargets = () => {
 		}
 	});
 	
-	const [targetOne, seTargetOne] = useState({ labels:[], datasets:[] });
+	const [targetOne, seTargetOne] = useState({ labels:[], datasets:[]  ,  CSV:[]
+	});
 
-	const [targetTwo, seTargetTwo] = useState({ labels:[], datasets:[] });
+	const [targetTwo, seTargetTwo] = useState({ labels:[], datasets:[],  CSV2:[] });
 
-	const [targetThree, seTargetThree] = useState({	labels:[], datasets:[] });
+	const [targetThree, seTargetThree] = useState({	labels:[], datasets:[],  CSV:[] });
 
-	const [targetFour, seTargetFour] = useState({ labels:[], datasets:[] });
+	const [targetFour, seTargetFour] = useState({ labels:[], datasets:[],  CSV:[] });
 	const [targetFourCharTwo, seTargetFourTwo] = useState({ labels:[], datasets:[] });
 
 	const [targetSix, seTargetSix] = useState({ labels:[], datasets:[] });
@@ -83,12 +85,23 @@ const DrawGlobalTargets = () => {
 			}
 		});
 	}
+	 
+
+	const DownloadCSV = e => {
+		ConvertToCSV(targetOne.CSV)
+
+
+		}
+	
 	return (
+		
 		<div style={{width:"75vw", minHeight:"1000px",marginTop:"20px"}}>
-			<ComboBox onChange={handleChange}/>
+			
+			
 			<ReactBootStrap.Container fluid style={{widht: "75vw"}}>
-				<ReactBootStrap.Row style={{height:"500px"}}>
-					<ReactBootStrap.Col lg={3} md={6} key="t1" style={{height: 350}} >
+			<ComboBox onChange={handleChange}    onClick={DownloadCSV} />
+				<ReactBootStrap.Row className="centerX pd-3" style={{justifyContent:"center"}}>
+					<ReactBootStrap.Col lg={3} md={6} key="t1" style={{height: 300}} >
 						<MixedChart 
 							data={targetOne}
 							title="Target 1.- Zero net deforestation"
@@ -96,24 +109,28 @@ const DrawGlobalTargets = () => {
 							labelString='1000h/year'
 							fontSize='12'
 							fontColor='black'
-							labelposition="bottom"/>
+							labelposition="right"/>
 					</ReactBootStrap.Col>
-					<ReactBootStrap.Col lg={3} md={6} key="t2" style={{height: 350}} >
+					<ReactBootStrap.Col lg={3} md={6} key="t2" style={{height: 300}} >
 						<MixedChart2
 							data={targetTwo}
 							aspectRatio={false}
-							labelposition="bottom"
+							labelposition="right"
 							title="Target 2.- Share of total land which is protected"/>
 					</ReactBootStrap.Col>
-					<ReactBootStrap.Col lg={3} md={6} key="t3" style={{height: 350}} >
+					<ReactBootStrap.Col lg={3} md={6} key="t3" style={{height: 300}} >
 						<MixedChart2 
 							data={targetThree}
 							aspectRatio={false}
-							labelposition="bottom"
+							labelposition="right"
 							
 							title="Target 3.- Share of land where natural processes predominate"/>
 					</ReactBootStrap.Col>
-					<ReactBootStrap.Col lg={3} md={6} key="t4" style={{height: 350}}>
+					
+
+				</ReactBootStrap.Row>
+				<ReactBootStrap.Row className="pt-5" style={{justifyContent:"center"}}>
+				<ReactBootStrap.Col lg={3} md={6} key="t4" style={{height: 300}}>
 						<div>
 							<p style={{position:"fixed",paddingLeft:"160px",paddingBottom:"500px"}}></p>
 						</div>
@@ -126,13 +143,10 @@ const DrawGlobalTargets = () => {
 							labelposition="right"
 							labelString='GtCo2'
 							fontSize="10"
-							TitlePosition="bottom"
+							TitlePosition="right"
 							title="From Agriculture "/>
 					</ReactBootStrap.Col>
-
-				</ReactBootStrap.Row>
-				<ReactBootStrap.Row style={{height:"500px"}}>
-				<ReactBootStrap.Col lg={3} md={5} key="t5" style={{height: 350}}>
+				<ReactBootStrap.Col lg={3} md={5} key="t5" style={{height: 300}}>
 					<MixedChart 
 						data={targetFourCharTwo}
 						aspectRatio={false}
@@ -140,11 +154,11 @@ const DrawGlobalTargets = () => {
 						labelString='GtCo2'
 						fontSize="10"
 						title="From Land use change"
-						TitlePosition="bottom"
+						TitlePosition="right"
 						/>
 				</ReactBootStrap.Col>
 
-					<ReactBootStrap.Col lg={6} md={7} key="t6"le={{borderStyle:'none'}} style={{height: 350}} >
+					{/* <ReactBootStrap.Col lg={6} md={7} key="t6"le={{borderStyle:'none'}} style={{height: 350}} >
 						<MixedChart 
 							data={targetFive}
 							aspectRatio={false}
@@ -157,22 +171,38 @@ const DrawGlobalTargets = () => {
 								<p style={{fontFamily: "Montserrat",color:'gray',fontSize:18}}>kilocalories per capita per day by country from the year 2030 of energy intake and Minimum Dietary Energy Requirement (MDER).
 								</p>
 							</div>
-					</ReactBootStrap.Col>
-					<ReactBootStrap.Col lg={3} md={12} key="t7"le={{borderStyle:'none'}} style={{height: 350}}>
+					</ReactBootStrap.Col> */}
+					<ReactBootStrap.Col lg={3} md={12} key="t7"le={{borderStyle:'none'}} style={{height: 300}}>
 						
 						<MixedChart
 							data={targetSix}
 							aspectRatio={false}
-							labelposition="bottom"
-							labelString='blue water in million cubic meters'
+							labelposition="right"
+							labelString='blue water in  cubic meters'
 							fontSize='14'
 							fontColor='black'
 							title="Target 6.- Fresh water use"/>
 							<div>
-								<p style={{fontFamily: "Montserrat",color: 'gray',fontSize:16}}>Water use for irrigation for crops and livestock production 
-		</p>
+								<p style={{fontFamily: "Montserrat",color: 'gray',fontSize:16}}>Water use for irrigation for crops and livestock production </p>
 							</div>
 
+					</ReactBootStrap.Col>
+				</ReactBootStrap.Row>
+				<ReactBootStrap.Row className="centerX pt-5" style={{justifyContent:"center"}}>
+					<ReactBootStrap.Col lg={6} md={7} key="t6"le={{borderStyle:'none'}} style={{height: 300}} >
+						<MixedChart 
+							data={targetFive}
+							aspectRatio={false}
+							labelposition="right"
+							labelString='Kcal per capita /day'
+							fontSize='15'
+							fontColor='black'
+							title="Target 5.-  Food security"/>
+							<div>
+								<p style={{fontFamily: "Montserrat",color:'gray',fontSize:18}}>kilocalories per capita per day by country from the year 2030 of energy intake and Minimum Dietary Energy Requirement (MDER).
+								</p>
+							</div>
+							
 					</ReactBootStrap.Col>
 				</ReactBootStrap.Row>
 			</ReactBootStrap.Container>

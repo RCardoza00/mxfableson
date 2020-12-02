@@ -15,15 +15,22 @@ import GreenHouseOne from '../pages/GreenHouseOne'
 import FreshWaterTwo from '../pages/FreshWaterTwo'
 //assets
 import styled from 'styled-components';
-import BannerLifeOnLand from '../assets/banners/Mesa de trabajo 19.png';
+import BannerLifeOnLand from '../assets/netForestNew.png';
+import BannerLifeOnLandByCountry from '../assets/coverByCountry.png';
+import BiodiversityIMG from '../assets/biodiversity.png';
+import ProtectedAreas from '../assets/protectedAreas.png';
+import LandCoverNew from '../assets/LandCoverNew.png';
+import newFood1 from '../assets/newFood1.png';
+import food2 from '../assets/food2.png';
+import freshNew from '../assets/freshWaterNew.png';
+import ghgnew from '../assets/ghgnew.png';
+
 import BannerCleanWater from '../assets/banners/Mesa de trabajo 8.png';
 import BannerZeroHunger from '../assets/banners/Mesa de trabajo 2.png';
+import BannerZeroHunger2 from '../assets/banners/Mesa de trabajo 2-1.png';
 import BannerClimateAction from '../assets/banners/Mesa de trabajo 16.png';
-import BannerCustom from '../assets/banners/Mesa de trabajo 21.png';
-import SustainableImporter from '../pages/SustainableImporter'
-import SustainableNetExporter from './SustainableNetExporter'
-import CurrenTrendExporter from './CurrenTrendExporter'
-import CurrenTrendImporter from './CurrenTrendImporter'
+import BannerCustom from '../assets/xdxd.png';
+import TradeReport from './TradeReport'
 import DashboardCover from '../assets/DashboardCover2.jpg';
 
 const Styles = styled.div`
@@ -38,6 +45,7 @@ const Styles = styled.div`
     margin: 0;
     transition: all 0.5s ease;
     width: 100%;
+    max-height: 12vh;
 
     .banner{
         max-width:100%;
@@ -81,7 +89,6 @@ class Scenathon extends Component {
 
             })
         } else {
-
             this.setState({
                 select: {
                     //el next code evitara que se sobrescriba cuando reciba un valor new
@@ -90,7 +97,6 @@ class Scenathon extends Component {
                     [e.target.name]: e.target.value
                 },
                 dashboard: e.target.value
-
             });
         }
     }
@@ -115,33 +121,33 @@ class Scenathon extends Component {
                 break;
             case 'Net Forest Cover Change 2':
                 document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = BannerLifeOnLand;
+                document.getElementById("banner").src = BannerLifeOnLandByCountry;
                 this.combobox = null;
                 this.dash = <NetForestCoverChange2 />;
                 break;
             case 'Biodiversity':
                 document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = BannerLifeOnLand;
+                document.getElementById("banner").src = BiodiversityIMG;
                 this.combobox = null;
                 this.dash = <Biodiversity />;
                 break;
             case 'Protected Areas by Type':
                 document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = BannerLifeOnLand;
+                document.getElementById("banner").src = ProtectedAreas;
                 //  <ComboBox onChange={this.handleChange}/>
                 this.combobox = null;
                 this.dash = <ProtectedAreaByType />;
                 break;
             case 'Land Cover':
                 document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = BannerLifeOnLand;
+                document.getElementById("banner").src = LandCoverNew;
                 // this.combobox=<ComboBox onChange={this.handleChange}/>
                 this.combobox = null;
                 this.dash = <LandCover />;
                 break;
             case 'Fresh Water 1':
                 document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = BannerCleanWater;
+                document.getElementById("banner").src = freshNew;
                  //  this.combobox=<ComboBox onChange={this.handleChange}/>
                 this.combobox = null;
                 this.dash = <FreshWaterUse />;
@@ -149,61 +155,44 @@ class Scenathon extends Component {
                 break;
             case 'Fresh Water 2':
                 document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = BannerCleanWater;
+                document.getElementById("banner").src = freshNew;
                 //  this.combobox=<ComboBox onChange={this.handleChange}/>
                 this.combobox = null;
                 this.dash = <FreshWaterTwo />;
                 break;
             case 'Green House Gas (GHG) Emissions 1':
                 document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = BannerClimateAction;
+                document.getElementById("banner").src = ghgnew;
                 //   this.combobox=<ComboBox onChange={this.handleChange}/>
                 this.combobox = null;
                 this.dash = <GreenHouseOne />;
                 break;
             case 'Green House Gas (GHG) Emissions 2':
                 document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = BannerClimateAction;
+                document.getElementById("banner").src = ghgnew;
                 // this.combobox=<ComboBox onChange={this.handleChange}/>
                 this.combobox = null;
                 this.dash = <GreenHouse2 />;
                 break;
             case 'Food Energy Intake Per Capita 1':
                 document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = BannerZeroHunger;
+                document.getElementById("banner").src = newFood1;
                 //   this.combobox=<ComboBox2 onChange={this.handleChange}/>
                 this.combobox = null;
                 this.dash = <FoodEnergyIntakePerCapita />;
                 break;
             case 'Food Energy Intake Per Capita 2':
                 document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = BannerZeroHunger;
+                document.getElementById("banner").src = food2;
                 this.combobox = null;
                 this.dash = <FoodEnergyIntakePerCapita2 />;
                 break;
-            case 'Sustainable_next_exporters':
+           
+            case 'Trade_Report':
                 document.getElementById('container-fluid').style.background="transparent";
                 document.getElementById("banner").src = "";
                 this.combobox = null;
-                this.dash = <SustainableNetExporter />;
-                break;
-            case 'Sustainable_next_importers':
-                document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = "";
-                this.combobox = null;
-                this.dash = <SustainableImporter />;
-                break;
-            case 'Current_trend_next_exporters':
-                document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = "";
-                this.combobox = null;
-                this.dash = <CurrenTrendExporter />;
-                break;
-            case 'Current_trend_next_importers':
-                document.getElementById('container-fluid').style.background="transparent";
-                document.getElementById("banner").src = "";
-                this.combobox = null;
-                this.dash = <CurrenTrendImporter />;
+                this.dash = <TradeReport/>;
                 break;
             default: this.combobox = null;
             document.getElementById("banner").src = "";
@@ -216,7 +205,7 @@ class Scenathon extends Component {
 
             <Styles>
                 <div className="header" ref={this.fableRef}>
-                    <img className="banner" id="banner" alt=""></img>
+                    <img className="banner" id="banner" src={BannerCustom} alt=""/>
                 </div>
                 <div id="container-fluid" className="container-fluid" style={{ display: 'flex' , padding:'0 0'}} >
 

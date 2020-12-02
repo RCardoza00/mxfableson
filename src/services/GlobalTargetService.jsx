@@ -2,7 +2,7 @@
 import ChartCharacteristics from '../data/ChartCharacteristics.json';
 
 const responseApi = response =>{
-
+console.log(response);
     function Global(ChartCharacteristics, data) {
        
         this.data = data;
@@ -89,12 +89,14 @@ datasetsTargetOne.push(global);
 
   //target Two
   global = new GlobalTarget(ChartCharacteristics["protected_land_target"],protected_landTarget);
+  console.log("protected")
+  console.log(protected_landTarget);
   datasetsTargetTwo.push(global);
   global = new Global(ChartCharacteristics["protected_land"],protected_land);
   datasetsTargetTwo.push(global);
 
   //target3
-  global = new GlobalTarget(ChartCharacteristics["protected_land_target"],target_biodiversity);
+  global = new GlobalTarget(ChartCharacteristics["biodiversity_target"],target_biodiversity);
   datasetsTargetThree.push(global);
   global = new Global(ChartCharacteristics["biodiversity_land"],biodiversity_land);
   datasetsTargetThree.push(global);
@@ -106,24 +108,31 @@ datasetsTargetOne.push(global);
 
   var dataTargetOne = {
     labels:labels,
-    datasets:datasetsTargetOne
+    datasets:datasetsTargetOne,
+    CSV:response,
+
 };
 
 var dataTargetTwo= {
     labels:labels,
-    datasets:datasetsTargetTwo
+    datasets:datasetsTargetTwo,
+    CSV2:response,
+
 };
 
 var dataTargeThree= {
     labels:labels,
-    datasets:datasetsTargetThree
+    datasets:datasetsTargetThree,
+    CSV:response,
+
 };
    
 
 var dataGlobal={
 targetOne:dataTargetOne,
 targetTwo:dataTargetTwo,
-targetThree:dataTargeThree
+targetThree:dataTargeThree,
+
 };
     
 
@@ -149,6 +158,7 @@ return dataGlobal;
 export default function getGlobalTargets(props)  {
     try {
        
+     
      
         return fetch ("https://fable2020.herokuapp.com/targets123"+JSON.stringify(props))
         .then(res=>res.json()).then(responseApi);

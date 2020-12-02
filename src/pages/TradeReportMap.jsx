@@ -5,7 +5,7 @@ import * as L from 'leaflet';
 import surfaceAreas from './../data/countries_surfaceArea.json';
 import centros from './../data/countries_centers.json';
 import mapDataTest from './../data/Countries.json';
-import 'leaflet/dist/leaflet.css'; //This style is for the scroll and plus controls of the map
+import 'leaflet/dist/leaflet.css';
 import '../css/index.css';
 
 const TradeReportMap = (props) => {
@@ -200,10 +200,10 @@ const TradeReportMap = (props) => {
 		var fullName = ""
 		for (const currentValue in years) {
 			var currentYear = years[currentValue]
-			if (currentYear == selectedYear) {
+			if (currentYear === selectedYear) {
 				valor = parseFloat(data[index][currentValue])
 				found = true;
-				if (valor == 0.0) {
+				if (valor === 0.0) {
 					return NaN;
 				}
 				break;
@@ -215,7 +215,7 @@ const TradeReportMap = (props) => {
 		found = false
 
 		for (var center in centros) {
-			if (center == countryName) {
+			if (center === countryName) {
 				found = true;
 				lat = centros[center]['latitude']
 				long = centros[center]['longitude']
@@ -227,7 +227,7 @@ const TradeReportMap = (props) => {
 		}
 
 		for (var srf in surfaceAreas) {
-			if (srf == countryName) {
+			if (srf === countryName) {
 				surfaceArea = surfaceAreas[srf]['area']
 				fullName = surfaceAreas[srf]['country']
 				break;
@@ -243,37 +243,37 @@ const TradeReportMap = (props) => {
 		var fromRegion = false
 		if (R_AFR.includes(countryName)) {
 			indexAux = countriesName.indexOf('R_AFR');
-			if (indexAux == -1) {
+			if (indexAux === -1) {
 				indexAux = countriesName.indexOf('SSA');
 			}
 			fromRegion = true
 		} else if (R_MECAS.includes(countryName)) {
 			indexAux = countriesName.indexOf('R_MECAS');
-			if (indexAux == -1) {
+			if (indexAux === -1) {
 				indexAux = countriesName.indexOf('NMC');
 			}
 			fromRegion = true
 		} else if (R_LAM.includes(countryName)) {
 			indexAux = countriesName.indexOf('R_LAM');
-			if (indexAux == -1) {
+			if (indexAux === -1) {
 				indexAux = countriesName.indexOf('CSA');
 			}
 			fromRegion = true
 		} else if (R_OEU.includes(countryName)) {
 			indexAux = countriesName.indexOf('ROEU');
-			if (indexAux == -1) {
+			if (indexAux === -1) {
 				indexAux = countriesName.indexOf('R_OEU');
 			}
 			fromRegion = true
 		} else if (R_NEU.includes(countryName)) {
 			indexAux = countriesName.indexOf('R_NEU');
-			if (indexAux == -1) {
+			if (indexAux === -1) {
 				indexAux = countriesName.indexOf('NEU');
 			}
 			fromRegion = true
 		} else if (R_ASIPAC.includes(countryName)) {
 			indexAux = countriesName.indexOf('R_ASIPAC');
-			if (indexAux == -1) {
+			if (indexAux === -1) {
 				indexAux = countriesName.indexOf('ASP');
 			}
 			fromRegion = true
@@ -289,7 +289,7 @@ const TradeReportMap = (props) => {
 		var indexAux = belongs[0]
 		var fromRegion = belongs[1]
 		if (indexAux !== -1) {
-			if (fromRegion == false) {
+			if (fromRegion === false) {
 				layer.options.fillColor = color[indexAux];
 			}
 		}
@@ -302,7 +302,7 @@ const TradeReportMap = (props) => {
 			var indexAux = belongs[0]
 			var fromRegion = belongs[1]
 			if (indexAux !== -1) {
-				if (fromRegion == false) {
+				if (fromRegion === false) {
 					addInfoBubbleOnCountry(indexAux, countryName);
 				}
 			}
@@ -331,7 +331,7 @@ const TradeReportMap = (props) => {
 		return a[3] < b[3] ? 1 : -1;
 	});
 
-	var from = ""
+	
 
 	return (
 		<div>

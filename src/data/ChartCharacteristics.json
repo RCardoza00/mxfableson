@@ -152,7 +152,7 @@
     "cubic_metres": [
         {
             "type": "bar",
-            "label": "Million Cubic metres",
+            "label": "Cubic metres",
             "borderColor": "#81c784",
             "backgroundColor": "#0072f0",
             "pointBorderColor": "#81c784",
@@ -424,13 +424,13 @@
 
     }],"biodiversity_target":[{
         "label":"Biod-target1",
-        "fill":false,
         "type":"scatter",
-        "backgroundColor":"black",
-        "borderColor":"black",
-        "hoverBackgroundColor":"black",
-        "hoverBorderColor":"black",
-        "yAxisID":"y-axis-1"
+        "fill": false,
+        "backgroundColor": "red",
+        "borderColor":"red",
+        "radius": 5.2,
+        "hoverBackgroundColor":"Red",
+        "hoverBorderColor":"Red"
        
 
     }],

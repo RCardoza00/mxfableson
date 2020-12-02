@@ -3,6 +3,7 @@ import BarChart from "../components/BarChart";
 import ComboBox from '../components/ComboBox';
 import Tour from "../components/Tour";
 import FreshWaterService from '../services/FreshWaterService';
+import ConvertToCSV from '../components/ConvertToCSV';
 
 const DrawFreshWaterUse = () => {
 
@@ -17,8 +18,8 @@ const DrawFreshWaterUse = () => {
   });
 
   const [json, setJson] = useState([{
-    labels:[],
-    datasets:[]
+    Chart:[],
+    CSV:[]
   }]);
 
   useEffect(() => {
@@ -88,33 +89,32 @@ const DrawFreshWaterUse = () => {
         }
       ]
  */
-
+const DownloadCSV = e => {
+  ConvertToCSV(json.CSV)
+  }
   return (
     <div>
       {/**<Tour stepsP={steps}*/}
 
       <div>
-        <ComboBox onChange={handleChange} />
+        <ComboBox onChange={handleChange} onClick={DownloadCSV}/>
      
       </div>
 
       <div className="graph" style={{height: "80vh",width:"70vw"}}>
 
-        <BarChart data={json}
+        <BarChart data={json.Chart}
           aspectRatio={false}
-          labelposition="top"
+          labelposition="right"
           labelwidth={40}
           labelSize={18}
-          labelString="Blue water/million cubic metres"
+          labelString="Blue water in cubic metres"
           TitleSize='24'
-          title="Fresh Water use"
+          title=""
           
           />
-     <div>
-    <p style={{color:"gray",fontSize:"20px",fontFamily: "Montserrat",paddingLeft:"296px"}}> 
-    Water use for irrigation for crops and livestock production 
-
-</p>
+   <div>
+      <p style={{fontSize:'16px', textAlign:"center",color:"#171717",fontFamily:"sans-serif"}}>Water use for irrigation for crops and livestock production</p>
     </div>
 
       </div>

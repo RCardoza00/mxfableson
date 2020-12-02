@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import ComboBox from '../components/ComboBox';
 import TradeReportMap from './TradeReportMap'
 import BiodiversityService from '../services/BiodiversityService';
-
+import ConvertToCSV from '../components/ConvertToCSV';
 
 //nfch=NetForestCoverChange
 const DrawBiodiversity = () => {
@@ -19,11 +19,12 @@ const DrawBiodiversity = () => {
   });
 
   const [json, setJson] = useState({
-    labels:[],
-    datasets:[],
+    labels: [],
+    datasets: [],
+    CSV: []
   });
   useEffect(() => {
-BiodiversityService(state).then(setJson);
+    BiodiversityService(state).then(setJson);
   }, [state]);
 
 
@@ -32,10 +33,9 @@ BiodiversityService(state).then(setJson);
     var group = state.select.GraficaType;
     var scenathon = state.select.scenathon_id;
     var iteration = state.select.Iteration;
-if(e.name === "GraficaType")
-{
-  group=e.value 
-}else if (e.target.name === "scenathon_id") {
+    if (e.name === "GraficaType") {
+      group = e.value
+    } else if (e.target.name === "scenathon_id") {
       switch (e.target.value) {
         case '6':
           iteration = state.select.Iteration === "1" ? "3" : "4";
@@ -48,7 +48,7 @@ if(e.name === "GraficaType")
         default: iteration = state.select.Iteration === "1" ? "3" : "4";
       }
     } else {
-      iteration =scenathon === "6" ? e.target.value === "after" ? "4" : "3" : e.target.value === "after" ? "2" : "1" ;
+      iteration = scenathon === "6" ? e.target.value === "after" ? "4" : "3" : e.target.value === "after" ? "2" : "1";
     }
 
     setState({
@@ -59,19 +59,22 @@ if(e.name === "GraficaType")
       }
     });
   }
+
+  const DownloadCSV = e => {
+    ConvertToCSV(json.CSV)
+    }
   return (
-    <Container className="charts">
+    <Container fluid >
       <div >
-        <ComboBox onChange={handleChange} />
+        <ComboBox onChange={handleChange} onClick={DownloadCSV}/>
       </div>
       <Row>
         <Col>
 
-          <div className="biodiversity-chart" style={{width:"40vw"}}>
-           
+          <div className="biodiversity-chart" style={{ width: "37vw", "margin-right": -200 }}>
             <BarChart3 data={json} title="Share of total land which is protected"
               aspectRatio={false}
-              labelString='1000ha per year'
+              labelString=''
               fontSize="20"
               labelWidth={40}
               labelSize={15}
@@ -81,11 +84,11 @@ if(e.name === "GraficaType")
 
         </Col>
         <Col>
-          <div className="biodiversity-map" style={{width:"25vw"}}>
-          <TradeReportMap countriesData = {json} from="Biodiversity"/>
-
+          <br /><br /><br />
+          <div style={{ width: "40vw" }}>
+            <TradeReportMap countriesData={json} from="Biodiversity" />
           </div>
-          
+
         </Col>
       </Row>
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import BarChart from "../components/BarChart.jsx";
 import ComboBox from '../components/ComboBox'
 import ProtectedAreaService from '../services/ProtectedAreaService';
+import ConvertToCSV from '../components/ConvertToCSV';
 
 import Tour from '../components/Tour'
 const DrawProtected = () => {
@@ -14,7 +15,8 @@ const DrawProtected = () => {
   });
   const [json, setJson] = useState([{
     labels:[],
-    datasets:[]
+    datasets:[],
+    CSV:[]
   }]);
 
 
@@ -84,13 +86,16 @@ const DrawProtected = () => {
 
  
 
+    const DownloadCSV = e => {
+      ConvertToCSV(json.CSV)
+      }
     return (
 
       <div className="graph" style={{height: "100vh",width:"70vw"}}>
 {/**<Tour stepsP={steps}/>
 */}
       
-      <ComboBox onChange={handleChange}/>
+      <ComboBox onChange={handleChange} onClick={DownloadCSV}/>
     
       
 
@@ -101,7 +106,7 @@ const DrawProtected = () => {
         labelwidth={50}
         labelSize={16}
         TitleSize={24}
-        title="Protected Areas By Type"/>
+        title=""/>
     
     </div>
     )
