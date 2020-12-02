@@ -1,5 +1,6 @@
 import React from 'react';
 import { ProSidebar, Menu, MenuItem, SubMenu ,SidebarHeader,SidebarContent } from 'react-pro-sidebar';
+import  {Link}  from 'react-router-dom';
 import '../css/SideMenu.css';
 
 const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar, onChange }) => {
@@ -54,6 +55,13 @@ const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar, onChange }
 						</SubMenu>
 					</SubMenu>
 					<MenuItem onClick={ () => handleChange("Trade_Report") }>Trade Report</MenuItem>
+				
+                   <MenuItem>
+				  
+				   <a href="http://testing.claudiester.tk:3000/"></a>
+				   Biodiversity
+				   </MenuItem>
+                
 				</Menu>
 			</SidebarContent>
 		</ProSidebar>
