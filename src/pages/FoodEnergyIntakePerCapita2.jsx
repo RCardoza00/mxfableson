@@ -6,9 +6,6 @@ import ComboBox2 from "../components/ComboBox2.jsx";
 import ConvertToCSV from '../components/ConvertToCSV';
 const FoodEnergyIntakePerCapita = () => {
 
-
-
- 
   const [state, setState] = useState({
     select: {
       Year: '2030',
@@ -29,13 +26,6 @@ const FoodEnergyIntakePerCapita = () => {
   useEffect(() => {
     FoodEnergyTwo(state).then(setJson);
   }, [state]);
-
-
-
-
-
-
-
 
   const handleChange = e => {
     var year = state.select.Year;
@@ -110,8 +100,7 @@ ConvertToCSV(json.CSV)
           labelSize={14}
           TitleSize={30}
           fontSize={14}
-          labelString="Gr per capita per day"
-          title="Food energy intake per capita" />
+          labelString="Gr per capita per day"/>
                    <div>
     <p style={{color:"gray",fontSize:"18px",fontFamily: "Montserrat",paddingTop:"40px",paddingLeft:"200px", textAlign:"justify"}}>Average gr per capita per day of fat and protein feasible by country and selected year
 
